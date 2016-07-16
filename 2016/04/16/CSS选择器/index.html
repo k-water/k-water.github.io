@@ -1,0 +1,917 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="元素选择器这是最基本的CSS选择器，HTML文档中的元素本身就是一个选择器;1234p &amp;#123;    line-height:1.5em;    margin-bottom:1em;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS选择器">
+<meta property="og:url" content="http://yoursite.com/2016/04/16/CSS选择器/index.html">
+<meta property="og:site_name" content="Sunshine'Note">
+<meta property="og:description" content="元素选择器这是最基本的CSS选择器，HTML文档中的元素本身就是一个选择器;1234p &amp;#123;    line-height:1.5em;    margin-bottom:1em;&amp;#125;">
+<meta property="og:image" content="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/69548418.jpg">
+<meta property="og:updated_time" content="2016-07-16T12:43:10.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS选择器">
+<meta name="twitter:description" content="元素选择器这是最基本的CSS选择器，HTML文档中的元素本身就是一个选择器;1234p &amp;#123;    line-height:1.5em;    margin-bottom:1em;&amp;#125;">
+<meta name="twitter:image" content="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/69548418.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6271886744275125000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> CSS选择器 | Sunshine'Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?10f6405da871f8fdcb13498ebd95a561";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunshine'Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'zs-v-BNbd9DVJBbXKgmZ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS选择器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T21:59:01+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/16/CSS选择器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/CSS选择器/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/04/16/CSS选择器/" class="leancloud_visitors" data-flag-title="CSS选择器">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/69548418.jpg" rel="gallery_ciqpa1wji000a9goprj0wdt6a"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/69548418.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h3 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h3><p>这是最基本的CSS选择器，HTML文档中的元素本身就是一个选择器;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">1.5em</span>;</div><div class="line">    <span class="attribute">margin-bottom</span>:<span class="number">1em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="关系选择器"><a href="#关系选择器" class="headerlink" title="关系选择器"></a>关系选择器</h3><h4 id="A-gt-B-后代选择器，该选择器点位元素A后代中所有的元素"><a href="#A-gt-B-后代选择器，该选择器点位元素A后代中所有的元素" class="headerlink" title="A &gt; B:后代选择器，该选择器点位元素A后代中所有的元素"></a>A &gt; B:后代选择器，该选择器点位元素A后代中所有的元素</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">ul</span> &gt; <span class="selector-tag">li</span> &#123;</div><div class="line">    <span class="attribute">list-style</span>:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>仅限ul的直接子元素li，如果li里面还嵌套着另一个 ul 结构时，最里面的 li 将被忽略</p>
+</blockquote>
+<hr>
+<h4 id="A-B：相邻兄弟选择器，该选择器定位与元素A具有相同父元素且在标记中紧邻A的元素B"><a href="#A-B：相邻兄弟选择器，该选择器定位与元素A具有相同父元素且在标记中紧邻A的元素B" class="headerlink" title="A + B：相邻兄弟选择器，该选择器定位与元素A具有相同父元素且在标记中紧邻A的元素B"></a>A + B：相邻兄弟选择器，该选择器定位与元素A具有相同父元素且在标记中紧邻A的元素B</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span> + <span class="selector-tag">li</span> &#123;</div><div class="line">  <span class="attribute">border-top</span>:<span class="number">1px</span> solid <span class="number">#ddd</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位具有相同父元素ul里除第一个li之外的所有li,demo如下</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/50530779.jpg" alt=""><br><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/15470224.jpg" alt=""></p>
+<hr>
+<h4 id="A-B：一般兄弟选择器，它会匹配第二个元素-即匹配A之后的B-条件是它必须跟-不一定是紧跟-在第一个元素之后-且他们都有一个共同的父元素"><a href="#A-B：一般兄弟选择器，它会匹配第二个元素-即匹配A之后的B-条件是它必须跟-不一定是紧跟-在第一个元素之后-且他们都有一个共同的父元素" class="headerlink" title="A ~ B：一般兄弟选择器，它会匹配第二个元素,即匹配A之后的B,条件是它必须跟(不一定是紧跟)在第一个元素之后,且他们都有一个共同的父元素 ."></a>A ~ B：一般兄弟选择器，它会匹配第二个元素,即匹配A之后的B,条件是它必须跟(不一定是紧跟)在第一个元素之后,且他们都有一个共同的父元素 .</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> ~ <span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">color</span>:<span class="number">#f00</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位具有相同父元素的，h1标签之后的所有p标签,demo如下</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/99829038.jpg" alt=""><br><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/80216557.jpg" alt=""></p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><h4 id="A-attr-：该选择器定位具有属性attr的任何元素A"><a href="#A-attr-：该选择器定位具有属性attr的任何元素A" class="headerlink" title="A[attr]：该选择器定位具有属性attr的任何元素A"></a>A[attr]：该选择器定位具有属性attr的任何元素A</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[required]</span> &#123;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位页面里所有具有必填属性”required”的input</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/85580541.jpg" alt=""><br><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/2813311.jpg" alt=""></p>
+<h4 id="A-attr-value-表示以-attr-命名的属性名-且该属性的值为”value”的元素"><a href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值为”value”的元素" class="headerlink" title="A[attr=value]:表示以 attr 命名的属性名,且该属性的值为”value”的元素."></a>A[attr=value]:表示以 attr 命名的属性名,且该属性的值为”value”的元素.</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-attr">[attr=value]</span> &#123;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#aaa</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位页面里的密码输入框</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/11934370.jpg" alt=""><br><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/64372028.jpg" alt=""></p>
+<h4 id="A-attr-value-表示以-attr-命名的属性名，且该属性的值为“value”，或者该属性的值以“value-“（”-“为连字符，Unicode编码为U-002D）开头的元素。典型的应用场景是用来来匹配语言简写代码（如zh-CN，zh-TW）"><a href="#A-attr-value-表示以-attr-命名的属性名，且该属性的值为“value”，或者该属性的值以“value-“（”-“为连字符，Unicode编码为U-002D）开头的元素。典型的应用场景是用来来匹配语言简写代码（如zh-CN，zh-TW）" class="headerlink" title="A[attr|=value]:表示以 attr 命名的属性名，且该属性的值为“value”，或者该属性的值以“value-“（”-“为连字符，Unicode编码为U+002D）开头的元素。典型的应用场景是用来来匹配语言简写代码（如zh-CN，zh-TW）."></a>A[attr|=value]:表示以 attr 命名的属性名，且该属性的值为“value”，或者该属性的值以“value-“（”-“为连字符，Unicode编码为U+002D）开头的元素。典型的应用场景是用来来匹配语言简写代码（如zh-CN，zh-TW）.</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-attr">[class|=a]</span> &#123;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#333</span>;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位页面里所有的P段落里具有class属性且属性值为a或是a-开始的，比如class=”a”以及class=”a-b”</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/81959822.jpg" alt=""><br><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/50934770.jpg" alt=""></p>
+<h4 id="A-attr-value-表示以-attr-命名的属性名-且该属性的值是一个以空格作为分隔的值列表-其中一个值为”value”的元素"><a href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值是一个以空格作为分隔的值列表-其中一个值为”value”的元素" class="headerlink" title="A[attr~=value]:表示以 attr 命名的属性名,且该属性的值是一个以空格作为分隔的值列表,其中一个值为”value”的元素."></a>A[attr~=value]:表示以 attr 命名的属性名,且该属性的值是一个以空格作为分隔的值列表,其中一个值为”value”的元素.</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-attr">[title~=english]</span> &#123;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#f88</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位页面里所有具有属性title且属性值里拥有完整单词english的div容器，比如title=”english”以及title=”a english”</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/20270986.jpg" alt=""><br><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/57669919.jpg" alt=""></p>
+<h4 id="A-attr-value-表示以-attr-命名的属性名-且该属性的值是以”value”开头的元素"><a href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值是以”value”开头的元素" class="headerlink" title="A[attr^=value]:表示以 attr 命名的属性名,且该属性的值是以”value”开头的元素."></a>A[attr^=value]:表示以 attr 命名的属性名,且该属性的值是以”value”开头的元素.</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-attr">[class^=a]</span> &#123;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#666</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位页面里具有属性class且属性值以a开头的div容器，比如class=”a”以及class=”ab”</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/369216.jpg" alt=""></p>
+<h4 id="A-attr-value-表示以-attr-命名的属性名-且该属性的值是以”value”结尾的元素"><a href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值是以”value”结尾的元素" class="headerlink" title="A[attr$=value]:表示以 attr 命名的属性名,且该属性的值是以”value”结尾的元素."></a>A[attr$=value]:表示以 attr 命名的属性名,且该属性的值是以”value”结尾的元素.</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-attr">[class$=a]</span> &#123;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位页面里具有属性class且属性值以a结尾的div窗口，比如class=”nba”以及class=”cba”</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/48350164.jpg" alt=""></p>
+<h4 id="A-attr-value-表示以-attr-命名的属性名-且该属性的值中至少包含一个以”value”作为子串的元素"><a href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值中至少包含一个以”value”作为子串的元素" class="headerlink" title="A[attr*=value]:表示以 attr 命名的属性名,且该属性的值中至少包含一个以”value”作为子串的元素."></a>A[attr*=value]:表示以 attr 命名的属性名,且该属性的值中至少包含一个以”value”作为子串的元素.</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[title*=link]</span> &#123;</div><div class="line">    <span class="attribute">text-decoration</span>:underline;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>定位所有title里具有link字符串的a链接</p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/62317623.jpg" alt=""><br><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/57669919.jpg" alt=""></p>
+<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><h4 id="简单入门"><a href="#简单入门" class="headerlink" title="简单入门"></a>简单入门</h4><blockquote>
+<p>:link：未访问的链接；<br>:visited：已访问的链接，不建议使用；<br>:hover：鼠标移动到容器，不仅限于链接，可用于页面中的任何元素；<br>:active：被激活时的状态，不仅限于链接，可用于任何具有tabindex属性的元素；<br>:focus：获得焦点时状态，不仅限于链接，可用于任何具有tabindex属性的无线：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">background-color</span>: <span class="number">#ffffc9</span> &#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color</span>: blue &#125; <span class="comment">/* 未访问链接 */</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color</span>: purple &#125; <span class="comment">/* 已访问链接 */</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">font-weight</span>: bold &#125; <span class="comment">/* 用户鼠标悬停 */</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: lime &#125; <span class="comment">/* 激活链接 */</span></div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:focus</span> &#123;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#333</span>;&#125; <span class="comment">/* 输入框获得焦点时的样式 */</span></div></pre></td></tr></table></figure>
+<h4 id="enabled：已启用的界面元素"><a href="#enabled：已启用的界面元素" class="headerlink" title=":enabled：已启用的界面元素"></a>:enabled：已启用的界面元素</h4><p>下面的代码，当文本输入框处于启用状态时，输入框的文本是中绿色（medium green），当处于禁用状态时，输入框的文本是灰色。这样可以把元素是否可用反馈给用户。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"url_of_form"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"FirstField"</span>&gt;</span>First field (enabled):<span class="tag">&lt;/<span class="name">label</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"FirstField"</span> <span class="attr">value</span>=<span class="string">"Lorem"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"SecondField"</span>&gt;</span>Second field (disabled):<span class="tag">&lt;/<span class="name">label</span>&gt;</span> </div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"SecondField"</span> <span class="attr">value</span>=<span class="string">"Ipsum"</span> <span class="attr">disabled</span>=<span class="string">"disabled"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"Submit"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:enabled</span> &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#22AA22</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:disabled</span> &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#D9D9D9</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/52712478.jpg" alt=""></p>
+<h4 id="target：该选择器定位当前活动页面内定位点的目标元素"><a href="#target：该选择器定位当前活动页面内定位点的目标元素" class="headerlink" title=":target：该选择器定位当前活动页面内定位点的目标元素"></a>:target：该选择器定位当前活动页面内定位点的目标元素</h4><blockquote>
+<p>这里有个简单的<a href="http://labs.qianduan.net/target.html" target="_blank" rel="external">demo</a>，使用target实现tab切换</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">        * &#123;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.tablist</span> &#123;</div><div class="line">            <span class="attribute">position</span>: relative;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">50px</span> auto;</div><div class="line">            <span class="attribute">min-height</span>: <span class="number">200px</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">/* this example style begin */</span></div><div class="line">        <span class="selector-class">.tab_content</span> &#123;</div><div class="line">            <span class="attribute">position</span>: absolute;</div><div class="line">            <span class="comment">/*set content box as absolute*/</span></div><div class="line">            <span class="comment">/* content style begin*/</span></div><div class="line">            <span class="attribute">width</span>: <span class="number">600px</span>;</div><div class="line">            <span class="attribute">height</span>: <span class="number">170px</span>;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">15px</span>;</div><div class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#91a7b4</span>;</div><div class="line">            <span class="attribute">border-radius</span>: <span class="number">3px</span>;</div><div class="line">            <span class="attribute">box-shadow</span>: <span class="number">0</span> <span class="number">2px</span> <span class="number">3px</span> <span class="built_in">rgba</span>(0, 0, 0, 0.1);</div><div class="line">            <span class="attribute">font-size</span>: <span class="number">1.2em</span>;</div><div class="line">            <span class="attribute">line-height</span>: <span class="number">1.5em</span>;</div><div class="line">            <span class="attribute">color</span>: <span class="number">#666</span>;</div><div class="line">            <span class="attribute">background</span>: <span class="number">#fff</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-id">#tab1</span><span class="selector-pseudo">:target</span>,</div><div class="line">        <span class="selector-id">#tab2</span><span class="selector-pseudo">:target</span>,</div><div class="line">        <span class="selector-id">#tab3</span><span class="selector-pseudo">:target</span> &#123;</div><div class="line">            <span class="attribute">z-index</span>: <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">/* tabmenu style */</span></div><div class="line">        <span class="selector-class">.tabmenu</span> &#123;</div><div class="line">            <span class="attribute">position</span>: absolute;</div><div class="line">            <span class="attribute">top</span>: <span class="number">100%</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.tabmenu</span> <span class="selector-tag">li</span> &#123;</div><div class="line">            <span class="attribute">display</span>: inline-block;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.tabmenu</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</div><div class="line">            <span class="attribute">display</span>: block;</div><div class="line">            <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>;</div><div class="line">            <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">10px</span> <span class="number">0</span> <span class="number">0</span>;</div><div class="line">            <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#91a7b4</span>;</div><div class="line">            <span class="attribute">border-radius</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="number">5px</span>;</div><div class="line">            <span class="attribute">background</span>: <span class="number">#e3f1f8</span>;</div><div class="line">            <span class="attribute">color</span>: <span class="number">#333</span>;</div><div class="line">            <span class="attribute">text-decoration</span>: none;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tablist"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"tabmenu"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#tab1"</span>&gt;</span>标签一<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#tab2"</span>&gt;</span>标签二<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#tab3"</span>&gt;</span>标签三<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tab1"</span> <span class="attr">class</span>=<span class="string">"tab_content"</span>&gt;</span>HTML文件中的每一个class或id都可以有自己的显示特征，而且每一个没有id特性的HTML结构也可以有自己的显示特征。</div><div class="line">            <span class="comment">&lt;!-- end tab1 content --&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tab2"</span> <span class="attr">class</span>=<span class="string">"tab_content"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>Cascading Style Sheets（层叠样式表／串樣式列表），简写为CSS，由W3C定义和维护的标准，一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言。目前最新版本是CSS 2.1，为W3C的候选推荐标准。下一版本CSS 3仍然在开发过程中。</div><div class="line">                <span class="comment">&lt;!-- end tab2 content--&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"tab3"</span> <span class="attr">class</span>=<span class="string">"tab_content"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-size:24px;"</span>&gt;</span>高质量设计文章分享平台<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>HTML文件中的每一个class或id都可以有自己的显示特征，而且每一个没有id特性的HTML结构也可以有自己的显示特征。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="comment">&lt;!-- end tab3 content--&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="E-default选择器用来指定当页面打开时默认处于选取状态的单选按钮或者复选框的样式。需要注意的是，即使用户将默认设定为选取状态的单选按钮或者复选框修改为非选取状态，使用E-default选择器设定的样式依然有效。"><a href="#E-default选择器用来指定当页面打开时默认处于选取状态的单选按钮或者复选框的样式。需要注意的是，即使用户将默认设定为选取状态的单选按钮或者复选框修改为非选取状态，使用E-default选择器设定的样式依然有效。" class="headerlink" title="E:default选择器用来指定当页面打开时默认处于选取状态的单选按钮或者复选框的样式。需要注意的是，即使用户将默认设定为选取状态的单选按钮或者复选框修改为非选取状态，使用E:default选择器设定的样式依然有效。"></a>E:default选择器用来指定当页面打开时默认处于选取状态的单选按钮或者复选框的样式。需要注意的是，即使用户将默认设定为选取状态的单选按钮或者复选框修改为非选取状态，使用E:default选择器设定的样式依然有效。</h4><blockquote>
+<p>PS：此伪类只兼容firefox浏览器<br> <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"> <span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>E:default选择器的使用示例<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="css"></span></div><div class="line">        <span class="selector-tag">input</span><span class="selector-attr">[type="checkbox"]</span><span class="selector-pseudo">:default</span> &#123;</div><div class="line">            <span class="attribute">outline</span>: <span class="number">2px</span> solid blue;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></div><div class="line">        兴趣:<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span>&gt;</span>阅读<span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>旅游<span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>看电影<span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>上网<span class="tag">&lt;/<span class="name">input</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+</blockquote>
+<p><img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-16/71907265.jpg" alt=""></p>
+<h4 id="验证性伪类"><a href="#验证性伪类" class="headerlink" title="验证性伪类"></a>验证性伪类</h4><p>:valid：应用于有效元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:valid</span> &#123;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#f80</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>当输入框验证为有效时加载这个边框样式，基于type或pattern属性</p>
+</blockquote>
+<p>:invalid：应用于空的必填元素，以及未能与type或pattern属性所定义的需求相匹配的元素<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:invalid</span> &#123;</div><div class="line">    <span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#f00</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>当输入框为空且必填时，或已填写但验证无效时，加载此边框样式<br>:required：应用于具有必填属性required的表单控件</p>
+</blockquote>
+<h4 id="读写伪类"><a href="#读写伪类" class="headerlink" title="读写伪类"></a>读写伪类</h4><blockquote>
+<p>E:read-only选择器用来指定当元素处于只读状态时的样式，在ff下需要写成-moz-read-only的形式<br>E:read-write选择器用来指定当元素处于非只读状态时的样式。在ff下需要写成-moz-read-write的形式</p>
+</blockquote>
+<h4 id="匹配伪类"><a href="#匹配伪类" class="headerlink" title="匹配伪类"></a>匹配伪类</h4><blockquote>
+<p>E F:nth-child(n)：该选择器定位元素E的第n个子元素的元素F：<br>E F:nth-last-child(n)：该选择器定位元素E的倒数第n个子元素的元素F；<br>E:nth-of-type(n)：该选择器定位元素E的第n个指定类型子元素；<br>E:nth-lash-of-type(n)：该选择器定位元素E的导数第n个指定类型子元素：<br>.class p:nth-child(2) 与 .class p:nth-of-type(2) 的区别在于，如果.class里的第2个子元素不是P元素时，.class p:nth-child(2) 的样式将无效，而.class p:nth-of-type(2) 将定位在 .class 里的第2个p元素<br>nth-child(n)、nth-last-child(n)、nth-of-type(n)、nth-last-of-type(n)，这其中的 n 可以使用数字静态式，比如 .nth-child(2n+1) 将匹配第1、3、5…个元素<br>E:first-child：父元素的第一个子元素E，与:nth-child(1)相同；<br>E:last-child：父元素的倒数第一个子元素E；<br>E:first-of-type：与:nth-of-type(1)相同；<br>E:last-of-type：与:nth-last-of-type(1)相同；<br>E:only-child：父元素中唯一的子元素E；<br>E:only-of-type：父元素中唯一具有该类型的元素E；<br>E:empty：没有子元素的元素，没有子元素包括文本节点；<br>E:lang(en)：具有使用双字母缩写(en)表示的语言的元素；<br>E:not(exception)：该选择器将选择与括号内的选择器不匹配的元素：</p>
+</blockquote>
+<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><blockquote>
+<p>伪元素可用于定位文档中包含的文本，为与伪类进行区分，伪元素使用双冒号 :: 定义，但单冒号 : 也能被识别。</p>
+<p>::first-line：匹配文本首行；</p>
+<p>::first-letter：匹配文本首字母；</p>
+<p>::before 与 ::after ：使用 contnet 属性生成额外的内容并插入在标记中：</p>
+<p>a[href^=http]::after {content:”link”} 在页面的a链接的后面插入文字link</p>
+<p>::selection：匹配突出显示的文本：</p>
+<p>::selection {background:#444; color:#fff;} 定义选中的文本颜色与背景色</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/13/hexo-github搭建Blog/" rel="next" title="hexo+github搭建Blog">
+                <i class="fa fa-chevron-left"></i> hexo+github搭建Blog
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/05/JQuery选择器/" rel="prev" title="jQuery选择器">
+                jQuery选择器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/16/CSS选择器/"
+     data-title="CSS选择器"
+     data-content=""
+     data-url="http://yoursite.com/2016/04/16/CSS选择器/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/16/CSS选择器/"
+           data-title="CSS选择器" data-url="http://yoursite.com/2016/04/16/CSS选择器/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xsx7g.com2.z0.glb.clouddn.com/16-7-16/36324554.jpg"
+               alt="Sunshine" />
+          <p class="site-author-name" itemprop="name">Sunshine</p>
+          <p class="site-description motion-element" itemprop="description">A contented mind is a perpetual feast.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sunshinelzb" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.jaylin.me/" target="_blank">jaylin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/huyihao" target="_blank">胡少爷</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#元素选择器"><span class="nav-number">1.</span> <span class="nav-text">元素选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系选择器"><span class="nav-number">2.</span> <span class="nav-text">关系选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-gt-B-后代选择器，该选择器点位元素A后代中所有的元素"><span class="nav-number">2.1.</span> <span class="nav-text">A > B:后代选择器，该选择器点位元素A后代中所有的元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-B：相邻兄弟选择器，该选择器定位与元素A具有相同父元素且在标记中紧邻A的元素B"><span class="nav-number">2.2.</span> <span class="nav-text">A + B：相邻兄弟选择器，该选择器定位与元素A具有相同父元素且在标记中紧邻A的元素B</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-B：一般兄弟选择器，它会匹配第二个元素-即匹配A之后的B-条件是它必须跟-不一定是紧跟-在第一个元素之后-且他们都有一个共同的父元素"><span class="nav-number">2.3.</span> <span class="nav-text">A ~ B：一般兄弟选择器，它会匹配第二个元素,即匹配A之后的B,条件是它必须跟(不一定是紧跟)在第一个元素之后,且他们都有一个共同的父元素 .</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性选择器"><span class="nav-number">3.</span> <span class="nav-text">属性选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-attr-：该选择器定位具有属性attr的任何元素A"><span class="nav-number">3.1.</span> <span class="nav-text">A[attr]：该选择器定位具有属性attr的任何元素A</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值为”value”的元素"><span class="nav-number">3.2.</span> <span class="nav-text">A[attr=value]:表示以 attr 命名的属性名,且该属性的值为”value”的元素.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-attr-value-表示以-attr-命名的属性名，且该属性的值为“value”，或者该属性的值以“value-“（”-“为连字符，Unicode编码为U-002D）开头的元素。典型的应用场景是用来来匹配语言简写代码（如zh-CN，zh-TW）"><span class="nav-number">3.3.</span> <span class="nav-text">A[attr|=value]:表示以 attr 命名的属性名，且该属性的值为“value”，或者该属性的值以“value-“（”-“为连字符，Unicode编码为U+002D）开头的元素。典型的应用场景是用来来匹配语言简写代码（如zh-CN，zh-TW）.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值是一个以空格作为分隔的值列表-其中一个值为”value”的元素"><span class="nav-number">3.4.</span> <span class="nav-text">A[attr~=value]:表示以 attr 命名的属性名,且该属性的值是一个以空格作为分隔的值列表,其中一个值为”value”的元素.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值是以”value”开头的元素"><span class="nav-number">3.5.</span> <span class="nav-text">A[attr^=value]:表示以 attr 命名的属性名,且该属性的值是以”value”开头的元素.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值是以”value”结尾的元素"><span class="nav-number">3.6.</span> <span class="nav-text">A[attr$=value]:表示以 attr 命名的属性名,且该属性的值是以”value”结尾的元素.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#A-attr-value-表示以-attr-命名的属性名-且该属性的值中至少包含一个以”value”作为子串的元素"><span class="nav-number">3.7.</span> <span class="nav-text">A[attr*=value]:表示以 attr 命名的属性名,且该属性的值中至少包含一个以”value”作为子串的元素.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪类"><span class="nav-number">4.</span> <span class="nav-text">伪类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单入门"><span class="nav-number">4.1.</span> <span class="nav-text">简单入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#enabled：已启用的界面元素"><span class="nav-number">4.2.</span> <span class="nav-text">:enabled：已启用的界面元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#target：该选择器定位当前活动页面内定位点的目标元素"><span class="nav-number">4.3.</span> <span class="nav-text">:target：该选择器定位当前活动页面内定位点的目标元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-default选择器用来指定当页面打开时默认处于选取状态的单选按钮或者复选框的样式。需要注意的是，即使用户将默认设定为选取状态的单选按钮或者复选框修改为非选取状态，使用E-default选择器设定的样式依然有效。"><span class="nav-number">4.4.</span> <span class="nav-text">E:default选择器用来指定当页面打开时默认处于选取状态的单选按钮或者复选框的样式。需要注意的是，即使用户将默认设定为选取状态的单选按钮或者复选框修改为非选取状态，使用E:default选择器设定的样式依然有效。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证性伪类"><span class="nav-number">4.5.</span> <span class="nav-text">验证性伪类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读写伪类"><span class="nav-number">4.6.</span> <span class="nav-text">读写伪类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匹配伪类"><span class="nav-number">4.7.</span> <span class="nav-text">匹配伪类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#伪元素"><span class="nav-number">5.</span> <span class="nav-text">伪元素</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunshine</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshinelzb"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lgVv0O1yBB0kitbB2GlE1YiR-gzGzoHsz", "3qdyA9s3YhaqfBWFu3g0O2Rm");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+</body>
+</html>

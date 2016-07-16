@@ -1,0 +1,865 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言为什么要搭建一个独立博客?
+独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github搭建Blog">
+<meta property="og:url" content="http://yoursite.com/2016/04/13/hexo-github搭建Blog/index.html">
+<meta property="og:site_name" content="Sunshine'Note">
+<meta property="og:description" content="前言为什么要搭建一个独立博客?
+独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2veofkl2fj20910dhaas.jpg">
+<meta property="og:image" content="http://cnfeat.qiniudn.com/bg2012082502.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2veby5m85j20rl0lrwh4.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c444dccejw1f2vzb0krj3j20ho080wit.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2vz0ytknej21120lkwhf.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccejw1f2vz1k5kxjj211d0miwiz.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vz3gg4pbj20p003i75z.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccejw1f2vcf6odlpj20es04zdgr.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2vfaoe76zj20pb08xdh6.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vfer5jx9j20oi0l2jv5.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vfvmpy2oj20t20astbk.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vg75wajoj20pr0513z7.jpg">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/c444dccejw1f2vg5h4xikj20ok05gaam.jpg">
+<meta property="og:updated_time" content="2016-07-16T12:45:33.681Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo+github搭建Blog">
+<meta name="twitter:description" content="前言为什么要搭建一个独立博客?
+独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2veofkl2fj20910dhaas.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6271886744275125000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> hexo+github搭建Blog | Sunshine'Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?10f6405da871f8fdcb13498ebd95a561";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunshine'Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'zs-v-BNbd9DVJBbXKgmZ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                hexo+github搭建Blog
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-13T20:41:08+08:00" content="2016-04-13">
+              2016-04-13
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/13/hexo-github搭建Blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/hexo-github搭建Blog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/04/13/hexo-github搭建Blog/" class="leancloud_visitors" data-flag-title="hexo+github搭建Blog">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><h3 id="为什么要搭建一个独立博客"><a href="#为什么要搭建一个独立博客" class="headerlink" title="为什么要搭建一个独立博客?"></a><strong>为什么要搭建一个独立博客?</strong></h3><blockquote>
+<p>独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。<br><a id="more"></a></p>
+<h3 id="喜欢写Blog的人，会经历三个阶段。"><a href="#喜欢写Blog的人，会经历三个阶段。" class="headerlink" title="喜欢写Blog的人，会经历三个阶段。"></a><strong>喜欢写Blog的人，会经历三个阶段。</strong></h3><p> 引用自阮一峰老师</p>
+<ol>
+<li>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</li>
+<li>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</li>
+<li>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a><strong>Hexo简介</strong></h2><blockquote>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">hexo</a>是一个基于<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>的静态博客程序，可以方便的生成静态网页托管在<a href="https://github.com/" target="_blank" rel="external">github</a>和Heroku上。作者是来自台湾的<a href="https://github.com/tommy351/hexo" target="_blank" rel="external">@tommy351</a>。</p>
+</blockquote>
+<h2 id="我为什么使用Hexo"><a href="#我为什么使用Hexo" class="headerlink" title="我为什么使用Hexo"></a><strong>我为什么使用Hexo</strong></h2><p>引用作者的原话</p>
+<blockquote>
+<p>不可思议的快速 ─ 只要一眨眼静态文件即生成完成<br>支持 <a href="https://www.zybuluo.com" target="_blank" rel="external">Markdown</a><br>仅需一道指令即可部署到 GitHub Pages 和 Heroku<br>已移植 Octopress 插件<br>高扩展性、自订性<br>兼容于 Windows, Mac &amp; Linux</p>
+</blockquote>
+<h2 id="开始搭建属于自己的博客"><a href="#开始搭建属于自己的博客" class="headerlink" title="开始搭建属于自己的博客"></a><strong>开始搭建属于自己的博客</strong></h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a><strong>安装Git</strong></h3><p>很好用的工具，把本地的hexo内容提交到github上，请到<a href="https://git-for-windows.github.io/" target="_blank" rel="external">官网</a>自行下载。安装完成后在桌面右键，点击Git Bash即可使用<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f2veofkl2fj20910dhaas.jpg" alt="git"></p>
+<h3 id="Github账号"><a href="#Github账号" class="headerlink" title="Github账号"></a><strong>Github账号</strong></h3><p> 通过<a href="https://github.com" target="_blank" rel="external">官网</a>注册一个账户，这个就不多说了。<br><img src="http://cnfeat.qiniudn.com/bg2012082502.jpg" alt="github"></p>
+<p> 接下来使用github为每个用户使用的二级域名，创建一个属于自己的仓库，可以时时预览自己上传的网页。如下图，其中仓库的名字格式为：username.github.io(只有这样才能生效)。设置完成后再浏览器中键入username.githu.io测试，就可以了。<br> <img src="http://ww2.sinaimg.cn/large/c444dccejw1f2veby5m85j20rl0lrwh4.jpg" alt="仓库"></p>
+<h4 id="配置ssh密钥"><a href="#配置ssh密钥" class="headerlink" title="配置ssh密钥"></a><strong>配置ssh密钥</strong></h4><blockquote>
+<ol>
+<li><p>使用<code>git bash</code>输入命令<code>ssh keygen -t -rsa -C &quot;your email&quot;</code>然后按三个回车。如下<br><img src="http://ww1.sinaimg.cn/large/c444dccejw1f2vzb0krj3j20ho080wit.jpg" alt="keygen"></p>
+</li>
+<li><p>接着打开<code>/.ssh</code>目录下的<code>./id_rsa.pub</code>文件，将其复制粘贴到你的github账号上，如下<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f2vz0ytknej21120lkwhf.jpg" alt="ssh"><br><img src="http://ww4.sinaimg.cn/large/c444dccejw1f2vz1k5kxjj211d0miwiz.jpg" alt="ssh key"></p>
+</li>
+<li><p>本地测试是否成功，输入<code>ssh -T git@github.com</code>，若看到successful就可以了。<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vz3gg4pbj20p003i75z.jpg" alt="测试ssh"></p>
+</li>
+</ol>
+</blockquote>
+<hr>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></h3><p>这是比不可少的一步，从官网上下载一路安装就可以，安装成功后，打开cmd（win+R），测试是否安装成功。下图为本地测试结果<br><img src="http://ww4.sinaimg.cn/large/c444dccejw1f2vcf6odlpj20es04zdgr.jpg" alt="npm"></p>
+<hr>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><strong>安装Hexo</strong></h3><blockquote>
+<p>通过命令行 <code>npm install -g hexo</code>安装。PS：打开cmd输入此命令等待安装完成即可</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>安装完成后，初始化本地博客目录，选择你想存储的位置。例如，我在F盘下创建了一个blog文件夹，即<code>F:/blog</code>用来存放本地博客。进入此文件夹，右键使用<code>git bash</code>。输入<code>hexo init</code>回车。<br>好啦，至此，全部安装工作已经完成！blog就是你的博客根目录，所有的操作都在里面进行。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>紧接着，cd 到你的init目录，执行<code>hexo generate</code>（hexo g也可以）命令，生成静态页面至<code>blog\public\</code>目录。<br>命令必须在init目录下执行，否则不成功，但是也不报错。当你修改文章Tag或内容,不能正确重新生成内容，可以删除hexo\db.json后重试，还不行就到public目录删除对应的文件，重新生成。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>本地测试，输入<code>hexo server</code>如下图,<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f2vfaoe76zj20pb08xdh6.jpg" alt="hexo s"><br>然后在浏览器输入localhost:4000，请使用高级浏览器，否则呵呵哒，你懂的。至此，本地搭建基本完成。<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vfer5jx9j20oi0l2jv5.jpg" alt="hexo "></p>
+</blockquote>
+<hr>
+<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a><strong>部署到github</strong></h3><blockquote>
+<p>使用命令<code>npm install hexo-deployer-git --save</code>在你init的根目录下，我这里是blog，安装deploy_git,此时的目录结构如下<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vfvmpy2oj20t20astbk.jpg" alt="目录结构"></p>
+<p>编辑<code>_config.yml</code>文件，在<code>git bash</code>输入<code>vim _config.yml</code>做以下修改<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vg75wajoj20pr0513z7.jpg" alt="部署"><br>接着，键入命令<code>hexo deploy</code>输入github的账户密码即可部署在github上，可在浏览器输入<a href="http://sunshinelzb.github.io/" target="_blank" rel="external">http://sunshinelzb.github.io/</a>预览效果，其中<code>sunshinelzb</code>修改为你对应的名字。</p>
+<p>若使用ssh密钥，则每次部署不需要输入账户和密码，<code>_config.yml</code>也要做相应的修改。<br><img src="http://ww1.sinaimg.cn/large/c444dccejw1f2vg5h4xikj20ok05gaam.jpg" alt="ssh"></p>
+</blockquote>
+<hr>
+<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a><strong>部署步骤</strong></h3><blockquote>
+<p>每次部署的三个步骤<br>   <code>hexo clean</code><br>   <code>hexo generate</code><br>   <code>hexo deploy</code></p>
+</blockquote>
+<hr>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h3><blockquote>
+<p><code>hexo new&quot;postName&quot; #新建文章</code><br> <code>hexo new page&quot;pageName&quot; #新建页面</code><br> <code>hexo generate #生成静态页面至public目录</code><br> <code>hexo server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）</code><br> <code>hexo deploy #将.deploy目录部署到GitHub</code><br> <code>hexo help # 查看帮助</code><br> <code>hexo version #查看Hexo的版本</code></p>
+<h3 id="Hexo官方文档"><a href="#Hexo官方文档" class="headerlink" title="Hexo官方文档"></a><strong>Hexo官方文档</strong></h3><p>更多详细请参考<a href="hexo.io/zh-cn/docs/">Hexo</a>官方文档，在搭建的过程中，小林查看了很多资料，官方的很详细，细节方面就要多多捣鼓。Enjoy It！</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/16/CSS选择器/" rel="prev" title="CSS选择器">
+                CSS选择器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/04/13/hexo-github搭建Blog/"
+     data-title="hexo+github搭建Blog"
+     data-content=""
+     data-url="http://yoursite.com/2016/04/13/hexo-github搭建Blog/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/13/hexo-github搭建Blog/"
+           data-title="hexo+github搭建Blog" data-url="http://yoursite.com/2016/04/13/hexo-github搭建Blog/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xsx7g.com2.z0.glb.clouddn.com/16-7-16/36324554.jpg"
+               alt="Sunshine" />
+          <p class="site-author-name" itemprop="name">Sunshine</p>
+          <p class="site-description motion-element" itemprop="description">A contented mind is a perpetual feast.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sunshinelzb" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.jaylin.me/" target="_blank">jaylin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/huyihao" target="_blank">胡少爷</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要搭建一个独立博客"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要搭建一个独立博客?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#喜欢写Blog的人，会经历三个阶段。"><span class="nav-number">1.2.</span> <span class="nav-text">喜欢写Blog的人，会经历三个阶段。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我为什么使用Hexo"><span class="nav-number">3.</span> <span class="nav-text">我为什么使用Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建属于自己的博客"><span class="nav-number">4.</span> <span class="nav-text">开始搭建属于自己的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">4.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github账号"><span class="nav-number">4.2.</span> <span class="nav-text">Github账号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ssh密钥"><span class="nav-number">4.2.1.</span> <span class="nav-text">配置ssh密钥</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">4.3.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">4.4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到github"><span class="nav-number">4.5.</span> <span class="nav-text">部署到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署步骤"><span class="nav-number">4.6.</span> <span class="nav-text">部署步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">4.7.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo官方文档"><span class="nav-number">4.8.</span> <span class="nav-text">Hexo官方文档</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunshine</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshinelzb"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lgVv0O1yBB0kitbB2GlE1YiR-gzGzoHsz", "3qdyA9s3YhaqfBWFu3g0O2Rm");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+</body>
+</html>
