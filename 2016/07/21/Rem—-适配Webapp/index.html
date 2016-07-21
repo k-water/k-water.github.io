@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="jQuery," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -80,19 +80,29 @@
 
 
 
-<meta name="description" content="简单选择器
-在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。随后，我们就可以对这个获取到的DOM 节点进行行为操作了。">
+<meta name="description" content="简单说下px和em
+
+
+px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery选择器">
-<meta property="og:url" content="http://yoursite.com/2016/05/05/JQuery选择器/index.html">
+<meta property="og:title" content="Rem—_适配Webapp">
+<meta property="og:url" content="http://yoursite.com/2016/07/21/Rem—-适配Webapp/index.html">
 <meta property="og:site_name" content="Sunshine'Note">
-<meta property="og:description" content="简单选择器
-在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。随后，我们就可以对这个获取到的DOM 节点进行行为操作了。">
-<meta property="og:updated_time" content="2016-07-16T12:44:07.443Z">
+<meta property="og:description" content="简单说下px和em
+
+
+px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61hq4py6qj208704laa2.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccegw1f61hxtblkcj20hi0a6gnb.jpg">
+<meta property="og:updated_time" content="2016-07-21T06:23:14.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery选择器">
-<meta name="twitter:description" content="简单选择器
-在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。随后，我们就可以对这个获取到的DOM 节点进行行为操作了。">
+<meta name="twitter:title" content="Rem—_适配Webapp">
+<meta name="twitter:description" content="简单说下px和em
+
+
+px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg">
 
 
 
@@ -110,7 +120,7 @@
   };
 </script>
 
-  <title> jQuery选择器 | Sunshine'Note </title>
+  <title> Rem—_适配Webapp | Sunshine'Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +290,7 @@
             
             
               
-                jQuery选择器
+                Rem—_适配Webapp
               
             
           </h1>
@@ -292,8 +302,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-05T09:37:35+08:00" content="2016-05-05">
-              2016-05-05
+            <time itemprop="dateCreated" datetime="2016-07-21T14:19:52+08:00" content="2016-07-21">
+              2016-07-21
             </time>
           </span>
 
@@ -306,8 +316,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/jQuery/" itemprop="url" rel="index">
-                    <span itemprop="name">jQuery</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -322,8 +332,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/05/JQuery选择器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/05/JQuery选择器/" itemprop="commentsCount"></span>
+                <a href="/2016/07/21/Rem—-适配Webapp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/Rem—-适配Webapp/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -332,7 +342,7 @@
           
           
           
-             <span id="/2016/05/05/JQuery选择器/" class="leancloud_visitors" data-flag-title="jQuery选择器">
+             <span id="/2016/07/21/Rem—-适配Webapp/" class="leancloud_visitors" data-flag-title="Rem—_适配Webapp">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -354,75 +364,34 @@
       
 
       
-        <h3 id="简单选择器"><a href="#简单选择器" class="headerlink" title="简单选择器"></a>简单选择器</h3><blockquote>
-<p>在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而<br>CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。<br>随后，我们就可以对这个获取到的DOM 节点进行行为操作了。</p>
+        <blockquote>
+<h3>简单说下px和em</h3>
+
 </blockquote>
-<a id="more"></a>
-<h4 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box').css('color', 'red');  //获取DOM 节点对象，并添加行为</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th style="text-align:right">CSS模式</th>
-<th style="text-align:right">Jquery模式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>元素名</td>
-<td style="text-align:right">div{}</td>
-<td style="text-align:right">$(‘div’)</td>
-<td style="text-align:center">获取所有div 元素的DOM 对象</td>
-</tr>
-<tr>
-<td>ID</td>
-<td style="text-align:right">#box{}</td>
-<td style="text-align:right">$(‘#box’)</td>
-<td style="text-align:center">获取一个ID 为box 元素的DOM 对象</td>
-</tr>
-<tr>
-<td>类(class)</td>
-<td style="text-align:right">.box{}</td>
-<td style="text-align:right">$(‘.box’)</td>
-<td style="text-align:center">获取所有class 为box 的所有DOM 对象</td>
-</tr>
-</tbody>
-</table>
-<h4 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box &gt; p').css('color','red'); //jQuery 子选择器，兼容了IE6</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#box &gt; p &#123; //CSS 子选择器，IE6 不支持</div><div class="line">color:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="进阶选择器"><a href="#进阶选择器" class="headerlink" title="进阶选择器"></a>进阶选择器</h3><h4 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h4><blockquote>
-<p>CSS模式：span,em,.box {}<br>JQuery模式: $(‘span,em,.box’)<br>描述：获取多个选择器的DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">span, em, .box &#123; //多种选择器添加红色字体</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('span, em, .box').css('color', 'red'); //群组选择器jQuery 方式</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h4><blockquote>
-<p>CSS模式：ul li a{}<br>JQuery模式:$(‘ul li a’)<br>描述：获取追溯到的多个DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ul li a &#123; //层层追溯到的元素添加红色字体</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('ul li a').css('color', 'red'); //群组选择器jQuery 方式</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="通配选择器"><a href="#通配选择器" class="headerlink" title="通配选择器"></a>通配选择器</h4><blockquote>
-<p>CSS模式：<em>{}<br>JQuery模式:$(‘</em>‘)<br>描述：获取所有元素标签的DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* &#123; //页面所有元素都添加红色字体</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('*').css('color', 'red'); //通配选择器</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>目前介绍的六种选择器，在实际应用中，我们可以灵活的搭配，使得选择器更加的精准<br>和快速：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box p, ul li *').css('color', 'red'); //组合了多种选择器</div></pre></td></tr></table></figure></p>
-<h3 id="高级选择器"><a href="#高级选择器" class="headerlink" title="高级选择器"></a>高级选择器</h3><h4 id="next选择器"><a href="#next选择器" class="headerlink" title="next选择器"></a>next选择器</h4><blockquote>
-<p>CSS模式：div+p{}<br>JQuery模式:$(‘div+p’)<br>描述：只获取某节点后一个同级DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//next 选择器(下一个同级节点)</div><div class="line">#box + p &#123; //IE6 不支持</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('#box+p').css('color', 'red'); //兼容IE6</div><div class="line">jQuery 为next 选择器提供了一个等价的方法next()：</div><div class="line">$('#box').next('p').css('color', 'red'); //和next 选择器等价</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="nextAll选择器"><a href="#nextAll选择器" class="headerlink" title="nextAll选择器"></a>nextAll选择器</h4><blockquote>
-<p>CSS模式：div~p{}<br>JQuery模式:$(‘div~p’)<br>描述：获取某节点后面所有同级DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//nextAll 选择器(后面所有同级节点)</div><div class="line">#box ~ p &#123; //IE6 不支持</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('#box ~ p').css('color', 'red'); //兼容IE6</div><div class="line">jQuery 为nextAll 选择器提供了一个等价的方法nextAll()：</div><div class="line">$('#box').nextAll('p').css('color', 'red'); //和nextAll 选择器等价</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
-<p>在find()、next()、nextAll()和children()这四个方法中，如果不传递参数，就相当于传递<br>了“*”，即任何节点，我们不建议这么做，不但影响性能，而且由于精准度不佳可能在复杂<br>的HTML 结构时产生怪异的结果。</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box').next(); //相当于$('#box').next('*');</div></pre></td></tr></table></figure>
+<h3 id="px为单位"><a href="#px为单位" class="headerlink" title="px为单位"></a>px为单位</h3><p>在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。<br><a id="more"></a></p>
+<h3 id="em位单位"><a href="#em位单位" class="headerlink" title="em位单位"></a>em位单位</h3><p>使用“px”为单位是比较方便，而又一致，但在浏览器中放大或缩放浏览页面时会存在一个问题，要解决这个问题，我们可以使用“em”单位。“em”是指相对于父元素的字体大小的单位。设置em为单位，需要有一个参考点，即他的父元素的font-size的大小。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">62.5%</span>;<span class="comment">/*10 ÷ 16 × 100% = 62.5%*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">2.4em</span>; <span class="comment">/*2.4em × 10 = 24px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">1.4em</span>; <span class="comment">/*1.4em × 10 = 14px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其计算公式为：</p>
 <blockquote>
-<p>为了补充高级选择器的这三种模式，jQuery 还提供了更加丰富的方法来选择元素：</p>
+<p><strong>1 ÷ 父元素的font-size × 需要转换的像素值 = em值</strong></p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$('#box').prev('p').css('color', 'red'); //同级上一个元素</div><div class="line">$('#box').prevAll('p').css('color', 'red'); //同级所有上面的元素</div></pre></td></tr></table></figure>
+<h3 id="Rem"><a href="#Rem" class="headerlink" title="Rem"></a>Rem</h3><p>rem（font size of the rootelement）是指相对于根元素的字体大小的单位。简单的说它就是一个相对单位。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; <span class="attribute">font-size</span>: <span class="number">100px</span>; &#125;</div><div class="line"><span class="comment">/*或者*/</span></div><div class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">font-size</span>: <span class="number">62.5%</span>;<span class="comment">/*10 ÷ 16 × 100% = 62.5%*/</span>&#125;</div></pre></td></tr></table></figure>
 <blockquote>
-<p>nextUntil()和prevUnitl()方法是选定同级的下面或上面的所有节点，选定非指定的所有<br>元素，一旦遇到指定的元素就停止选定。</p>
+<p>于是，在整个页面中，就有这样的换算关系，<strong>1rem=100px</strong>；</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$('#box').prevUntil('p').css('color', 'red'); //同级上非指定元素选定，遇到则停止</div><div class="line">$('#box').nextUntil('p').css('color', 'red'); //同级下非指定元素选定，遇到则停止</div></pre></td></tr></table></figure>
-<blockquote>
-<p>siblings()方法正好集成了prevAll()和nextAll()两个功能的效果，及上下相邻的所有元素<br>进行选定：</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$('#box').siblings('p').css('color', 'red'); //同级上下所有元素选定</div><div class="line">//等价于下面：</div><div class="line">$('#box').prevAll('p').css('color', 'red'); //同级上所有元素选定</div><div class="line">$('#box').nextAll('p').css('color', 'red'); //同级下所有元素选定</div></pre></td></tr></table></figure>
+<h3 id="使用Rem实现屏幕适配布局"><a href="#使用Rem实现屏幕适配布局" class="headerlink" title="使用Rem实现屏幕适配布局"></a>使用Rem实现屏幕适配布局</h3><p>rem是通过根元素进行适配的，网页中的根元素指的是html我们通过设置html的字体大小就可以控制rem的大小。举个例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.btn</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">6rem</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">3rem</span>;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">3rem</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1.2rem</span>;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#0f0</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#000</span>;</div><div class="line">    <span class="attribute">border-radius</span>: .<span class="number">5rem</span>;</div><div class="line">    <span class="attribute">text-decoration</span>: none;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">outline</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果如下：<br><img src="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg" alt=""><br>当改变html中font-size的值，会发生怎样的变化呢，我们做如下的改变：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww4.sinaimg.cn/large/c444dccegw1f61hq4py6qj208704laa2.jpg" alt=""><br>如图所示，上面的width，height变成了上面结果的两倍，我们只改变了html的font-size，但.btn样式的width,height的rem设置的属性不变的情况下就改变了按钮在web中的大小。</p>
+<p>由此我们可以看到，我们不需要改变.btn中的width，height，只需改变html即根元素中的font-size的值，按钮的大小就会随之改变。从例子中，我们也可以知道rem和px之间的换算关系，在这里，<i>1rem=10px</i>。</p>
+<h3 id="不同分辨率下font-size的值"><a href="#不同分辨率下font-size的值" class="headerlink" title="不同分辨率下font-size的值"></a>不同分辨率下font-size的值</h3><p>这里借用了ISUX的博文中一张图，如下</p>
+<p><img src="http://ww3.sinaimg.cn/large/c444dccegw1f61hxtblkcj20hi0a6gnb.jpg" alt=""></p>
+<p>引用ISUX中的媒体查询，做的是对大部分设备的适配，可以参考。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size </span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">401px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">25px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">428px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">26.75px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">481px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">30px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">569px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">35px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">641px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">40px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="Rem-flexible-实现移动端适配"><a href="#Rem-flexible-实现移动端适配" class="headerlink" title="Rem + flexible 实现移动端适配"></a>Rem + flexible 实现移动端适配</h3><p>参考大漠老师的博文: <a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a>，讲的很详细，值得学习。</p>
+<h3 id="相关学习资料"><a href="#相关学习资料" class="headerlink" title="相关学习资料"></a>相关学习资料</h3><p><a href="https://segmentfault.com/a/1190000003690140?_ea=746493#articleHeader1" target="_blank" rel="external">关于移动端 rem 布局的一些总结</a></p>
+<p><a href="http://isux.tencent.com/web-app-rem.html" target="_blank" rel="external">web app变革之rem</a></p>
+<p><a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a></p>
+
       
     </div>
     
@@ -442,7 +411,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jQuery/" rel="tag">#jQuery</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
         </div>
       
@@ -451,17 +420,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/16/CSS选择器/" rel="next" title="CSS选择器">
-                <i class="fa fa-chevron-left"></i> CSS选择器
+              <a href="/2016/07/21/float浮动/" rel="next" title="float浮动">
+                <i class="fa fa-chevron-left"></i> float浮动
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/16/HTML5大纲/" rel="prev" title="HTML5大纲">
-                HTML5大纲 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,10 +441,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/05/JQuery选择器/"
-     data-title="jQuery选择器"
+        <div class="ds-share flat" data-thread-key="2016/07/21/Rem—-适配Webapp/"
+     data-title="Rem—_适配Webapp"
      data-content=""
-     data-url="http://yoursite.com/2016/05/05/JQuery选择器/">
+     data-url="http://yoursite.com/2016/07/21/Rem—-适配Webapp/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -506,8 +471,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/05/JQuery选择器/"
-           data-title="jQuery选择器" data-url="http://yoursite.com/2016/05/05/JQuery选择器/">
+      <div class="ds-thread" data-thread-key="2016/07/21/Rem—-适配Webapp/"
+           data-title="Rem—_适配Webapp" data-url="http://yoursite.com/2016/07/21/Rem—-适配Webapp/">
       </div>
     
   </div>
@@ -624,7 +589,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单选择器"><span class="nav-number">1.</span> <span class="nav-text">简单选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ID选择器"><span class="nav-number">1.1.</span> <span class="nav-text">ID选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子选择器"><span class="nav-number">1.2.</span> <span class="nav-text">子选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶选择器"><span class="nav-number">2.</span> <span class="nav-text">进阶选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#群组选择器"><span class="nav-number">2.1.</span> <span class="nav-text">群组选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后代选择器"><span class="nav-number">2.2.</span> <span class="nav-text">后代选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通配选择器"><span class="nav-number">2.3.</span> <span class="nav-text">通配选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级选择器"><span class="nav-number">3.</span> <span class="nav-text">高级选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#next选择器"><span class="nav-number">3.1.</span> <span class="nav-text">next选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nextAll选择器"><span class="nav-number">3.2.</span> <span class="nav-text">nextAll选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">简单说下px和em</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#px为单位"><span class="nav-number">2.</span> <span class="nav-text">px为单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#em位单位"><span class="nav-number">3.</span> <span class="nav-text">em位单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rem"><span class="nav-number">4.</span> <span class="nav-text">Rem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Rem实现屏幕适配布局"><span class="nav-number">5.</span> <span class="nav-text">使用Rem实现屏幕适配布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同分辨率下font-size的值"><span class="nav-number">6.</span> <span class="nav-text">不同分辨率下font-size的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rem-flexible-实现移动端适配"><span class="nav-number">7.</span> <span class="nav-text">Rem + flexible 实现移动端适配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关学习资料"><span class="nav-number">8.</span> <span class="nav-text">相关学习资料</span></a></li></ol></div>
             
           </div>
         </section>
