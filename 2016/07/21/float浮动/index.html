@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="jQuery," />
+  <meta name="keywords" content="CSS," />
 
 
 
@@ -80,19 +80,21 @@
 
 
 
-<meta name="description" content="简单选择器
-在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。随后，我们就可以对这个获取到的DOM 节点进行行为操作了。">
+<meta name="description" content="前言算算时间，学习html和css也有一段时间了，打算整理整理浮动这个技术，一开始学习浮动的时候遇到很多坑，例如，一个块浮动之后，其他块的位置会怎么变化，当一个父元素的子元素浮动之后，父元素的高度为什么会塌陷，浮动之后脱离文档流等等。在翻看大牛的博客和网上的资料之后，对浮动有了一定的理解。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery选择器">
-<meta property="og:url" content="http://yoursite.com/2016/05/05/JQuery选择器/index.html">
+<meta property="og:title" content="float浮动">
+<meta property="og:url" content="http://yoursite.com/2016/07/21/float浮动/index.html">
 <meta property="og:site_name" content="Sunshine'Note">
-<meta property="og:description" content="简单选择器
-在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。随后，我们就可以对这个获取到的DOM 节点进行行为操作了。">
-<meta property="og:updated_time" content="2016-07-16T12:44:07.443Z">
+<meta property="og:description" content="前言算算时间，学习html和css也有一段时间了，打算整理整理浮动这个技术，一开始学习浮动的时候遇到很多坑，例如，一个块浮动之后，其他块的位置会怎么变化，当一个父元素的子元素浮动之后，父元素的高度为什么会塌陷，浮动之后脱离文档流等等。在翻看大牛的博客和网上的资料之后，对浮动有了一定的理解。">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61c8k9d2qj20j2046dfv.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccegw1f61c93ptpcj206c05xaa8.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccegw1f61ce43133j20iw03t3yk.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccegw1f61ce43133j20iw03t3yk.jpg">
+<meta property="og:updated_time" content="2016-07-21T03:10:07.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery选择器">
-<meta name="twitter:description" content="简单选择器
-在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。随后，我们就可以对这个获取到的DOM 节点进行行为操作了。">
+<meta name="twitter:title" content="float浮动">
+<meta name="twitter:description" content="前言算算时间，学习html和css也有一段时间了，打算整理整理浮动这个技术，一开始学习浮动的时候遇到很多坑，例如，一个块浮动之后，其他块的位置会怎么变化，当一个父元素的子元素浮动之后，父元素的高度为什么会塌陷，浮动之后脱离文档流等等。在翻看大牛的博客和网上的资料之后，对浮动有了一定的理解。">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61c8k9d2qj20j2046dfv.jpg">
 
 
 
@@ -110,7 +112,7 @@
   };
 </script>
 
-  <title> jQuery选择器 | Sunshine'Note </title>
+  <title> float浮动 | Sunshine'Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +282,7 @@
             
             
               
-                jQuery选择器
+                float浮动
               
             
           </h1>
@@ -292,8 +294,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-05T09:37:35+08:00" content="2016-05-05">
-              2016-05-05
+            <time itemprop="dateCreated" datetime="2016-07-21T11:02:55+08:00" content="2016-07-21">
+              2016-07-21
             </time>
           </span>
 
@@ -306,8 +308,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/jQuery/" itemprop="url" rel="index">
-                    <span itemprop="name">jQuery</span>
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
                   </a>
                 </span>
 
@@ -322,8 +324,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/05/JQuery选择器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/05/JQuery选择器/" itemprop="commentsCount"></span>
+                <a href="/2016/07/21/float浮动/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/21/float浮动/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -332,7 +334,7 @@
           
           
           
-             <span id="/2016/05/05/JQuery选择器/" class="leancloud_visitors" data-flag-title="jQuery选择器">
+             <span id="/2016/07/21/float浮动/" class="leancloud_visitors" data-flag-title="float浮动">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -354,75 +356,38 @@
       
 
       
-        <h3 id="简单选择器"><a href="#简单选择器" class="headerlink" title="简单选择器"></a>简单选择器</h3><blockquote>
-<p>在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而<br>CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。<br>随后，我们就可以对这个获取到的DOM 节点进行行为操作了。</p>
-</blockquote>
-<a id="more"></a>
-<h4 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a>ID选择器</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box').css('color', 'red');  //获取DOM 节点对象，并添加行为</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th style="text-align:right">CSS模式</th>
-<th style="text-align:right">Jquery模式</th>
-<th style="text-align:center">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>元素名</td>
-<td style="text-align:right">div{}</td>
-<td style="text-align:right">$(‘div’)</td>
-<td style="text-align:center">获取所有div 元素的DOM 对象</td>
-</tr>
-<tr>
-<td>ID</td>
-<td style="text-align:right">#box{}</td>
-<td style="text-align:right">$(‘#box’)</td>
-<td style="text-align:center">获取一个ID 为box 元素的DOM 对象</td>
-</tr>
-<tr>
-<td>类(class)</td>
-<td style="text-align:right">.box{}</td>
-<td style="text-align:right">$(‘.box’)</td>
-<td style="text-align:center">获取所有class 为box 的所有DOM 对象</td>
-</tr>
-</tbody>
-</table>
-<h4 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box &gt; p').css('color','red'); //jQuery 子选择器，兼容了IE6</div></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#box &gt; p &#123; //CSS 子选择器，IE6 不支持</div><div class="line">color:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="进阶选择器"><a href="#进阶选择器" class="headerlink" title="进阶选择器"></a>进阶选择器</h3><h4 id="群组选择器"><a href="#群组选择器" class="headerlink" title="群组选择器"></a>群组选择器</h4><blockquote>
-<p>CSS模式：span,em,.box {}<br>JQuery模式: $(‘span,em,.box’)<br>描述：获取多个选择器的DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">span, em, .box &#123; //多种选择器添加红色字体</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('span, em, .box').css('color', 'red'); //群组选择器jQuery 方式</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="后代选择器"><a href="#后代选择器" class="headerlink" title="后代选择器"></a>后代选择器</h4><blockquote>
-<p>CSS模式：ul li a{}<br>JQuery模式:$(‘ul li a’)<br>描述：获取追溯到的多个DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ul li a &#123; //层层追溯到的元素添加红色字体</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('ul li a').css('color', 'red'); //群组选择器jQuery 方式</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="通配选择器"><a href="#通配选择器" class="headerlink" title="通配选择器"></a>通配选择器</h4><blockquote>
-<p>CSS模式：<em>{}<br>JQuery模式:$(‘</em>‘)<br>描述：获取所有元素标签的DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* &#123; //页面所有元素都添加红色字体</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('*').css('color', 'red'); //通配选择器</div></pre></td></tr></table></figure></p>
-</blockquote>
-<p>目前介绍的六种选择器，在实际应用中，我们可以灵活的搭配，使得选择器更加的精准<br>和快速：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box p, ul li *').css('color', 'red'); //组合了多种选择器</div></pre></td></tr></table></figure></p>
-<h3 id="高级选择器"><a href="#高级选择器" class="headerlink" title="高级选择器"></a>高级选择器</h3><h4 id="next选择器"><a href="#next选择器" class="headerlink" title="next选择器"></a>next选择器</h4><blockquote>
-<p>CSS模式：div+p{}<br>JQuery模式:$(‘div+p’)<br>描述：只获取某节点后一个同级DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//next 选择器(下一个同级节点)</div><div class="line">#box + p &#123; //IE6 不支持</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('#box+p').css('color', 'red'); //兼容IE6</div><div class="line">jQuery 为next 选择器提供了一个等价的方法next()：</div><div class="line">$('#box').next('p').css('color', 'red'); //和next 选择器等价</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h4 id="nextAll选择器"><a href="#nextAll选择器" class="headerlink" title="nextAll选择器"></a>nextAll选择器</h4><blockquote>
-<p>CSS模式：div~p{}<br>JQuery模式:$(‘div~p’)<br>描述：获取某节点后面所有同级DOM 对象<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//nextAll 选择器(后面所有同级节点)</div><div class="line">#box ~ p &#123; //IE6 不支持</div><div class="line">color:red;</div><div class="line">&#125;</div><div class="line">$('#box ~ p').css('color', 'red'); //兼容IE6</div><div class="line">jQuery 为nextAll 选择器提供了一个等价的方法nextAll()：</div><div class="line">$('#box').nextAll('p').css('color', 'red'); //和nextAll 选择器等价</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><blockquote>
-<p>在find()、next()、nextAll()和children()这四个方法中，如果不传递参数，就相当于传递<br>了“*”，即任何节点，我们不建议这么做，不但影响性能，而且由于精准度不佳可能在复杂<br>的HTML 结构时产生怪异的结果。</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$('#box').next(); //相当于$('#box').next('*');</div></pre></td></tr></table></figure>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>算算时间，学习html和css也有一段时间了，打算整理整理浮动这个技术，一开始学习浮动的时候遇到很多坑，例如，一个块浮动之后，其他块的位置会怎么变化，当一个父元素的子元素浮动之后，父元素的高度为什么会塌陷，浮动之后脱离文档流等等。在翻看大牛的博客和网上的资料之后，对浮动有了一定的理解。<br><a id="more"></a></p>
+<h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><p>所谓的文档流实际上是一种民间说法，正常称谓应该指的是常规流（normal flow），个人感觉这两者应该是“阀值”与“阈值”的关系。从直观上理解正常流指的是元素按照其在 HTML中的位置顺序决定排布的过程，主要的形式是自上而下，一行接一行，每一行从左至右。</p>
 <blockquote>
-<p>为了补充高级选择器的这三种模式，jQuery 还提供了更加丰富的方法来选择元素：</p>
+<ol>
+<li>常规流，也就是俗称的文档流，又包含三种类型：块级元素的块级格式、行内元素的行内格式以及两种元素的相对定位方式。</li>
+<li>浮动（Float）</li>
+<li>绝对定位（Absolute Positioning）：包含 absulote 和 fix 两种</li>
+</ol>
 </blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$('#box').prev('p').css('color', 'red'); //同级上一个元素</div><div class="line">$('#box').prevAll('p').css('color', 'red'); //同级所有上面的元素</div></pre></td></tr></table></figure>
-<blockquote>
-<p>nextUntil()和prevUnitl()方法是选定同级的下面或上面的所有节点，选定非指定的所有<br>元素，一旦遇到指定的元素就停止选定。</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$('#box').prevUntil('p').css('color', 'red'); //同级上非指定元素选定，遇到则停止</div><div class="line">$('#box').nextUntil('p').css('color', 'red'); //同级下非指定元素选定，遇到则停止</div></pre></td></tr></table></figure>
-<blockquote>
-<p>siblings()方法正好集成了prevAll()和nextAll()两个功能的效果，及上下相邻的所有元素<br>进行选定：</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$('#box').siblings('p').css('color', 'red'); //同级上下所有元素选定</div><div class="line">//等价于下面：</div><div class="line">$('#box').prevAll('p').css('color', 'red'); //同级上所有元素选定</div><div class="line">$('#box').nextAll('p').css('color', 'red'); //同级下所有元素选定</div></pre></td></tr></table></figure>
+<h4>所谓的不脱离文档流就只有三种情况：块级、行内和相对定位。由此上面遇到的第一个问题也就得以证实：相对定位是不脱离文档流的。</h4>
+
+<p><strong>脱离文档流的问题也迎刃而解，就只有两种情况：<em>浮动</em> 和 <em>绝对定位</em>。而这两者的表现实际上非常相似，区别仅在于宽度缺失</strong></p>
+<h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><p>浮动可以让页面元素并排显示，而且还可以制作一个干净的布局。然而，有时候需要一些严格的定位，这时需要使用其他的技术，包括“relative”和“absolute”定位。创建一全页面的布局时，浮动是一种常用的方法，也是页面元素定位的一种基本功能。浮动可以让元素一个挨着一个。浮动可以创建一个自然流布局，同时充许元素设置自身尺寸和其父元素容器的尺寸大小。</p>
+<h3 id="浮动问题-父元素高度塌陷"><a href="#浮动问题-父元素高度塌陷" class="headerlink" title="浮动问题-父元素高度塌陷"></a>浮动问题-父元素高度塌陷</h3><p>一个父元素包含了多个浮动的子元素。页面的内容设置了一个宽度，子元素的浮动确定了他们的位置，但浮动元素不会影响父元素的宽度。这样做会让父元素塌陷，从而使父元素的高度为“0”，以及忽略其他的属性。很多时候，这种现像都被忽略，特别是在父元素没有任何样式，以及其子元素看起来都正确的对齐。如下例子所示，在“.parent”div下应该有一个黑色的背景，但在其子元素浮动之后，这个背景却看不到了，打开盒子模型之后才发现，“.parent”的高度变为0。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line">	<span class="attribute">background-color</span>: <span class="number">#000</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">	<span class="attribute">background-color</span>: <span class="number">#f00</span>;</div><div class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">	<span class="attribute">margin</span>: <span class="number">10px</span>;</div><div class="line">	<span class="attribute">float</span>: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>DEMO效果</strong><br><img src="http://ww4.sinaimg.cn/large/c444dccegw1f61c8k9d2qj20j2046dfv.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/large/c444dccegw1f61c93ptpcj206c05xaa8.jpg" alt=""></p>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><h4 id="clear-both"><a href="#clear-both" class="headerlink" title="clear:both"></a>clear:both</h4><p>有一种方法，在容器的结束标签前添加一个空标签，在空标签上直接设置样式“clear:both”。用这种方法来清除浮动，在大多数情况下是有效的，但这不太适合语义化。这取决于一个页面有多少浮动需要清除，这样造成页面上的空标签迅速堆积，而且在页面中没有上下文内容。</p>
+<h4 id="overflow技巧"><a href="#overflow技巧" class="headerlink" title="overflow技巧"></a>overflow技巧</h4><p>使用“overflow”属性。在具有浮动元素的父容器中设置“overflow”的属性值为“auto”，这样父容器就会有一个高度存在，例子中的黑色背景就能看到了。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.parent</span> &#123;</div><div class="line">	<span class="attribute">background-color</span>: <span class="number">#000</span>;</div><div class="line">	<span class="attribute">overflow</span>: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://ww2.sinaimg.cn/large/c444dccegw1f61ce43133j20iw03t3yk.jpg" alt=""></p>
+<h4 id="clearfix技巧"><a href="#clearfix技巧" class="headerlink" title="clearfix技巧"></a>clearfix技巧</h4><p>另外一种清除浮动的技巧是在最后一个子元素后面添加一个class=“clearfix”的div，使用伪类清除浮动，代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span>box3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"clearfix"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<pre><code class="css"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> {
+    <span class="attribute">content</span>: <span class="string">"."</span>;
+    <span class="attribute">height</span>: <span class="number">0</span>;
+    <span class="attribute">clear</span>: both;
+    <span class="attribute">visibility</span>: hidden;
+    <span class="attribute">display</span>: block;
+}
+</code></pre>
+<p>清除浮动后效果<br><img src="http://ww2.sinaimg.cn/large/c444dccegw1f61ce43133j20iw03t3yk.jpg" alt=""></p>
+<h3 id="有效的包含浮动"><a href="#有效的包含浮动" class="headerlink" title="有效的包含浮动"></a>有效的包含浮动</h3><p>使用哪种技巧来清除浮动，终究要看你自己喜好。有些人坚持使用“clearfix”来清除浮动，因为这种方法可以贯穿整个项目。有些人认为“clearfix”技巧使用的代码太多，他还是喜欢简单点的。至于使用什么技巧由您来决定，只要在运用了浮动的元素的父容器需要清除浮动。个人最常使用的是第三种方法。</p>
+<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><p><a href="http://www.ituring.com.cn/article/198258" target="_blank" rel="external">图灵社区：CSS 定位与文档流</a><br><a href="http://www.w3cplus.com/css/advanced-html-css-lesson2-detailed-css-positioning.html" target="_blank" rel="external">HTML和CSS高级指南之二——定位详解</a></p>
+
       
     </div>
     
@@ -442,7 +407,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jQuery/" rel="tag">#jQuery</a>
+            <a href="/tags/CSS/" rel="tag">#CSS</a>
           
         </div>
       
@@ -451,17 +416,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/16/CSS选择器/" rel="next" title="CSS选择器">
-                <i class="fa fa-chevron-left"></i> CSS选择器
+              <a href="/2016/07/16/HTML5大纲/" rel="next" title="HTML5大纲">
+                <i class="fa fa-chevron-left"></i> HTML5大纲
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/16/HTML5大纲/" rel="prev" title="HTML5大纲">
-                HTML5大纲 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -476,10 +437,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/05/JQuery选择器/"
-     data-title="jQuery选择器"
+        <div class="ds-share flat" data-thread-key="2016/07/21/float浮动/"
+     data-title="float浮动"
      data-content=""
-     data-url="http://yoursite.com/2016/05/05/JQuery选择器/">
+     data-url="http://yoursite.com/2016/07/21/float浮动/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -506,8 +467,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/05/JQuery选择器/"
-           data-title="jQuery选择器" data-url="http://yoursite.com/2016/05/05/JQuery选择器/">
+      <div class="ds-thread" data-thread-key="2016/07/21/float浮动/"
+           data-title="float浮动" data-url="http://yoursite.com/2016/07/21/float浮动/">
       </div>
     
   </div>
@@ -624,7 +585,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单选择器"><span class="nav-number">1.</span> <span class="nav-text">简单选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ID选择器"><span class="nav-number">1.1.</span> <span class="nav-text">ID选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子选择器"><span class="nav-number">1.2.</span> <span class="nav-text">子选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶选择器"><span class="nav-number">2.</span> <span class="nav-text">进阶选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#群组选择器"><span class="nav-number">2.1.</span> <span class="nav-text">群组选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后代选择器"><span class="nav-number">2.2.</span> <span class="nav-text">后代选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通配选择器"><span class="nav-number">2.3.</span> <span class="nav-text">通配选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高级选择器"><span class="nav-number">3.</span> <span class="nav-text">高级选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#next选择器"><span class="nav-number">3.1.</span> <span class="nav-text">next选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nextAll选择器"><span class="nav-number">3.2.</span> <span class="nav-text">nextAll选择器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档流"><span class="nav-number">2.</span> <span class="nav-text">文档流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">所谓的不脱离文档流就只有三种情况：块级、行内和相对定位。由此上面遇到的第一个问题也就得以证实：相对定位是不脱离文档流的。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动"><span class="nav-number">3.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮动问题-父元素高度塌陷"><span class="nav-number">4.</span> <span class="nav-text">浮动问题-父元素高度塌陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#清除浮动"><span class="nav-number">5.</span> <span class="nav-text">清除浮动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#clear-both"><span class="nav-number">5.1.</span> <span class="nav-text">clear:both</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#overflow技巧"><span class="nav-number">5.2.</span> <span class="nav-text">overflow技巧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#clearfix技巧"><span class="nav-number">5.3.</span> <span class="nav-text">clearfix技巧</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有效的包含浮动"><span class="nav-number">6.</span> <span class="nav-text">有效的包含浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关资料"><span class="nav-number">7.</span> <span class="nav-text">相关资料</span></a></li></ol></div>
             
           </div>
         </section>
