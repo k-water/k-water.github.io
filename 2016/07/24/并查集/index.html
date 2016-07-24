@@ -1,0 +1,848 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Algorithm,Data struct," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="并查集一种树型数据结构，用于处理不相交集合（Disjoint Sets）的合并以及查询；一开始让所有元素独立成树，也就是只有根节点的树；然后根据需要将关联的元素（树）进行合并；合并的方式仅仅是将一棵树最原始的节点的父亲索引指向另一棵树；并查集支持两种操作
+
+Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。
+Union：将两个子集合并成同一个集合。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="并查集">
+<meta property="og:url" content="http://yoursite.com/2016/07/24/并查集/index.html">
+<meta property="og:site_name" content="Sunshine'Note">
+<meta property="og:description" content="并查集一种树型数据结构，用于处理不相交集合（Disjoint Sets）的合并以及查询；一开始让所有元素独立成树，也就是只有根节点的树；然后根据需要将关联的元素（树）进行合并；合并的方式仅仅是将一棵树最原始的节点的父亲索引指向另一棵树；并查集支持两种操作
+
+Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。
+Union：将两个子集合并成同一个集合。">
+<meta property="og:image" content="http://7xsx7g.com2.z0.glb.clouddn.com/16-7-24/38952778.jpg">
+<meta property="og:updated_time" content="2016-07-24T01:39:49.739Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="并查集">
+<meta name="twitter:description" content="并查集一种树型数据结构，用于处理不相交集合（Disjoint Sets）的合并以及查询；一开始让所有元素独立成树，也就是只有根节点的树；然后根据需要将关联的元素（树）进行合并；合并的方式仅仅是将一棵树最原始的节点的父亲索引指向另一棵树；并查集支持两种操作
+
+Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。
+Union：将两个子集合并成同一个集合。">
+<meta name="twitter:image" content="http://7xsx7g.com2.z0.glb.clouddn.com/16-7-24/38952778.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6271886744275125000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 并查集 | Sunshine'Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?10f6405da871f8fdcb13498ebd95a561";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunshine'Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'zs-v-BNbd9DVJBbXKgmZ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                并查集
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-24T09:34:08+08:00" content="2016-07-24">
+              2016-07-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
+                    <span itemprop="name">Algorithm</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Algorithm/Data-struct/" itemprop="url" rel="index">
+                    <span itemprop="name">Data struct</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/24/并查集/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/并查集/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/07/24/并查集/" class="leancloud_visitors" data-flag-title="并查集">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h3><p>一种树型数据结构，用于处理不相交集合（Disjoint Sets）的合并以及查询；一开始让所有元素独立成树，也就是只有根节点的树；然后根据需要将关联的元素（树）进行合并；合并的方式仅仅是将一棵树最原始的节点的父亲索引指向另一棵树；并查集支持两种操作</p>
+<blockquote>
+<p>Find：确定元素属于哪一个子集。它可以被用来确定两个元素是否属于同一子集。</p>
+<p>Union：将两个子集合并成同一个集合。</p>
+</blockquote>
+<a id="more"></a>
+<p>因为它支持这两种操作，一个不相交集也常被称为联合-查找数据结构（union-find data structure）或合并-查找集合（merge-find set）。其他的重要方法，MakeSet，用于建立单元素集合。有了这些方法，许多经典的划分问题可以被解决。</p>
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>加入一个rank数组存储节点深度的下界（从当前节点到其最远子节点的距离），从而可以启发式的对树进行合并，从而减少树的深度，防止树的退化；使得包含较少节点的树根指向包含较多节点的树根，具体指代为树的高度；另一个优化就是路径压缩，尽可能将子节点都直接连接到根节点之后。<br>退化成链表的情况，id[]表示父亲<br><img src="http://7xsx7g.com2.z0.glb.clouddn.com/16-7-24/38952778.jpg" alt=""></p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>并查集的空间复杂度为O(N)，构建一个集合的时间复杂度为O(N)；压缩后的查找复杂度是一个很小的常数；应用：Kruskal算法求最小生成树中判断新加入的边是否在同一棵树内部；两个节点的最近公共祖先(Least Common Ancestors)。</p>
+<h3 id="No-1-初始化"><a href="#No-1-初始化" class="headerlink" title="No.1 初始化"></a>No.1 初始化</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*初始化father：各个节点独立成树，并且其father[i]=i，也就是其父节点就是其自身；*/</span></div><div class="line">father[i]</div><div class="line"><span class="number">0</span>	<span class="number">1</span>	<span class="number">2</span>	<span class="number">3</span>	<span class="number">4</span>	<span class="number">5</span>	<span class="number">6</span>	<span class="number">7</span>	<span class="number">8</span>	<span class="number">9</span></div><div class="line"><span class="number">0</span>	<span class="number">1</span>	<span class="number">2</span>	<span class="number">3</span>	<span class="number">4</span>	<span class="number">5</span>	<span class="number">6</span>	<span class="number">7</span>	<span class="number">8</span>	<span class="number">9</span></div><div class="line"><span class="comment">/*初始化rank：各个节点为根节点，所以高度都为1；*/</span></div><div class="line">rank[i]</div><div class="line"><span class="number">0</span>	<span class="number">1</span>	<span class="number">2</span>	<span class="number">3</span>	<span class="number">4</span>	<span class="number">5</span>	<span class="number">6</span>	<span class="number">7</span>	<span class="number">8</span>	<span class="number">9</span></div><div class="line"><span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span></div><div class="line"></div><div class="line"><span class="comment">/*合并2和6：由于rank[2]=rank[6]，所以将2的父亲索引指向6，这样2和6就在同一棵树；并需将6的rank值增加1；*/</span></div><div class="line">father[i]</div><div class="line"><span class="number">0</span>	<span class="number">1</span>	<span class="number">2</span>	<span class="number">3</span>	<span class="number">4</span>	<span class="number">5</span>	<span class="number">6</span>	<span class="number">7</span>	<span class="number">8</span>	<span class="number">9</span></div><div class="line"><span class="number">0</span>	<span class="number">1</span>	<span class="number">6</span>	<span class="number">3</span>	<span class="number">4</span>	<span class="number">5</span>	<span class="number">6</span>	<span class="number">7</span>	<span class="number">8</span>	<span class="number">9</span></div><div class="line">rank[i]</div><div class="line"><span class="number">0</span>	<span class="number">1</span>	<span class="number">2</span>	<span class="number">3</span>	<span class="number">4</span>	<span class="number">5</span>	<span class="number">6</span>	<span class="number">7</span>	<span class="number">8</span>	<span class="number">9</span></div><div class="line"><span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">2</span>	<span class="number">1</span>	<span class="number">1</span>	<span class="number">1</span></div></pre></td></tr></table></figure>
+<p><strong>代码实现</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 并查集的初始化：</div><div class="line"> * 数组father中的元素在最开始的时候都是独立的树，初始化把每个点所在集</div><div class="line"> * 合初始化为其自身，即n个节点就有n个集合。</div><div class="line"> * 遍历一次n个节点，把每个的父亲初始为自己，子树的深度初始化为1。</div><div class="line"> * */</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">makeSet</span><span class="params">()</span> </span>&#123; <span class="comment">//初始化</span></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</div><div class="line">        father[i] = i;</div><div class="line">        rank[i] = <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="No-2-查找"><a href="#No-2-查找" class="headerlink" title="No.2 查找"></a>No.2 查找</h3><p><strong>代码实现</strong><br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line">* 查找元素所在的集合并进行路径压缩，即在查找的过程中，将当前查找的元素</div><div class="line">* 结点的父节点设置为它的爷爷结点，具体实现看代码，</div><div class="line">* 这样做是为了让树变得更加扁平化，提高效率。因为需要多次使用findSet函数，</div><div class="line">* 当元素过多的时候，集合退化成链表，则findSet()需要O(N)，所以需要对其进行</div><div class="line">* 优化。</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">findSet</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; <span class="comment">//非递归路径压缩查找</span></div><div class="line">    <span class="comment">// 将x节点的父节点设置为它的爷爷节点</span></div><div class="line">    <span class="keyword">while</span>(x != father[x]) &#123;</div><div class="line">        father[x] = father[father[x]];</div><div class="line">        x = father[x];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> x;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="No-3-合并"><a href="#No-3-合并" class="headerlink" title="No.3 合并"></a>No.3 合并</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 优化：按秩合并 */</span></div><div class="line"><span class="comment">/*</span></div><div class="line">* 将两个元素所在的集合合并为一个集合。合并的时候先使用查找函数找到两个集</div><div class="line">* 合的根节点。如果根节点相同，说明属于同一个集合，则不需要合并。如果不同</div><div class="line">* ，只需把一个根节点的父亲指向另一个根节点即可。实际中使用了一个称为按秩</div><div class="line">* 合并的优化，因为直接合并可能产生一棵深度很深的树，这不利于后续的查找。</div><div class="line">* 前面的rank[x]数组表示节点x的秩，即该节点子树的深度。合并时我们总是把秩</div><div class="line">* 小的节点的父亲指向秩大的节点之上，这样可以尽量较少新生成的树的深度。当</div><div class="line">* 两个节点的秩相同时，新生成树的根节点的秩需要加1，因为子树的深度增加了1</div><div class="line">*，否则子树深度没有变化，秩也不需要改变。</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">unionSet</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123; <span class="comment">//合并</span></div><div class="line">    <span class="keyword">int</span> i = findSetNonRecursive(x);</div><div class="line">    <span class="keyword">int</span> j = findSetNonRecursive(y);</div><div class="line">    <span class="keyword">if</span>(i == j) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    <span class="comment">// 将小树作为大树的子树</span></div><div class="line">    <span class="keyword">if</span>(rank[i] &lt; rank[j]) &#123;</div><div class="line">        father[i] = j;</div><div class="line">        rank[j] += rank[i];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">        father[j] = i;</div><div class="line">        rank[i] += rank[j];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="应用–最小生成树"><a href="#应用–最小生成树" class="headerlink" title="应用–最小生成树"></a>应用–最小生成树</h3><p>思路：从并查集的角度来考虑这个问题。初始时我们把所有节点自身初始化为一个集合。每次添加一条边进入最小生成树时，实际上是把这条边的两个节点所在的集合合并。如果添加当前边之后会产生回路，实际上是指当前边的两个节点所在的集合是一样的。所以实际上可以把边按权值从小到大排序，然后逐个合并边的两个节点的集合，如果节点集合不同，就添加了一条新边，否则直接忽略。</p>
+<blockquote>
+<p>代码实现：<a href="http://paste.ubuntu.com/20682201/" target="_blank" rel="external">http://paste.ubuntu.com/20682201/</a></p>
+</blockquote>
+<h3 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h3><p><a href="https://zh.wikipedia.org/wiki/%E5%B9%B6%E6%9F%A5%E9%9B%86" target="_blank" rel="external">并查集–维基百科</a></p>
+<p><a href="http://blog.csdn.net/dm_vincent/article/details/7655764" target="_blank" rel="external">并查集(Union-Find)算法介绍</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithm/" rel="tag">#Algorithm</a>
+          
+            <a href="/tags/Data-struct/" rel="tag">#Data struct</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/21/Rem—-适配Webapp/" rel="next" title="Rem—_适配Webapp">
+                <i class="fa fa-chevron-left"></i> Rem—_适配Webapp
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/07/24/并查集/"
+     data-title="并查集"
+     data-content=""
+     data-url="http://yoursite.com/2016/07/24/并查集/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/24/并查集/"
+           data-title="并查集" data-url="http://yoursite.com/2016/07/24/并查集/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xsx7g.com2.z0.glb.clouddn.com/16-7-16/36324554.jpg"
+               alt="Sunshine" />
+          <p class="site-author-name" itemprop="name">Sunshine</p>
+          <p class="site-description motion-element" itemprop="description">A contented mind is a perpetual feast.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sunshinelzb" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.jaylin.me/" target="_blank">jaylin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/huyihao" target="_blank">胡少爷</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#并查集"><span class="nav-number">1.</span> <span class="nav-text">并查集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-number">2.</span> <span class="nav-text">优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">3.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#No-1-初始化"><span class="nav-number">4.</span> <span class="nav-text">No.1 初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#No-2-查找"><span class="nav-number">5.</span> <span class="nav-text">No.2 查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#No-3-合并"><span class="nav-number">6.</span> <span class="nav-text">No.3 合并</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用–最小生成树"><span class="nav-number">7.</span> <span class="nav-text">应用–最小生成树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习资料"><span class="nav-number">8.</span> <span class="nav-text">学习资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunshine</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshinelzb"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lgVv0O1yBB0kitbB2GlE1YiR-gzGzoHsz", "3qdyA9s3YhaqfBWFu3g0O2Rm");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+</body>
+</html>
