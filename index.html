@@ -279,6 +279,429 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/01/Sass入门二-变量/" itemprop="url">
+                  Sass入门二--变量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-01T11:02:51+08:00" content="2016-09-01">
+              2016-09-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Sass/" itemprop="url" rel="index">
+                    <span itemprop="name">Sass</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/01/Sass入门二-变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/Sass入门二-变量/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/09/01/Sass入门二-变量/" class="leancloud_visitors" data-flag-title="Sass入门二--变量">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Sass变量"><a href="#Sass变量" class="headerlink" title="Sass变量"></a>Sass变量</h3><p>###变量的定义：用<code>$</code>表示。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$width</span>: <span class="number">100px</span>;</div><div class="line">$_name: facebook;</div></pre></td></tr></table></figure></p>
+<h3 id="变量的引用"><a href="#变量的引用" class="headerlink" title="变量的引用"></a>变量的引用</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.test</span>&#123; <span class="attribute">width</span>: <span class="variable">$width</span>;&#125;</div><div class="line"><span class="selector-class">.ico_</span>#&#123;$_name&#125;&#123; <span class="attribute">background</span>: url(<span class="string">"..."</span>);&#125;</div></pre></td></tr></table></figure>
+<p>###变量的类型</p>
+<blockquote>
+<p><li><code>数字</code>（e.g. 2，3，10px）</li></p>
+<p><li>有引号或者没有引号的<code>文本字符</code>（e.g. foo,”foo”,’foo’）</li></p>
+<p><li><code>色值</code>（e.g. blue，#333，rgba(255,255,255,0.5)）</li></p>
+<p><li><code>布尔型</code>（e.g. true，false）</li></p>
+<p><li><code>空</code>（e.g. null）</li></p>
+<p><li><code>列表值</code>，用空格或逗号分隔（e.g. 3px solid #333, Arial, sans-serif）</li></p>
+<p><li>sass 3.3.4中新增加一种<code>数据类型map</code>(映射类型)（e.g. $map:(key1:value1,key2:value2,key3:value3) ）</li>\</p>
+<p>###变量可以做什么</p>
+<p><li>1.属性值</li></p>
+<p><li>2.选择器名（更适合有规律的选择器名）</li></p>
+<p><li>3.进行运算</li><br>          <code>运算符号：+ - * / %</code></p>
+</blockquote>
+<h4 id="3-1-运算注意事项"><a href="#3-1-运算注意事项" class="headerlink" title="3.1 运算注意事项"></a>3.1 运算注意事项</h4><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$n = 3px; $m = 4pt; $n + $m; $m + $n;</div><div class="line">font: $n / $m;</div><div class="line">font: #&#123;$n&#125; / #&#123;$m&#125;;</div></pre></td></tr></table></figure>
+<p>变量或者数值进行运算时不能带有不同的单位，否则会报错。</p>
+<h3 id="列表类型变量"><a href="#列表类型变量" class="headerlink" title="列表类型变量"></a>列表类型变量</h3><p>比如：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$list</span>: item1, item2, item3;</div><div class="line"><span class="variable">$list</span>: item1 item2 item3;</div><div class="line"><span class="variable">$list</span>: item1-<span class="number">1</span> item1-<span class="number">2</span> item1-<span class="number">3</span>, item2-<span class="number">1</span> item2-<span class="number">2</span> item2-<span class="number">3</span>;</div><div class="line"><span class="comment">//(看起来有些像数组)</span></div></pre></td></tr></table></figure></p>
+<h4 id="列表变量可以和function配合使用"><a href="#列表变量可以和function配合使用" class="headerlink" title="列表变量可以和function配合使用"></a>列表变量可以和function配合使用</h4><blockquote>
+<p>length($list)<br>nth($list,$index)<br>index($list,$value)<br>append($list,$value[,separator])<br>join($list1,$list2[,separator])<br>zip($lists…)<br>list-separator(#list)</p>
+</blockquote>
+<p>例如下面的循环：<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">each</span> <span class="variable">$animal</span> in puma, sea-slug, egret, salamander &#123;</div><div class="line">  .#&#123;<span class="variable">$animal</span>&#125;-<span class="attribute">icon</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: url(<span class="string">'/images/#&#123;$animal&#125;.png'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>或者是<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$list</span>: puma, sea-slug, egret, salamander;</div><div class="line">@<span class="keyword">each</span> <span class="variable">$animal</span> in <span class="variable">$list</span>&#123;</div><div class="line">  .#&#123;<span class="variable">$animal</span>&#125;-<span class="attribute">icon</span> &#123;</div><div class="line">    <span class="attribute">background-image</span>: url(<span class="string">'/images/#&#123;$animal&#125;.png'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译的结果是：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.puma-icon</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/images/puma.png"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.sea-slug-icon</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/images/sea-slug.png"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.egret-icon</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/images/egret.png"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.salamander-icon</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"/images/salamander.png"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="简写参数列表"><a href="#简写参数列表" class="headerlink" title="简写参数列表"></a>简写参数列表</h3><p></p><h3>$var_name…</h3><br>e,g<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> colors(<span class="variable">$text</span>, <span class="variable">$background</span>, <span class="variable">$border</span>) &#123;</div><div class="line">    <span class="attribute">color</span>: <span class="variable">$text</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="variable">$background</span>;</div><div class="line">    <span class="attribute">border-color</span>: <span class="variable">$border</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//list类型变量</span></div><div class="line"><span class="variable">$values</span>: <span class="number">#ff0000</span>, <span class="number">#00ff00</span>, <span class="number">#0000ff</span>;</div><div class="line"><span class="selector-class">.primary</span> &#123;</div><div class="line">    @<span class="keyword">include</span> colors(<span class="variable">$values</span>...);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//map类型变量</span></div><div class="line"><span class="variable">$value-map</span>: (text: <span class="number">#00ff00</span>, background: <span class="number">#0000ff</span>, border: <span class="number">#ff0000</span>);</div><div class="line"><span class="selector-class">.secondary</span> &#123;</div><div class="line">    @<span class="keyword">include</span> colors(<span class="variable">$value-map</span>...);</div><div class="line">&#125;</div></pre></td></tr></table></figure><p></p>
+<p>编译结果如下：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.primary</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#ff0000</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#00ff00</span>;</div><div class="line">  <span class="attribute">border-color</span>: <span class="number">#0000ff</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.secondary</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#00ff00</span>;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#0000ff</span>;</div><div class="line">  <span class="attribute">border-color</span>: <span class="number">#ff0000</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="占位符选择器-placeholder"><a href="#占位符选择器-placeholder" class="headerlink" title="占位符选择器%placeholder"></a>占位符选择器%placeholder</h3><p>%foo 占位符选择器（不属于变量）<br>它看起来像是类选择器或id选择器，除了将#或.替换成%。调用时使用<code>@extend</code>命令。<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#context</span> <span class="selector-tag">a</span>%extreme &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.notice</span> &#123;</div><div class="line">  @<span class="keyword">extend</span> %extreme;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译结果<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#context</span> <span class="selector-tag">a</span><span class="selector-class">.notice</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">  <span class="attribute">font-weight</span>: bold;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>占位符功能很强大，它可以取代以前 CSS 中的基类造成的代码冗余的情形。因为 <code>%placeholder</code>声明的代码，如果不被 <code>@extend</code>调用的话，不会产生任何代码。</p>
+<p>占位符还有一个功能，通过 <code>@extend</code> 调用的占位符，编译出来的代码会将相同的代码合并在一起。这也是我们希望看到的效果，也让你的代码变得更为干净。</p>
+<p>e.g<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">%mt5 &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line">%pt5&#123;</div><div class="line">  <span class="attribute">padding-top</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.btn</span> &#123;</div><div class="line">  @<span class="keyword">extend</span> %mt5;</div><div class="line">  @<span class="keyword">extend</span> %pt5;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.block</span> &#123;</div><div class="line">  @<span class="keyword">extend</span> %mt5;</div><div class="line"></div><div class="line">  <span class="selector-tag">span</span> &#123;</div><div class="line">    @<span class="keyword">extend</span> %pt5;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>编译结果<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.btn</span>, <span class="selector-class">.block</span> &#123;</div><div class="line">  <span class="attribute">margin-top</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.btn</span>, <span class="selector-class">.block</span> <span class="selector-tag">span</span> &#123;</div><div class="line">  <span class="attribute">padding-top</span>: <span class="number">5px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="混合宏-VS-继承-VS-占位符"><a href="#混合宏-VS-继承-VS-占位符" class="headerlink" title="混合宏 VS 继承 VS 占位符"></a>混合宏 VS 继承 VS 占位符</h3><p>使用<code>mixin</code>混合宏，不会自动合并相同的样式代码，如果在样式文件中调用同一个混合宏，会产生多个对应的样式代码，造成代码的冗余，这也是 CSSer 无法忍受的一件事情。不过他并不是一无事处，<code>他可以传参数</code>。</p>
+<p>使用<code>@extend</code>继承后，编译出来的 CSS 会将使用继承的代码块合并到一起，通过组合选择器的方式向大家展现，比如 .mt, .block, .block span, .header, .header span。这样编译出来的代码相对于混合宏来说要干净的多，也是 CSSer 期望看到。但是<code>他不能传变量参数</code>。使用继承时需要一个基类（好像是废话）。</p>
+<p>使用<code>%placeholder</code>占位符编译出来的 CSS 代码和使用继承基本上是相同，只是不会在代码中生成占位符 mt 的选择器。那么占位符和继承的主要区别的，“占位符是独立定义，不调用的时候是不会在 CSS 中产生任何代码；继承是首先有一个基类存在，不管调用与不调用，基类的样式都将会出现在编译出来的 CSS 代码中。”</p>
+<p><img src="https://ws4.sinaimg.cn/large/c444dccejw1f7dwk0ywibj20m20a4dj3.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/30/Sass入门一-了解与安装/" itemprop="url">
+                  Sass入门一--了解与安装
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-30T22:12:08+08:00" content="2016-08-30">
+              2016-08-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Sass/" itemprop="url" rel="index">
+                    <span itemprop="name">Sass</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/30/Sass入门一-了解与安装/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/30/Sass入门一-了解与安装/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/08/30/Sass入门一-了解与安装/" class="leancloud_visitors" data-flag-title="Sass入门一--了解与安装">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="什么是Sass"><a href="#什么是Sass" class="headerlink" title="什么是Sass"></a>什么是Sass</h3><p>Sass（Syntactically Awesome StyleSheets）是样式表预编译器，是Haml（HTML Abstract Markup Language）的副功能，Haml是为了防止标签没有闭合而开发的一种语言，类似于<code>ruby</code>，<code>python</code>的简洁语法结构。<br>Scss是CSS3的一个<code>超集</code>，采用CSS标准语法，使用大括号将样式的属性及属性值括起来。</p>
+<h3 id="Sass安装-基于Windows"><a href="#Sass安装-基于Windows" class="headerlink" title="Sass安装(基于Windows)"></a>Sass安装(基于Windows)</h3><p>首先到<code>Ruby</code><a href="http://rubyinstaller.org/" target="_blank" rel="external">官网</a>上下载ruby的安装程序。<br>双击ruby的安装程序，到下面的界面时全部勾选，然后点击install按钮直至安装完成。<br>Ruby 安装文件下载好后，可以按应用软件安装步骤进行安装 Ruby。在安装过程中选择第二个选项（不选中，就会出现编译时找不到Ruby环境的情况），如下图所示：<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f78q33vxzoj20aw08gmyf.jpg" alt=""><br>安装完成后，打开cmd命令控制台，输入<code>gem install sass</code>,安装完成后，输入<code>sass -v</code>查看sass版本信息，若出现如下信息，则安装成功，可以开心的玩耍了。<br><img src="https://ws1.sinaimg.cn/large/c444dccejw1f78q784966j20d203a0tc.jpg" alt=""></p>
+<h3 id="使用Sass监听"><a href="#使用Sass监听" class="headerlink" title="使用Sass监听"></a>使用Sass监听</h3><p>Scss监视.scss文件<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//监视整个文件夹</span></div><div class="line">$ scss --watch scss_path:css_path</div><div class="line"></div><div class="line">//监视单个文件</div><div class="line">$ scss --watch scss_path/style.scss:css_path/style.css</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/08/25/javascript秘密花园/" itemprop="url">
+                  javascript秘密花园
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-25T22:39:20+08:00" content="2016-08-25">
+              2016-08-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/25/javascript秘密花园/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/25/javascript秘密花园/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/08/25/javascript秘密花园/" class="leancloud_visitors" data-flag-title="javascript秘密花园">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="javascript秘密花园"><a href="#javascript秘密花园" class="headerlink" title="javascript秘密花园"></a>javascript秘密花园</h3><p>这几天看到了<code>javascript秘密花园</code>这个译文，看完觉得收获很多，也可以当文档来用。<br>在这里跟大家分享下，大神自动忽略。</p>
+<h3 id="传送门"><a href="#传送门" class="headerlink" title="传送门"></a>传送门</h3><p><a href="http://bonsaiden.github.io/JavaScript-Garden/zh/" target="_blank" rel="external">javascript秘密花园</a></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/13/JavaScript事件冒泡与事件捕获/" itemprop="url">
                   JavaScript事件冒泡与事件捕获
                 </a>
@@ -307,8 +730,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -438,8 +861,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -1204,399 +1627,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/05/JQuery选择器/" itemprop="url">
-                  jQuery选择器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-05T09:37:35+08:00" content="2016-05-05">
-              2016-05-05
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/jQuery/" itemprop="url" rel="index">
-                    <span itemprop="name">jQuery</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/05/JQuery选择器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/05/JQuery选择器/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-          
-             <span id="/2016/05/05/JQuery选择器/" class="leancloud_visitors" data-flag-title="jQuery选择器">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="简单选择器"><a href="#简单选择器" class="headerlink" title="简单选择器"></a>简单选择器</h3><blockquote>
-<p>在使用jQuery 选择器时，我们首先必须使用“$()”函数来包装我们的CSS 规则。而<br>CSS 规则作为参数传递到jQuery 对象内部后，再返回包含页面中对应元素的jQuery 对象。<br>随后，我们就可以对这个获取到的DOM 节点进行行为操作了。</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/05/JQuery选择器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/16/CSS选择器/" itemprop="url">
-                  CSS选择器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-16T21:59:01+08:00" content="2016-04-16">
-              2016-04-16
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/16/CSS选择器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/CSS选择器/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-          
-             <span id="/2016/04/16/CSS选择器/" class="leancloud_visitors" data-flag-title="CSS选择器">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/69548418.jpg" rel="gallery_cirt7c2790000g8op5exy0bhl"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://7xsx7g.com2.z0.glb.qiniucdn.com/16-4-15/69548418.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <h3 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h3><p>这是最基本的CSS选择器，HTML文档中的元素本身就是一个选择器;<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">line-height</span>:<span class="number">1.5em</span>;</div><div class="line">    <span class="attribute">margin-bottom</span>:<span class="number">1em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/16/CSS选择器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/13/hexo-github搭建Blog/" itemprop="url">
-                  hexo+github搭建Blog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-13T20:41:08+08:00" content="2016-04-13">
-              2016-04-13
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/13/hexo-github搭建Blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/hexo-github搭建Blog/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-          
-             <span id="/2016/04/13/hexo-github搭建Blog/" class="leancloud_visitors" data-flag-title="hexo+github搭建Blog">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><h3 id="为什么要搭建一个独立博客"><a href="#为什么要搭建一个独立博客" class="headerlink" title="为什么要搭建一个独立博客?"></a><strong>为什么要搭建一个独立博客?</strong></h3><blockquote>
-<p>独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/13/hexo-github搭建Blog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1635,7 +1672,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1643,7 +1680,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1652,7 +1689,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
