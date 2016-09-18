@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="jQuery," />
 
 
 
@@ -80,33 +80,21 @@
 
 
 
-<meta name="description" content="前言为什么要搭建一个独立博客?
-独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。">
+<meta name="description" content="前言学了一年的前端了，前前后后虽然重构了一些小网页和做过一些静态的网站，但实际上却还没接触过前后端交互的实战。Ajax有初步的了解，也写过一些小demo，但也只是初步了解Ajax。对于模拟前后端数据交互，还是蛮有感兴趣的，在大神的点拨下开始学习前后端数据交互之—-解析JSON数据。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo+github搭建Blog">
-<meta property="og:url" content="http://yoursite.com/2016/04/13/hexo-github搭建Blog/index.html">
+<meta property="og:title" content="jQuery解析JSON">
+<meta property="og:url" content="http://yoursite.com/2016/09/18/jQuery解析JSON/index.html">
 <meta property="og:site_name" content="Sunshine'Note">
-<meta property="og:description" content="前言为什么要搭建一个独立博客?
-独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2veofkl2fj20910dhaas.jpg">
-<meta property="og:image" content="http://cnfeat.qiniudn.com/bg2012082502.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2veby5m85j20rl0lrwh4.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/c444dccejw1f2vzb0krj3j20ho080wit.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2vz0ytknej21120lkwhf.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccejw1f2vz1k5kxjj211d0miwiz.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vz3gg4pbj20p003i75z.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccejw1f2vcf6odlpj20es04zdgr.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2vfaoe76zj20pb08xdh6.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vfer5jx9j20oi0l2jv5.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vfvmpy2oj20t20astbk.jpg">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/c444dccejw1f2vg75wajoj20pr0513z7.jpg">
-<meta property="og:image" content="http://ww1.sinaimg.cn/large/c444dccejw1f2vg5h4xikj20ok05gaam.jpg">
-<meta property="og:updated_time" content="2016-07-16T12:45:33.681Z">
+<meta property="og:description" content="前言学了一年的前端了，前前后后虽然重构了一些小网页和做过一些静态的网站，但实际上却还没接触过前后端交互的实战。Ajax有初步的了解，也写过一些小demo，但也只是初步了解Ajax。对于模拟前后端数据交互，还是蛮有感兴趣的，在大神的点拨下开始学习前后端数据交互之—-解析JSON数据。">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/09/18/57de433dcb93a.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/09/18/57de4362bfc71.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/09/18/57de4797a6be6.png">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/09/18/57de47bf9d344.png">
+<meta property="og:updated_time" content="2016-09-18T07:58:52.174Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo+github搭建Blog">
-<meta name="twitter:description" content="前言为什么要搭建一个独立博客?
-独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f2veofkl2fj20910dhaas.jpg">
+<meta name="twitter:title" content="jQuery解析JSON">
+<meta name="twitter:description" content="前言学了一年的前端了，前前后后虽然重构了一些小网页和做过一些静态的网站，但实际上却还没接触过前后端交互的实战。Ajax有初步的了解，也写过一些小demo，但也只是初步了解Ajax。对于模拟前后端数据交互，还是蛮有感兴趣的，在大神的点拨下开始学习前后端数据交互之—-解析JSON数据。">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2016/09/18/57de433dcb93a.png">
 
 
 
@@ -124,7 +112,7 @@
   };
 </script>
 
-  <title> hexo+github搭建Blog | Sunshine'Note </title>
+  <title> jQuery解析JSON | Sunshine'Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -304,7 +292,7 @@
             
             
               
-                hexo+github搭建Blog
+                jQuery解析JSON
               
             
           </h1>
@@ -316,19 +304,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-13T20:41:08+08:00" content="2016-04-13">
-              2016-04-13
+            <time itemprop="dateCreated" datetime="2016-09-18T15:54:53+08:00" content="2016-09-18">
+              2016-09-18
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jQuery/" itemprop="url" rel="index">
+                    <span itemprop="name">jQuery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/13/hexo-github搭建Blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/13/hexo-github搭建Blog/" itemprop="commentsCount"></span>
+                <a href="/2016/09/18/jQuery解析JSON/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/18/jQuery解析JSON/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -337,7 +344,7 @@
           
           
           
-             <span id="/2016/04/13/hexo-github搭建Blog/" class="leancloud_visitors" data-flag-title="hexo+github搭建Blog">
+             <span id="/2016/09/18/jQuery解析JSON/" class="leancloud_visitors" data-flag-title="jQuery解析JSON">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -359,69 +366,83 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h2><h3 id="为什么要搭建一个独立博客"><a href="#为什么要搭建一个独立博客" class="headerlink" title="为什么要搭建一个独立博客?"></a><strong>为什么要搭建一个独立博客?</strong></h3><blockquote>
-<p>独立的才是自己的。我想到些博客也是缘于自己的兴趣，在写博客的过程中，一方面是给自己做笔记，可以提升自己的写作、总结能力，一个技术点我们会使用，并不难，但是要做到让让别人也能听懂我们讲得，还是需要一定的技巧和经验的。写博客是一个不错的锻炼机会。<br><a id="more"></a></p>
-<h3 id="喜欢写Blog的人，会经历三个阶段。"><a href="#喜欢写Blog的人，会经历三个阶段。" class="headerlink" title="喜欢写Blog的人，会经历三个阶段。"></a><strong>喜欢写Blog的人，会经历三个阶段。</strong></h3><p> 引用自阮一峰老师</p>
-<ol>
-<li>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</li>
-<li>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</li>
-<li>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</li>
-</ol>
-</blockquote>
-<hr>
-<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a><strong>Hexo简介</strong></h2><blockquote>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">hexo</a>是一个基于<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a>的静态博客程序，可以方便的生成静态网页托管在<a href="https://github.com/" target="_blank" rel="external">github</a>和Heroku上。作者是来自台湾的<a href="https://github.com/tommy351/hexo" target="_blank" rel="external">@tommy351</a>。</p>
-</blockquote>
-<h2 id="我为什么使用Hexo"><a href="#我为什么使用Hexo" class="headerlink" title="我为什么使用Hexo"></a><strong>我为什么使用Hexo</strong></h2><p>引用作者的原话</p>
-<blockquote>
-<p>不可思议的快速 ─ 只要一眨眼静态文件即生成完成<br>支持 <a href="https://www.zybuluo.com" target="_blank" rel="external">Markdown</a><br>仅需一道指令即可部署到 GitHub Pages 和 Heroku<br>已移植 Octopress 插件<br>高扩展性、自订性<br>兼容于 Windows, Mac &amp; Linux</p>
-</blockquote>
-<h2 id="开始搭建属于自己的博客"><a href="#开始搭建属于自己的博客" class="headerlink" title="开始搭建属于自己的博客"></a><strong>开始搭建属于自己的博客</strong></h2><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a><strong>安装Git</strong></h3><p>很好用的工具，把本地的hexo内容提交到github上，请到<a href="https://git-for-windows.github.io/" target="_blank" rel="external">官网</a>自行下载。安装完成后在桌面右键，点击Git Bash即可使用<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f2veofkl2fj20910dhaas.jpg" alt="git"></p>
-<h3 id="Github账号"><a href="#Github账号" class="headerlink" title="Github账号"></a><strong>Github账号</strong></h3><p> 通过<a href="https://github.com" target="_blank" rel="external">官网</a>注册一个账户，这个就不多说了。<br><img src="http://cnfeat.qiniudn.com/bg2012082502.jpg" alt="github"></p>
-<p> 接下来使用github为每个用户使用的二级域名，创建一个属于自己的仓库，可以时时预览自己上传的网页。如下图，其中仓库的名字格式为：username.github.io(只有这样才能生效)。设置完成后再浏览器中键入username.githu.io测试，就可以了。<br> <img src="http://ww2.sinaimg.cn/large/c444dccejw1f2veby5m85j20rl0lrwh4.jpg" alt="仓库"></p>
-<h4 id="配置ssh密钥"><a href="#配置ssh密钥" class="headerlink" title="配置ssh密钥"></a><strong>配置ssh密钥</strong></h4><blockquote>
-<ol>
-<li><p>使用<code>git bash</code>输入命令<code>ssh keygen -t -rsa -C &quot;your email&quot;</code>然后按三个回车。如下<br><img src="http://ww1.sinaimg.cn/large/c444dccejw1f2vzb0krj3j20ho080wit.jpg" alt="keygen"></p>
-</li>
-<li><p>接着打开<code>/.ssh</code>目录下的<code>./id_rsa.pub</code>文件，将其复制粘贴到你的github账号上，如下<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f2vz0ytknej21120lkwhf.jpg" alt="ssh"><br><img src="http://ww4.sinaimg.cn/large/c444dccejw1f2vz1k5kxjj211d0miwiz.jpg" alt="ssh key"></p>
-</li>
-<li><p>本地测试是否成功，输入<code>ssh -T git@github.com</code>，若看到successful就可以了。<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vz3gg4pbj20p003i75z.jpg" alt="测试ssh"></p>
-</li>
-</ol>
-</blockquote>
-<hr>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a></h3><p>这是比不可少的一步，从官网上下载一路安装就可以，安装成功后，打开cmd（win+R），测试是否安装成功。下图为本地测试结果<br><img src="http://ww4.sinaimg.cn/large/c444dccejw1f2vcf6odlpj20es04zdgr.jpg" alt="npm"></p>
-<hr>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a><strong>安装Hexo</strong></h3><blockquote>
-<p>通过命令行 <code>npm install -g hexo</code>安装。PS：打开cmd输入此命令等待安装完成即可</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>安装完成后，初始化本地博客目录，选择你想存储的位置。例如，我在F盘下创建了一个blog文件夹，即<code>F:/blog</code>用来存放本地博客。进入此文件夹，右键使用<code>git bash</code>。输入<code>hexo init</code>回车。<br>好啦，至此，全部安装工作已经完成！blog就是你的博客根目录，所有的操作都在里面进行。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>紧接着，cd 到你的init目录，执行<code>hexo generate</code>（hexo g也可以）命令，生成静态页面至<code>blog\public\</code>目录。<br>命令必须在init目录下执行，否则不成功，但是也不报错。当你修改文章Tag或内容,不能正确重新生成内容，可以删除hexo\db.json后重试，还不行就到public目录删除对应的文件，重新生成。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>本地测试，输入<code>hexo server</code>如下图,<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f2vfaoe76zj20pb08xdh6.jpg" alt="hexo s"><br>然后在浏览器输入localhost:4000，请使用高级浏览器，否则呵呵哒，你懂的。至此，本地搭建基本完成。<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vfer5jx9j20oi0l2jv5.jpg" alt="hexo "></p>
-</blockquote>
-<hr>
-<h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a><strong>部署到github</strong></h3><blockquote>
-<p>使用命令<code>npm install hexo-deployer-git --save</code>在你init的根目录下，我这里是blog，安装deploy_git,此时的目录结构如下<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vfvmpy2oj20t20astbk.jpg" alt="目录结构"></p>
-<p>编辑<code>_config.yml</code>文件，在<code>git bash</code>输入<code>vim _config.yml</code>做以下修改<br><img src="http://ww2.sinaimg.cn/large/c444dccejw1f2vg75wajoj20pr0513z7.jpg" alt="部署"><br>接着，键入命令<code>hexo deploy</code>输入github的账户密码即可部署在github上，可在浏览器输入<a href="http://sunshinelzb.github.io/" target="_blank" rel="external">http://sunshinelzb.github.io/</a>预览效果，其中<code>sunshinelzb</code>修改为你对应的名字。</p>
-<p>若使用ssh密钥，则每次部署不需要输入账户和密码，<code>_config.yml</code>也要做相应的修改。<br><img src="http://ww1.sinaimg.cn/large/c444dccejw1f2vg5h4xikj20ok05gaam.jpg" alt="ssh"></p>
-</blockquote>
-<hr>
-<h3 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a><strong>部署步骤</strong></h3><blockquote>
-<p>每次部署的三个步骤<br>   <code>hexo clean</code><br>   <code>hexo generate</code><br>   <code>hexo deploy</code></p>
-</blockquote>
-<hr>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a><strong>常用命令</strong></h3><blockquote>
-<p><code>hexo new&quot;postName&quot; #新建文章</code><br> <code>hexo new page&quot;pageName&quot; #新建页面</code><br> <code>hexo generate #生成静态页面至public目录</code><br> <code>hexo server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）</code><br> <code>hexo deploy #将.deploy目录部署到GitHub</code><br> <code>hexo help # 查看帮助</code><br> <code>hexo version #查看Hexo的版本</code></p>
-<h3 id="Hexo官方文档"><a href="#Hexo官方文档" class="headerlink" title="Hexo官方文档"></a><strong>Hexo官方文档</strong></h3><p>更多详细请参考<a href="hexo.io/zh-cn/docs/">Hexo</a>官方文档，在搭建的过程中，小林查看了很多资料，官方的很详细，细节方面就要多多捣鼓。Enjoy It！</p>
-</blockquote>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学了一年的前端了，前前后后虽然重构了一些小网页和做过一些静态的网站，但实际上却还没接触过前后端交互的实战。Ajax有初步的了解，也写过一些小demo，但也只是初步了解Ajax。对于模拟前后端数据交互，还是蛮有感兴趣的，在大神的点拨下开始学习前后端数据交互之—-解析JSON数据。</p>
+<a id="more"></a>
+<h3 id="了解JSON"><a href="#了解JSON" class="headerlink" title="了解JSON"></a>了解JSON</h3><p><code>JSON</code>即JavaScript Object Notation。JSON 是一种用来序列化对象、数组、数值、字符串、布尔值和 null 的语法。它基于 JavaScript 语法，但是又有区别：一些 JavaScript 值不是 JSON，而某些 JSON 不是 JavaScript 值。参考 JSON: <a href="http://timelessrepo.com/json-isnt-a-javascript-subset" target="_blank" rel="external">The JavaScript subset that isn’t</a>。</p>
+<h3 id="JSON数据类型"><a href="#JSON数据类型" class="headerlink" title="JSON数据类型"></a>JSON数据类型</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">数字型（Number）</td>
+<td style="text-align:center">JavaScript 中的双精度浮点型格式</td>
+</tr>
+<tr>
+<td style="text-align:center">字符串型（String）</td>
+<td style="text-align:center">双引号包裹的 Unicode 字符和反斜杠转义字符</td>
+</tr>
+<tr>
+<td style="text-align:center">布尔型（Boolean）</td>
+<td style="text-align:center">true 或 false</td>
+</tr>
+<tr>
+<td style="text-align:center">数组（Array）</td>
+<td style="text-align:center">有序的值序列</td>
+</tr>
+<tr>
+<td style="text-align:center">值（Value）</td>
+<td style="text-align:center">可以是字符串，数字，true 或 false，null 等等</td>
+</tr>
+<tr>
+<td style="text-align:center">对象（Object）</td>
+<td style="text-align:center">无序的键:值对集合</td>
+</tr>
+<tr>
+<td style="text-align:center">空格（Whitespace）</td>
+<td style="text-align:center">可用于任意符号对之间</td>
+</tr>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center">空</td>
+</tr>
+</tbody>
+</table>
+<p>更多的JSON信息请自行查阅文档。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="external">MDN</a><br><a href="https://segmentfault.com/a/1190000000668072" target="_blank" rel="external">JavaScript学习总结（六）数据类型和JSON格式</a></p>
+<h3 id="解析JSON"><a href="#解析JSON" class="headerlink" title="解析JSON"></a>解析JSON</h3><p>在这里用到了jQuery 封装的函数，解析JSON首先要分析JSON的数据类型，不同的数据类型解析方式不同。自己写的小demo实现的基础是，点击触发按钮然后向服务器发送请求，请求JSON数据，然后在返回重绘到html页面上。请求可以用<code>$.getJSON</code>或者用<code>$.ajax</code>,解析加载JSON数据用<code>$.each</code>循环遍历得到。<br><code>$.getJSON</code> 通过 HTTP GET 请求载入 JSON 数据<br><code>语法</code> jQuery.getJSON(url,data,success(data,status,xhr))</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">url</td>
+<td style="text-align:center">必需。规定将请求发送的哪个 URL。</td>
+</tr>
+<tr>
+<td style="text-align:center">data</td>
+<td style="text-align:center">可选。规定连同请求发送到服务器的数据。</td>
+</tr>
+<tr>
+<td style="text-align:center">success(data,status,xhr)</td>
+<td style="text-align:center">可选。规定当请求成功时运行的函数。额外的参数：response - 包含来自请求的结果数status - 包含请求的状态xhr - 包含 XMLHttpRequest 对象</td>
+</tr>
+</tbody>
+</table>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>凡是都从最简单的做起，首先我找了一个最简单的数据进行实验，如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"array"</span>: [</div><div class="line">        <span class="number">1</span>,</div><div class="line">        <span class="number">2</span>,</div><div class="line">        <span class="number">3</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"boolean"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="attr">"null"</span>: <span class="literal">null</span>,</div><div class="line">    <span class="attr">"number"</span>: <span class="number">123</span>,</div><div class="line">    <span class="attr">"object"</span>: &#123;</div><div class="line">        <span class="attr">"a"</span>: <span class="string">"b"</span>,</div><div class="line">        <span class="attr">"c"</span>: <span class="string">"d"</span>,</div><div class="line">        <span class="attr">"e"</span>: <span class="string">"f"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"string"</span>: <span class="string">"Hello World"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>很明显，这个JSON数据包含了JSON支持的数据格式，一目了然。<br>接下来用<code>$.getJSON</code>方法请求JSON数据，用<code>$.each</code>遍历解析，代码如下：</p>
+<p><img src="https://ooo.0o0.ooo/2016/09/18/57de433dcb93a.png" alt="UO3BE_CWYE1FHYIYZJEXO1K.png"><br>效果如下：</p>
+<p><img src="https://ooo.0o0.ooo/2016/09/18/57de4362bfc71.png" alt="{M%~1GZ991KUPBZ(AO~N8AB.png"></p>
+<p>如果你觉得不够理解，您可以戳<a href="http://sunshinelzb.coding.me/sunshinelzb/Json/first.html" target="_blank" rel="external">这里</a>体验一下。</p>
+<h3 id="更进一步"><a href="#更进一步" class="headerlink" title="更进一步"></a>更进一步</h3><p>有了之前的经验之后，我感觉这个挺好玩的，就找了一个更复杂的JSON，由于太长，在这里就不贴了，有兴趣可以点击<a href="http://sunshinelzb.coding.me/sunshinelzb/json2.txt" target="_blank" rel="external">这里</a><br>这个复杂的JSON主要是对象里面涵盖了对象，刚开始还不知道怎么解决，上网学习了之后尝试了一下，发现真的可以。前面的简单JSON已经有了经验，主要的方法嵌套循环，也就是嵌套<code>$.each</code>,当然，你要了解<code>$.each</code>的参数和回调函数，请自行查看API。<br>代码：<br><img src="https://ooo.0o0.ooo/2016/09/18/57de4797a6be6.png" alt="AU0Q~6GWOJYB)%KMN$U%%L9.png"><br>效果：</p>
+<p><img src="https://ooo.0o0.ooo/2016/09/18/57de47bf9d344.png" alt="V5%XMT32)B_DN]}2{H52)~R.png"></p>
+<p>详情DEMO请点击<a href="http://sunshinelzb.coding.me/sunshinelzb/Json/" target="_blank" rel="external">这里</a></p>
 
       
     </div>
@@ -442,7 +463,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/jQuery/" rel="tag">#jQuery</a>
           
         </div>
       
@@ -451,13 +472,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/10/三列布局的实现/" rel="next" title="三列布局的实现">
+                <i class="fa fa-chevron-left"></i> 三列布局的实现
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/16/CSS选择器/" rel="prev" title="CSS选择器">
-                CSS选择器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,10 +493,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/13/hexo-github搭建Blog/"
-     data-title="hexo+github搭建Blog"
+        <div class="ds-share flat" data-thread-key="2016/09/18/jQuery解析JSON/"
+     data-title="jQuery解析JSON"
      data-content=""
-     data-url="http://yoursite.com/2016/04/13/hexo-github搭建Blog/">
+     data-url="http://yoursite.com/2016/09/18/jQuery解析JSON/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -502,8 +523,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/13/hexo-github搭建Blog/"
-           data-title="hexo+github搭建Blog" data-url="http://yoursite.com/2016/04/13/hexo-github搭建Blog/">
+      <div class="ds-thread" data-thread-key="2016/09/18/jQuery解析JSON/"
+           data-title="jQuery解析JSON" data-url="http://yoursite.com/2016/09/18/jQuery解析JSON/">
       </div>
     
   </div>
@@ -620,7 +641,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要搭建一个独立博客"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要搭建一个独立博客?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#喜欢写Blog的人，会经历三个阶段。"><span class="nav-number">1.2.</span> <span class="nav-text">喜欢写Blog的人，会经历三个阶段。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我为什么使用Hexo"><span class="nav-number">3.</span> <span class="nav-text">我为什么使用Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始搭建属于自己的博客"><span class="nav-number">4.</span> <span class="nav-text">开始搭建属于自己的博客</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">4.1.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github账号"><span class="nav-number">4.2.</span> <span class="nav-text">Github账号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置ssh密钥"><span class="nav-number">4.2.1.</span> <span class="nav-text">配置ssh密钥</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Node-js"><span class="nav-number">4.3.</span> <span class="nav-text">安装Node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Hexo"><span class="nav-number">4.4.</span> <span class="nav-text">安装Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到github"><span class="nav-number">4.5.</span> <span class="nav-text">部署到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署步骤"><span class="nav-number">4.6.</span> <span class="nav-text">部署步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">4.7.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo官方文档"><span class="nav-number">4.8.</span> <span class="nav-text">Hexo官方文档</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#了解JSON"><span class="nav-number">2.</span> <span class="nav-text">了解JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON数据类型"><span class="nav-number">3.</span> <span class="nav-text">JSON数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析JSON"><span class="nav-number">4.</span> <span class="nav-text">解析JSON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">5.</span> <span class="nav-text">实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更进一步"><span class="nav-number">6.</span> <span class="nav-text">更进一步</span></a></li></ol></div>
             
           </div>
         </section>
