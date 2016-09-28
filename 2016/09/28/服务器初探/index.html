@@ -1,0 +1,845 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前言学习编程也将近一年了，但是就没接触过服务器这东西，以前听人家说服务器就是一台电脑，当然，可能是抽象的这么说，一年前百度的时候也不太懂，现在也不是很懂，毕竟也是刚接触，hhh。在学习的过程中也接触了一些集成的软件，例如，phpstudy，wamp等。简单实用，可以方便的搭建起本地的服务器，其中的环境也就是Apache，MySQL，PHP的集成。（PS:可能说的不太对）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器初探">
+<meta property="og:url" content="http://yoursite.com/2016/09/28/服务器初探/index.html">
+<meta property="og:site_name" content="Sunshine'Note">
+<meta property="og:description" content="前言学习编程也将近一年了，但是就没接触过服务器这东西，以前听人家说服务器就是一台电脑，当然，可能是抽象的这么说，一年前百度的时候也不太懂，现在也不是很懂，毕竟也是刚接触，hhh。在学习的过程中也接触了一些集成的软件，例如，phpstudy，wamp等。简单实用，可以方便的搭建起本地的服务器，其中的环境也就是Apache，MySQL，PHP的集成。（PS:可能说的不太对）">
+<meta property="og:image" content="https://ooo.0o0.ooo/2016/09/28/57ebc13712544.png">
+<meta property="og:updated_time" content="2016-09-28T13:19:52.681Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="服务器初探">
+<meta name="twitter:description" content="前言学习编程也将近一年了，但是就没接触过服务器这东西，以前听人家说服务器就是一台电脑，当然，可能是抽象的这么说，一年前百度的时候也不太懂，现在也不是很懂，毕竟也是刚接触，hhh。在学习的过程中也接触了一些集成的软件，例如，phpstudy，wamp等。简单实用，可以方便的搭建起本地的服务器，其中的环境也就是Apache，MySQL，PHP的集成。（PS:可能说的不太对）">
+<meta name="twitter:image" content="https://ooo.0o0.ooo/2016/09/28/57ebc13712544.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6271886744275125000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 服务器初探 | Sunshine'Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?10f6405da871f8fdcb13498ebd95a561";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunshine'Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'zs-v-BNbd9DVJBbXKgmZ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                服务器初探
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-28T21:14:53+08:00" content="2016-09-28">
+              2016-09-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/28/服务器初探/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/28/服务器初探/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/09/28/服务器初探/" class="leancloud_visitors" data-flag-title="服务器初探">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习编程也将近一年了，但是就没接触过服务器这东西，以前听人家说服务器就是一台电脑，当然，可能是抽象的这么说，一年前百度的时候也不太懂，现在也不是很懂，毕竟也是刚接触，hhh。在学习的过程中也接触了一些集成的软件，例如，phpstudy，wamp等。简单实用，可以方便的搭建起本地的服务器，其中的环境也就是Apache，MySQL，PHP的集成。（PS:可能说的不太对）<br><a id="more"></a></p>
+<h3 id="服务器初始配置"><a href="#服务器初始配置" class="headerlink" title="服务器初始配置"></a>服务器初始配置</h3><h4 id="小白跳坑"><a href="#小白跳坑" class="headerlink" title="小白跳坑"></a>小白跳坑</h4><p>在腾讯云上购买了一个服务器之后，就开始着手配置服务器的环境，中间还跳了一次坑。我购买的服务器的系统是<code>CentOS7.0</code>，之前听说过有一键安装环境的方法，就去google了一下，发现是lnmp这个东西。怀着偷懒的心态，我按照官网的教程安装了，在几个小时的等待中（网速渣渣），终于迎来了春天。<br> <hr><br> 滑稽的分割线<br> 虽然安装好了，但是环境不能用，尼玛这时候心中千万匹草尼玛在奔腾，几个小时就这么白费了。（内心独白：以后再也不用一键安装这种东西了……）</p>
+<h4 id="老老实实做人"><a href="#老老实实做人" class="headerlink" title="老老实实做人"></a>老老实实做人</h4><p>  在网上搜索了一些教程之后，一步步跟着教程走，最终也成功了搭建好了服务器的环境。<br>  <strong>准备篇</strong><br> 一、配置防火墙，开启80端口、3306端口<br>  <code>CentOS 7 默认使用的是firewall作为防火墙，这里改为iptables防火墙</code><br> 1、关闭firewall：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl stop firewalld.service #停止firewall</div><div class="line">systemctl disable firewalld.service #禁止firewall开机启动</div></pre></td></tr></table></figure></p>
+<p>2、安装iptables防火墙<br><figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml">yum install iptables-services #安装</span></div><div class="line">vi /etc/sysconfig/iptables #编辑防火墙配置文件</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"># Firewall configuration written by system-config-firewall</div><div class="line"># Manual customization of this file is not recommended.</div><div class="line">*filter</div><div class="line">:INPUT ACCEPT [0:0]</div><div class="line">:FORWARD ACCEPT [0:0]</div><div class="line">:OUTPUT ACCEPT [0:0]</div><div class="line">-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</div><div class="line">-A INPUT -p icmp -j ACCEPT</div><div class="line">-A INPUT -i lo -j ACCEPT</div><div class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT</div><div class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT</div><div class="line">-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</div><div class="line">-A INPUT -j REJECT --reject-with icmp-host-prohibited</div><div class="line">-A FORWARD -j REJECT --reject-with icmp-host-prohibited</div><div class="line">COMMIT</div><div class="line">:wq! #保存退出</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl restart iptables.service #最后重启防火墙使配置生效</div><div class="line">systemctl enable iptables.service #设置防火墙开机启动</div></pre></td></tr></table></figure>
+<p>PS：进入vi编辑模式的时候，按<code>i</code>可以进入编辑模式</p>
+<p>二、关闭SELINUX<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">vi /etc/selinux/config</div><div class="line">#SELINUX=enforcing #注释掉</div><div class="line">#SELINUXTYPE=targeted #注释掉</div><div class="line">SELINUX=disabled #增加</div><div class="line">:wq! #保存退出</div><div class="line">setenforce 0 #使配置立即生效</div></pre></td></tr></table></figure></p>
+<p><strong>安装篇：</strong></p>
+<p>一、安装Apache<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yum install httpd #根据提示，输入Y安装即可成功安装</div><div class="line">systemctl start httpd.service #启动apache</div><div class="line">systemctl stop httpd.service #停止apache</div><div class="line">systemctl restart httpd.service #重启apache</div><div class="line">systemctl enable httpd.service #设置apache开机启动</div></pre></td></tr></table></figure></p>
+<p>二、安装MariaDB</p>
+<p><code>CentOS 7 中，已经使用MariaDB替代了MySQL数据库</code></p>
+<p>1、安装MariaDB<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">yum install mariadb mariadb-server #询问是否要安装，输入Y即可自动安装,直到安装完成</div><div class="line">systemctl start mariadb.service #启动MariaDB</div><div class="line">systemctl stop mariadb.service #停止MariaDB</div><div class="line">systemctl restart mariadb.service #重启MariaDB</div><div class="line">systemctl enable mariadb.service #设置开机启动</div><div class="line">cp /usr/share/mysql/my-huge.cnf /etc/my.cnf #拷贝配置文件（注意：如果/etc目录下面默认有一个my.cnf，直接覆盖即可）</div></pre></td></tr></table></figure></p>
+<p>2、为root账户设置密码<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">mysql_secure_installation</div><div class="line">回车，根据提示输入Y</div><div class="line"></div><div class="line">输入2次密码，回车</div><div class="line"></div><div class="line">根据提示一路输入Y</div><div class="line"></div><div class="line">最后出现：Thanks for using MySQL!</div><div class="line"></div><div class="line">MySql密码设置完成，重新启动 MySQL：</div><div class="line"></div><div class="line">systemctl restart mariadb.service #重启MariaDB</div></pre></td></tr></table></figure></p>
+<p>三、安装PHP</p>
+<p>1、安装PHP 和 php-devel工具 方便日后使用 phpize 做扩展编译<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install php php-devel #根据提示输入Y直到安装完成</div></pre></td></tr></table></figure></p>
+<p>2、安装PHP组件，使PHP支持 MariaDB<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">yum install php-mysql php-gd libjpeg* php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-bcmath php-mhash</div><div class="line">#这里选择以上安装包进行安装，根据提示输入Y回车</div><div class="line"></div><div class="line">systemctl restart mariadb.service #重启MariaDB</div><div class="line">systemctl restart httpd.service #重启apache</div></pre></td></tr></table></figure></p>
+<p>四、安装phpmyadmin<br>使用yum安装phpmyadmin<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install phpmyadmin php-mcrypt</div></pre></td></tr></table></figure></p>
+<p><strong>配置篇</strong></p>
+<p>一、Apache配置<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">vi /etc/httpd/conf/httpd.conf #编辑文件</div><div class="line"></div><div class="line">#添加，在错误页中显示Apache的版本，Off为不显示</div><div class="line">ServerSignature On</div><div class="line"></div><div class="line">#修改为：Options Includes ExecCGI FollowSymLinks（允许服务器执行CGI及SSI，禁止列出目录）</div><div class="line">Options Indexes FollowSymLinks</div><div class="line"></div><div class="line">#修改为：AddHandler cgi-script .cgi .pl （允许扩展名为.pl的CGI脚本运行）</div><div class="line">AddHandler cgi-script .cgi</div><div class="line"></div><div class="line">#修改为：AllowOverride All （允许.htaccess）</div><div class="line">AllowOverride None</div><div class="line"></div><div class="line">#修改为：AddDefaultCharset GB2312　（添加GB2312为默认编码）</div><div class="line">AddDefaultCharset UTF-8</div><div class="line"></div><div class="line">#修改为 Options FollowSymLinks（不在浏览器上显示树状目录结构）</div><div class="line">Options Indexes FollowSymLinks</div><div class="line"></div><div class="line">#修改为：DirectoryIndex index.html index.htm Default.html Default.htm index.php（设置默认首页文件，增加index.php）</div><div class="line">DirectoryIndex index.html</div><div class="line"></div><div class="line">#添加MaxKeepAliveRequests 500 （增加同时连接数）</div><div class="line">MaxKeepAliveRequests 500</div><div class="line">:wq! #保存退出</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">systemctl restart httpd.service #重启apache</div><div class="line">rm -f /etc/httpd/conf.d/welcome.conf /var/www/error/noindex.html #删除默认测试页</div></pre></td></tr></table></figure>
+<p>二、php配置<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">vi /etc/php.ini #编辑</div><div class="line">date.timezone = PRC #把前面的分号去掉，改为date.timezone = PRC</div><div class="line">disable_functions = passthru,exec,system,chroot,scandir,chgrp,chown,shell_exec,proc_open,proc_get_status,ini_alter,ini_alter,ini_restore,dl,openlog,syslog,readlink,symlink,popepassthru,stream_socket_server,escapeshellcmd,dll,popen,disk_free_space,checkdnsrr,checkdnsrr,getservbyname,getservbyport,disk_total_space,posix_ctermid,posix_get_last_error,posix_getcwd, posix_getegid,posix_geteuid,posix_getgid, posix_getgrgid,posix_getgrnam,posix_getgroups,posix_getlogin,posix_getpgid,posix_getpgrp,posix_getpid, posix_getppid,posix_getpwnam,posix_getpwuid, posix_getrlimit, posix_getsid,posix_getuid,posix_isatty, posix_kill,posix_mkfifo,posix_setegid,posix_seteuid,posix_setgid, posix_setpgid,posix_setsid,posix_setuid,posix_strerror,posix_times,posix_ttyname,posix_uname</div><div class="line">#列出PHP可以禁用的函数，如果某些程序需要用到这个函数，可以删除，取消禁用。</div><div class="line">expose_php = Off #禁止显示php版本的信息</div><div class="line">short_open_tag = ON #支持php短标签</div><div class="line">open_basedir = .:/tmp/  #设置表示允许访问当前目录(即PHP脚本文件所在之目录)和/tmp/目录,可以防止php木马跨站,如果改了之后安装程序有问题(例如：织梦内容管理系统)，可以注销此行，或者直接写上程序的目录/data/www.osyunwei.com/:/tmp/</div><div class="line">:wq! #保存退出</div><div class="line">systemctl restart mariadb.service #重启MariaDB</div><div class="line">systemctl restart httpd.service #重启apache</div></pre></td></tr></table></figure></p>
+<p>3、phpmyadmin配置</p>
+<p>phpMyAdmin 的默认安装目录是 <code>/usr/share/phpMyAdmin</code>，同时会在 Apache 的配置文件目录中自动创建虚拟主机配置文件<code>/etc/httpd/conf.d/phpMyAdmin.conf</code>（区分大小写）。默认情况下，CentOS 7上的phpMyAdmin只允许从回环地址(127.0.0.1)访问。为了能远程连接，你需要改动它的配置。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">vi /etc/httpd/conf.d/phpMyAdmin.conf</div><div class="line">修改配置文件，如下：</div><div class="line"></div><div class="line">&lt;Directory /usr/share/phpMyAdmin/&gt;</div><div class="line">   AddDefaultCharset UTF-8</div><div class="line"></div><div class="line">   &lt;IfModule mod_authz_core.c&gt;</div><div class="line">     # Apache 2.4</div><div class="line">     &lt;RequireAny&gt;</div><div class="line">      # Require ip 127.0.0.1  #注释掉</div><div class="line">      # Require ip ::1   #注释掉</div><div class="line">      Require all granted   #新添加</div><div class="line">     &lt;/RequireAny&gt;</div><div class="line"> &lt;/IfModule&gt;</div><div class="line"> &lt;IfModule !mod_authz_core.c&gt;</div><div class="line">     # Apache 2.2</div><div class="line">     Order Deny,Allow</div><div class="line">     Deny from All</div><div class="line">     Allow from 127.0.0.1</div><div class="line">     Allow from ::1</div><div class="line">   &lt;/IfModule&gt;</div><div class="line">&lt;/Directory&gt;</div><div class="line"></div><div class="line">&lt;Directory /usr/share/phpMyAdmin/setup/&gt;</div><div class="line">   &lt;IfModule mod_authz_core.c&gt;</div><div class="line">     # Apache 2.4</div><div class="line">     &lt;RequireAny&gt;</div><div class="line">      #Require ip 127.0.0.1  #注释掉</div><div class="line">      #Require ip ::1   #注释掉</div><div class="line">      Require all granted   #新添加</div><div class="line">     &lt;/RequireAny&gt;</div><div class="line">   &lt;/IfModule&gt;</div><div class="line">   &lt;IfModule !mod_authz_core.c&gt;</div><div class="line">     # Apache 2.2</div><div class="line">     Order Deny,Allow</div><div class="line">     Deny from All</div><div class="line">     Allow from 127.0.0.1</div><div class="line">     Allow from ::1</div><div class="line">   &lt;/IfModule&gt;</div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p>然后重启Apache服务器<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">systemctl restart httpd</div></pre></td></tr></table></figure></p>
+<p>然后就可以通过浏览器访问<a href="http://服务器ip地址/phpmyadmin访问" target="_blank" rel="external">http://服务器ip地址/phpmyadmin访问</a><br>如下：<br><img src="https://ooo.0o0.ooo/2016/09/28/57ebc13712544.png" alt="M_4DTS8FB8)]KVVZ8$RQUTE.png"><br><strong>测试篇</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">cd /var/www/html</div><div class="line">vi index.php #输入下面内容</div><div class="line">&lt;?php</div><div class="line">phpinfo();</div><div class="line">?&gt;</div><div class="line">:wq! #保存退出</div><div class="line">注意：apache默认的程序目录是/var/www/html</div></pre></td></tr></table></figure></p>
+<p><code>权限设置：chown -R apache:apache  /var/www/html</code></p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>  总结下来，感觉服务器还是挺好玩的，虽然过程曲折，但是还是有收获的，还有一点点的成就感(hhh)。多实践，多动手。</p>
+<h3 id="学习传送门"><a href="#学习传送门" class="headerlink" title="学习传送门"></a>学习传送门</h3><p> <a href="https://my.oschina.net/sallency/blog/467647" target="_blank" rel="external">CentOS 7 安装配置LAMP服务器方法(Apache+PHP+MariaDB)</a><br> <a href="http://www.jianshu.com/p/bc14ff0ab1c7" target="_blank" rel="external">Centos7安装配置Apache+PHP+Mysql+phpmyadmin</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/" rel="next" title="Javascript面向对象编程（二）：构造函数的继承">
+                <i class="fa fa-chevron-left"></i> Javascript面向对象编程（二）：构造函数的继承
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/28/服务器初探/"
+     data-title="服务器初探"
+     data-content=""
+     data-url="http://yoursite.com/2016/09/28/服务器初探/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/28/服务器初探/"
+           data-title="服务器初探" data-url="http://yoursite.com/2016/09/28/服务器初探/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ooo.0o0.ooo/2016/09/09/57d2a667ce232.jpg"
+               alt="Sunshine" />
+          <p class="site-author-name" itemprop="name">Sunshine</p>
+          <p class="site-description motion-element" itemprop="description">A contented mind is a perpetual feast.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sunshinelzb" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.jaylin.me/" target="_blank">jaylin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/huyihao" target="_blank">胡少爷</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器初始配置"><span class="nav-number">2.</span> <span class="nav-text">服务器初始配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小白跳坑"><span class="nav-number">2.1.</span> <span class="nav-text">小白跳坑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#老老实实做人"><span class="nav-number">2.2.</span> <span class="nav-text">老老实实做人</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">3.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习传送门"><span class="nav-number">4.</span> <span class="nav-text">学习传送门</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunshine</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshinelzb"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lgVv0O1yBB0kitbB2GlE1YiR-gzGzoHsz", "3qdyA9s3YhaqfBWFu3g0O2Rm");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+</body>
+</html>
