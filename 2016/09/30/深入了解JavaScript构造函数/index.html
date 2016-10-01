@@ -1,0 +1,854 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript对象的创建方式在JavaScript中，创建对象的方式包括两种：对象字面量和使用new表达式。对象字面量是一种灵活方便的书写方式，例如：
+123456var o1 = &amp;#123;    p:”I’m in Object literal”,    alertP:function()&amp;#123;        alert(this.p);    &amp;#125;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入了解JavaScript构造函数">
+<meta property="og:url" content="http://yoursite.com/2016/09/30/深入了解JavaScript构造函数/index.html">
+<meta property="og:site_name" content="Sunshine'Note">
+<meta property="og:description" content="JavaScript对象的创建方式在JavaScript中，创建对象的方式包括两种：对象字面量和使用new表达式。对象字面量是一种灵活方便的书写方式，例如：
+123456var o1 = &amp;#123;    p:”I’m in Object literal”,    alertP:function()&amp;#123;        alert(this.p);    &amp;#125;&amp;#125;">
+<meta property="og:updated_time" content="2016-09-30T12:02:33.136Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入了解JavaScript构造函数">
+<meta name="twitter:description" content="JavaScript对象的创建方式在JavaScript中，创建对象的方式包括两种：对象字面量和使用new表达式。对象字面量是一种灵活方便的书写方式，例如：
+123456var o1 = &amp;#123;    p:”I’m in Object literal”,    alertP:function()&amp;#123;        alert(this.p);    &amp;#125;&amp;#125;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6271886744275125000,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 深入了解JavaScript构造函数 | Sunshine'Note </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?10f6405da871f8fdcb13498ebd95a561";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Sunshine'Note</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'zs-v-BNbd9DVJBbXKgmZ','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                深入了解JavaScript构造函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-30T20:00:56+08:00" content="2016-09-30">
+              2016-09-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/30/深入了解JavaScript构造函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/30/深入了解JavaScript构造函数/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+          
+             <span id="/2016/09/30/深入了解JavaScript构造函数/" class="leancloud_visitors" data-flag-title="深入了解JavaScript构造函数">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="JavaScript对象的创建方式"><a href="#JavaScript对象的创建方式" class="headerlink" title="JavaScript对象的创建方式"></a>JavaScript对象的创建方式</h3><p>在JavaScript中，创建对象的方式包括两种：<code>对象字面量</code>和使用<code>new表达式</code>。对象字面量是一种灵活方便的书写方式，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o1 = &#123;</div><div class="line">    p:”I’m <span class="keyword">in</span> <span class="built_in">Object</span> literal”,</div><div class="line">    alertP:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="keyword">this</span>.p);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>这样，就用对象字面量创建了一个<code>对象o1</code>，它具有一个<code>成员变量p</code>以及一个<code>成员方法alertP</code>。这种写法不需要定义构造函数，因此不在本文的讨论范围之内。这种写法的缺点是，每创建一个新的对象都需要写出完整的定义语句，不便于创建大量相同类型的对象，不利于使用继承等高级特性。</p>
+<p><code>new表达式</code>是配合构造函数使用的，例如<code>new String(“a string”)</code>，调用内置的String函数构造了一个字符串对象。下面我们用构造函数的方式来重新创建一个实现同样功能的对象，首先是定义构造函数，然后是调用<code>new表达式</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CO</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.p = “I’m <span class="keyword">in</span> constructed object”;</div><div class="line">    <span class="keyword">this</span>.alertP = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="keyword">this</span>.p);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o2 = newCO();</div></pre></td></tr></table></figure>
+<p>那么，在使用new操作符来调用一个构造函数的时候，发生了什么呢？其实很简单，就发生了四件事：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj  =&#123;&#125;;</div><div class="line">obj.__proto__ = CO.prototype;</div><div class="line">CO.call(obj);</div><div class="line"><span class="keyword">return</span> obj;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<li>第一行，创建一个空对象obj。</li><br><li>第二行，将这个空对象的<code>__proto__</code>成员指向了构造函数对象的<code>prototype成员对象</code>，这是最关键的一步，具体细节将在下文描述。</li><br><li>第三行，将<code>构造函数的作用域赋</code>给新对象，因此CA函数中的<code>this指向新对象obj</code>，然后再调用CO函数。于是我们就给obj对象赋值了一个成员变量p，这个成员变量的值是” I’min constructed object”。</li><br><li>第四行，<code>返回新对象obj</code>。当构造函数里包含返回语句时情况比较特殊，这种情况会在下文中说到。</li>
+
+
+</blockquote>
+<p>###正确定义JavaScript构造函数</p>
+<p>不同于其它的主流编程语言，JavaScript的构造函数并不是作为类的一个特定方法存在的；当任意一个普通函数用于创建一类对象时，它就被称作构造函数，或构造器。一个函数要作为一个真正意义上的构造函数，需要满足下列条件：</p>
+<blockquote>
+<p>1、 在函数内部对新对象（this）的属性进行设置，通常是添加属性和方法。</p>
+<p>2、 构造函数可以包含返回语句（不推荐），但返回值必须是this，或者其它非对象类型的值。</p>
+</blockquote>
+<p>上文定义的构造函数CO就是一个标准的、简单的构造函数。下面例子定义的函数C1返回了一个对象，我们可以使用new表达式来调用它，该表达式可以正确返回一个对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">C1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> o = &#123;</div><div class="line">        p:”I’m p <span class="keyword">in</span> C1”</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o1 = <span class="keyword">new</span> C1();</div><div class="line">alert(o1.p);<span class="comment">//I’m p in C1</span></div></pre></td></tr></table></figure></p>
+<p>但这种方式并不是值得推荐的方式，因为<code>对象o1的原型是函数C1内部定义的对象o的原型</code>，也就是<code>Object.prototype</code>。这种方式相当于执行了正常new表达式的前三步，而在第四步的时候返回了C1函数的返回值。该方式同样不便于创建大量相同类型的对象，不利于使用继承等高级特性，并且容易造成混乱，应该摒弃。</p>
+<p>一个构造函数在某些情况下完全可以作为普通的功能函数来使用，这是JavaScript灵活性的一个体现。下例定义的C2就是一个“多用途”函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">C2</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.p = a + b;</div><div class="line">    <span class="keyword">this</span>.alertP = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="keyword">this</span>.p);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.p;<span class="comment">//此返回语句在C2作为构造函数时没有意义</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> c2 = <span class="keyword">new</span> C2(<span class="number">2</span>,<span class="number">3</span>);</div><div class="line">c2.alertP();<span class="comment">//结果为5</span></div><div class="line">alert(C2(<span class="number">2</span>, <span class="number">3</span>)); <span class="comment">//结果为5</span></div></pre></td></tr></table></figure></p>
+<p>该函数既可以用作构造函数来构造一个对象，也可以作为普通的函数来使用。用作普通函数时，它接收两个参数，并返回两者的相加的结果。为了代码的可读性和可维护性，建议作为构造函数的函数不要掺杂除构造作用以外的代码；同样的，一般的功能函数也不要用作构造对象。</p>
+<h3 id="为什么要使用构造函数"><a href="#为什么要使用构造函数" class="headerlink" title="为什么要使用构造函数"></a>为什么要使用构造函数</h3><p>根据上文的定义，在表面上看来，构造函数似乎只是对一个新创建的对象进行初始化，增加一些成员变量和方法；然而构造函数的作用远不止这些。为了说明使用构造函数的意义，我们先来回顾一下前文提到的例子。执行<code>var o2 = new CO()</code>;创建对象的时候，发生了四件事情：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj  =&#123;&#125;;</div><div class="line">obj.__proto__ = CO.prototype;</div><div class="line">CO.call(obj);</div><div class="line"><span class="keyword">return</span> obj;</div></pre></td></tr></table></figure></p>
+<p>我们说最重要的是第二步，将新生成的对象的<code>__prop__</code>属性赋值为构造函数的<code>prototype</code>属性，使得通过构造函数创建的所有对象可以共享相同的原型。这意味着同一个构造函数创建的所有对象都继承自一个相同的对象，因此它们都是同一个类的对象</p>
+<p>在JavaScript标准中，并没有<code>__prop__</code>这个属性，不过它现在已经是一些主流的JavaScript执行环境默认的一个标准属性，用于指向构造函数的原型。<code>该属性是默认不可见的</code>，而且在各执行环境中实现的细节不尽相同，例如IE浏览器中不存在该属性。我们只要知道JavaScript对象内部存在指向构造函数原型的指针就可以了，这个指针是在调用new表达式的时候自动赋值的，并且我们不应该去修改它。</p>
+<p>在构造对象的四个步骤中，我们可以看到，除第二步以外，别的步骤我们无须借助new表达式去实现，因此new表达式不仅仅是对这四个步骤的简化，也是要实现继承的必经之路。</p>
+<h3 id="容易混淆的地方"><a href="#容易混淆的地方" class="headerlink" title="容易混淆的地方"></a>容易混淆的地方</h3><p>关于JavaScript的构造函数，有一个容易混淆的地方，那就是原型的<code>constructor属性</code>。在JavaScript中，每一个函数都有默认的原型对象属性prototype，该对象默认包含了两个成员属性：<code>constructor和__proto__</code>。关于原型的细节就不在本文赘述了，我们现在关心的是这个constructor属性。</p>
+<p>按照面向对象的习惯性思维，我们说构造函数相当于“类”的定义，从而可能会认为constructor属性就是该类实际意义上的构造函数，在new表达式创建一个对象的时候，会直接调用constructor来初始化对象，那就大错特错了。new表达式执行的实际过程已经在上文中介绍过了（四个步骤），其中用于初始化对象的是第三步，调用的初始化函数正是“类函数”本身，而不是constructor。如果没有考虑过这个问题，这一点可能不太好理解，那就让我们举个例子来说明一下吧：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">C3</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.p = a + b;</div><div class="line">    <span class="keyword">this</span>.alertP = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        alert(<span class="keyword">this</span>.p);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//我们定义一个函数来覆盖C3原型中的constructor，试图改变属性p的值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fake</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.p = <span class="number">100</span>;</div><div class="line">&#125;</div><div class="line">C3.prototype.constructor = fake; <span class="comment">//覆盖C3原型中的constructor</span></div><div class="line"><span class="keyword">var</span> c3 = <span class="keyword">new</span> C3(<span class="number">2</span>,<span class="number">3</span>);</div><div class="line">c3.alertP();<span class="comment">//结果仍然为5</span></div></pre></td></tr></table></figure>
+<p>上述代码手动改变了C3原型中的constructor函数，然而却没有对c3对象的创建产生实质的影响，<code>可见在new表达式中，起初始化对象作用的只能是构造函数本身。</code>那么constructor属性的作用是什么呢？一般来说，我们可以使用constructor属性来测试对象的类型：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">(myArray.constructor == <span class="built_in">Array</span>); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>这招对于简单的对象是管用的，涉及到继承或者跨窗口等复杂情况时，可能就没那么灵光了：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123; <span class="keyword">this</span>.foo = <span class="number">1</span>;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">s</span>(<span class="params"></span>) </span>&#123; <span class="keyword">this</span>.bar = <span class="number">2</span>; &#125;</div><div class="line">s.prototype = <span class="keyword">new</span> f(); <span class="comment">// s继承自f</span></div><div class="line">  </div><div class="line"><span class="keyword">var</span> son = <span class="keyword">new</span> s(); <span class="comment">// 用构造函数s创建一个子类对象</span></div><div class="line">(son.constructor == s); <span class="comment">// false</span></div><div class="line">(son.constructor == f); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>这样的结果可能跟你的预期不相一致，所以使用constructor属性的时候一定要小心，或者干脆不要用它。</p>
+<h3 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h3><p><a href="http://www.2cto.com/kf/201402/281841.html" target="_blank" rel="external">深入理解js构造函数</a></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/29/http-server局域网访问/" rel="next" title="http-server局域网访问">
+                <i class="fa fa-chevron-left"></i> http-server局域网访问
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/01/JavaScript思维导图/" rel="prev" title=" JavaScript思维导图">
+                 JavaScript思维导图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/09/30/深入了解JavaScript构造函数/"
+     data-title="深入了解JavaScript构造函数"
+     data-content=""
+     data-url="http://yoursite.com/2016/09/30/深入了解JavaScript构造函数/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/30/深入了解JavaScript构造函数/"
+           data-title="深入了解JavaScript构造函数" data-url="http://yoursite.com/2016/09/30/深入了解JavaScript构造函数/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://ooo.0o0.ooo/2016/09/09/57d2a667ce232.jpg"
+               alt="Sunshine" />
+          <p class="site-author-name" itemprop="name">Sunshine</p>
+          <p class="site-description motion-element" itemprop="description">A contented mind is a perpetual feast.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/sunshinelzb" target="_blank">
+                  
+                    <i class="fa fa-github"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title">友情链接</div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.jaylin.me/" target="_blank">jaylin</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/huyihao" target="_blank">胡少爷</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript对象的创建方式"><span class="nav-number">1.</span> <span class="nav-text">JavaScript对象的创建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要使用构造函数"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容易混淆的地方"><span class="nav-number">3.</span> <span class="nav-text">容易混淆的地方</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出处"><span class="nav-number">4.</span> <span class="nav-text">出处</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sunshine</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"sunshinelzb"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("lgVv0O1yBB0kitbB2GlE1YiR-gzGzoHsz", "3qdyA9s3YhaqfBWFu3g0O2Rm");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+</body>
+</html>
