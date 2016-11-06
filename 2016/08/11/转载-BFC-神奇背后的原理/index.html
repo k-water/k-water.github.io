@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>转载--BFC 神奇背后的原理 | Water的博客</title>
+  <title>转载--BFC 神奇背后的原理 | Water &#39;Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="BFC 已经是一个耳听熟闻的词语了，网上有许多关于 BFC 的文章，介绍了如何触发 BFC 以及 BFC 的一些用处（如清浮动，防止 margin 重叠等）。虽然我知道如何利用 BFC 解决这些问题，但当别人问我 BFC 是什么，我还是不能很有底气地解释清楚。于是这两天仔细阅读了CSS2.1 spec 和许多文章来全面地理解BFC。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="转载--BFC 神奇背后的原理">
 <meta property="og:url" content="http://Sunshinelzb.github.io/2016/08/11/转载-BFC-神奇背后的原理/index.html">
-<meta property="og:site_name" content="Water的博客">
+<meta property="og:site_name" content="Water 'Notes">
 <meta property="og:description" content="BFC 已经是一个耳听熟闻的词语了，网上有许多关于 BFC 的文章，介绍了如何触发 BFC 以及 BFC 的一些用处（如清浮动，防止 margin 重叠等）。虽然我知道如何利用 BFC 解决这些问题，但当别人问我 BFC 是什么，我还是不能很有底气地解释清楚。于是这两天仔细阅读了CSS2.1 spec 和许多文章来全面地理解BFC。">
 <meta property="og:image" content="http://7xsx7g.com2.z0.glb.clouddn.com/16-8-11/77572235.jpg">
 <meta property="og:image" content="http://7xsx7g.com2.z0.glb.clouddn.com/16-8-11/75976002.jpg">
@@ -24,7 +24,7 @@
 <meta name="twitter:description" content="BFC 已经是一个耳听熟闻的词语了，网上有许多关于 BFC 的文章，介绍了如何触发 BFC 以及 BFC 的一些用处（如清浮动，防止 margin 重叠等）。虽然我知道如何利用 BFC 解决这些问题，但当别人问我 BFC 是什么，我还是不能很有底气地解释清楚。于是这两天仔细阅读了CSS2.1 spec 和许多文章来全面地理解BFC。">
 <meta name="twitter:image" content="http://7xsx7g.com2.z0.glb.clouddn.com/16-8-11/77572235.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="Water的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Water &#39;Notes" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -87,6 +87,8 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/3292847310/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
 		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/codel" title="zhihu">zhihu</a>
+		        
 			</div>
 		</nav>
 	</header>		
@@ -125,6 +127,8 @@
 						<a class="github" target="_blank" href="https://github.com/sunshinelzb" title="github">github</a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/3292847310/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/codel" title="zhihu">zhihu</a>
 			        
 				</div>
 			</nav>
