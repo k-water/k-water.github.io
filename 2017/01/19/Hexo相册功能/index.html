@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Water" />
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo相册功能">
+<meta property="og:url" content="http://waterlin.cn/2017/01/19/Hexo相册功能/index.html">
+<meta property="og:site_name" content="Water 'Notes">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-19/70792679-file_1484812038938_36fd.jpg">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-19/80066474-file_1484810617394_36f1.png">
+<meta property="og:updated_time" content="2017-01-19T07:47:48.845Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo相册功能">
+<meta name="twitter:image" content="http://oc1gyfe6q.qnssl.com/17-1-19/70792679-file_1484812038938_36fd.jpg">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Hexo相册功能 | Water &#39;Notes</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Water</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">太阳当空照，花儿对我笑</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">归档</a></li>
+                        
+                            <li><a href="/photo/">相册</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/625592890@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="http://github.com/sunshinelzb" title="GitHub"></a>
+                            
+                                <a class="fa QQ" href="/625592890" title="QQ"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFC/">BFC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-struct/">Data struct</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJs/">NodeJs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Sass/">Sass</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/浏览器/">浏览器</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/liuweimingcprogram">AC_L</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Water</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Water</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">太阳当空照，花儿对我笑</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">归档</a></li>
+                
+                    <li><a href="/photo/">相册</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/625592890@qq.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="http://github.com/sunshinelzb" title="GitHub"></a>
+                            
+                                <a class="fa QQ" target="_blank" href="/625592890" title="QQ"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-Hexo相册功能" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/19/Hexo相册功能/" class="article-date">
+      <time datetime="2017-01-19T07:33:24.000Z" itemprop="datePublished">2017-01-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo相册功能
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/配置/">配置</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><img src="http://oc1gyfe6q.qnssl.com/17-1-19/70792679-file_1484812038938_36fd.jpg" alt=""><br><a id="more"></a></p>
+<h3 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h3><p>想起用<code>Hexo</code>搭博客也有一段时间了，但写的东西还是不多，主要还是自己懒吧~Orz<br>这两天突然想到自己blog上还有一个功能没实现，就是这篇文章的主题了，相册功能。<br>放假了，所以比较懒，看的番也多，看着看着就喜欢上了（次元迷），找了好多的番里面的壁纸，所以就想。嗯哼，要怎么保存呢，放在本机上？（开玩笑，程序猿一定要备份是吧）所以就想放在blog上，就开始了折腾之路。<br>╮(╯▽╰)╭，这次折腾了一天，总算是搞好了。Otz</p>
+<h3 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h3><h4 id="存储站点"><a href="#存储站点" class="headerlink" title="存储站点"></a>存储站点</h4><p>图片存储我采用七牛，不放在github上，这样访问速度快点，体验也好点。<br>至于七牛云嘛，我之前就有了，速度快，还有10G免费空间，我目前就把他当图床用了，之后再拓展吧，现在能力一般。（滑稽脸）</p>
+<blockquote>
+<p>PS：如果你没有，可以去注册一个，或者托管在github上也行</p>
+</blockquote>
+<p>上述工作搞定了之后呢，接着，在自己本地blog的根目录下新建一个文件夹<code>photos</code>，主要是用来放你想要上传的图片。</p>
+<h4 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h4><p>接着把图片上传到七牛上，也就是你相应的存储空间。</p>
+<p>在这之前，先安装七牛依赖，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install qiniu -S</div></pre></td></tr></table></figure>
+<p>下面需要一个脚本，把图片上传到七牛，主要是node<br>在根目录下新建一个<code>js文件</code>，例如我是新建了<code>photo.js</code>，然后把下面的内容复制进去：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</div><div class="line"><span class="comment">// 相册相对路径</span></div><div class="line"><span class="keyword">const</span> path = <span class="string">"./photos/"</span>;</div><div class="line"></div><div class="line"><span class="keyword">var</span> qiniu = <span class="built_in">require</span>(<span class="string">"qiniu"</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//需要填写你的 Access Key 和 Secret Key</span></div><div class="line">qiniu.conf.ACCESS_KEY = <span class="string">'***'</span>;</div><div class="line">qiniu.conf.SECRET_KEY = <span class="string">'***'</span>;</div><div class="line"></div><div class="line"><span class="comment">//要上传的空间 你自己的</span></div><div class="line">bucket = <span class="string">'***'</span>;</div><div class="line"></div><div class="line"><span class="comment">//构建上传策略函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">uptoken</span>(<span class="params">bucket, key</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> putPolicy = <span class="keyword">new</span> qiniu.rs.PutPolicy(bucket + <span class="string">":"</span> + key);</div><div class="line">  <span class="keyword">return</span> putPolicy.token();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//构造上传函数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">uploadFile</span>(<span class="params">uptoken, key, localFile</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> extra = <span class="keyword">new</span> qiniu.io.PutExtra();</div><div class="line">  qiniu.io.putFile(uptoken, key, localFile, extra, <span class="function"><span class="keyword">function</span> (<span class="params">err, ret</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (!err) &#123;</div><div class="line">      <span class="comment">// 上传成功， 处理返回值</span></div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'upload success : '</span>, ret.hash, ret.key);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="comment">// 上传失败， 处理返回代码</span></div><div class="line">      <span class="built_in">console</span>.log(err);</div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//读取文件后缀名称，并转化成小写</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFilenameSuffix</span>(<span class="params">file_name</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (file_name == <span class="string">'.DS_Store'</span>) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'.DS_Store'</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span> (file_name == <span class="literal">null</span> || file_name.length == <span class="number">0</span>)</div><div class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">  <span class="keyword">var</span> result = <span class="regexp">/\.[^\.]+/</span>.exec(file_name);</div><div class="line">  <span class="keyword">return</span> result == <span class="literal">null</span> ? <span class="literal">null</span> : (result + <span class="string">""</span>).toLowerCase();</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//获取文件名后缀名</span></div><div class="line"><span class="built_in">String</span>.prototype.extension = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> ext = <span class="literal">null</span>;</div><div class="line">  <span class="keyword">var</span> name = <span class="keyword">this</span>.toLowerCase();</div><div class="line">  <span class="keyword">var</span> i = name.lastIndexOf(<span class="string">"."</span>);</div><div class="line">  <span class="keyword">if</span> (i &gt; <span class="number">-1</span>) &#123;</div><div class="line">    <span class="keyword">var</span> ext = name.substring(i);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> ext;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//判断Array中是否包含某个值</span></div><div class="line"><span class="built_in">Array</span>.prototype.contain = <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>[i] === obj)</div><div class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 类型匹配</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">typeMatch</span>(<span class="params">type, filename</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> ext = filename.extension();</div><div class="line">  <span class="keyword">if</span> (type.contain(ext)) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">fs.readdir(path, <span class="function"><span class="keyword">function</span> (<span class="params">err, files</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">var</span> arr = [];</div><div class="line">  (<span class="function"><span class="keyword">function</span> <span class="title">iterator</span>(<span class="params">index</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (index == files.length) &#123;</div><div class="line">      fs.writeFile(<span class="string">"./source/photo/output.json"</span>, <span class="built_in">JSON</span>.stringify(arr, <span class="literal">null</span>, <span class="string">"\t"</span>));</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    fs.stat(path + files[index], <span class="function"><span class="keyword">function</span> (<span class="params">err, stats</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (err) &#123;</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">if</span> (stats.isFile()) &#123;</div><div class="line">        <span class="keyword">var</span> imgExt = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">".png"</span>, <span class="string">".jpg"</span>, <span class="string">".jpeg"</span>, <span class="string">".bmp"</span>, <span class="string">".gif"</span>); <span class="comment">//图片文件的后缀名</span></div><div class="line">        <span class="keyword">if</span> (typeMatch(imgExt, files[index])) &#123;</div><div class="line">          <span class="keyword">var</span> suffix = getFilenameSuffix(files[index]);</div><div class="line">          <span class="keyword">if</span> (!(suffix == <span class="string">'.js'</span> || suffix == <span class="string">'.DS_Store'</span>)) &#123;</div><div class="line">            <span class="comment">//要上传文件的本地路径</span></div><div class="line">            filePath = path + files[index];</div><div class="line">            <span class="built_in">console</span>.log(files[index]);</div><div class="line">            <span class="comment">//上传到七牛后保存的文件名</span></div><div class="line">            key = files[index];</div><div class="line">            <span class="comment">//生成上传 Token</span></div><div class="line">            token = uptoken(bucket, key);</div><div class="line"></div><div class="line">            uploadFile(token, key, filePath);</div><div class="line">            arr.push(files[index]);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      iterator(index + <span class="number">1</span>);</div><div class="line">    &#125;)</div><div class="line">  &#125;(<span class="number">0</span>));</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>接着运行这个文件</p>
+<blockquote>
+<p>node photo.js</p>
+</blockquote>
+<p>根据代码内容，会在你的blog目录下 <code>\blog\source\photo</code>生成一个json文件（<code>output.json</code>），代表的是你上传的图片的名字</p>
+<blockquote>
+<p>Tips: 如果你source没有photo文件夹，就新建一个，否则node运行会报错<br>每次上传一次图片就要运行一次，更新json文件的内容</p>
+</blockquote>
+<h4 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h4><p>图片上传成功后，通过脚本请求，把图片展示到对应的页面中。<br>相册页面通过get请求，生成这些图片的url，并添加到相册页面中，展示出来。<br>在<code>\blog\themes\yelee\source\js\</code>目录下新建一个<code>photos.js</code>文件<code>(在你对应的主题的资源目录下创建，例如我这里的主题是yelee)</code>，用来发送get请求，拼接成图片url的地址。<br>代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Created by water on 2017/1/19.</div><div class="line"> */</div><div class="line">define([], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    page: <span class="number">1</span>,</div><div class="line">    offset: <span class="number">20</span>,</div><div class="line">    init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">      $.getJSON(<span class="string">"/photo/output.json"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">        that.render(that.page, data);</div><div class="line"></div><div class="line">        that.scroll(data);</div><div class="line">      &#125;);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    render: <span class="function"><span class="keyword">function</span> (<span class="params">page, data</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> begin = (page - <span class="number">1</span>) * <span class="keyword">this</span>.offset;</div><div class="line">      <span class="keyword">var</span> end = page * <span class="keyword">this</span>.offset;</div><div class="line">      <span class="keyword">if</span> (begin &gt;= data.length) <span class="keyword">return</span>;</div><div class="line">      <span class="keyword">var</span> html, li = <span class="string">""</span>;</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = begin; i &lt; end &amp;&amp; i &lt; data.length; i++) &#123;</div><div class="line">        li += <span class="string">'&lt;li&gt;&lt;div class="img-box"&gt;'</span> +</div><div class="line">          <span class="string">'&lt;a class="img-bg" rel="example_group" href="https://oc1gyfe6q.qnssl.com/'</span> + data[i] + <span class="string">'?raw=true"&gt;&lt;/a&gt;'</span> +</div><div class="line">          <span class="string">'&lt;img lazy-src="https://oc1gyfe6q.qnssl.com/'</span> + data[i] + <span class="string">'?raw=true" /&gt;'</span> +</div><div class="line">          <span class="string">'&lt;/li&gt;'</span>;</div><div class="line">      &#125;</div><div class="line"></div><div class="line"></div><div class="line">      $(<span class="string">".img-box-ul"</span>).append(li);</div><div class="line">      $(<span class="string">".img-box-ul"</span>).lazyload();</div><div class="line">      $(<span class="string">"a[rel=example_group]"</span>).fancybox();</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    scroll: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">      $(<span class="built_in">window</span>).scroll(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> windowPageYOffset = <span class="built_in">window</span>.pageYOffset;</div><div class="line">        <span class="keyword">var</span> windowPageYOffsetAddHeight = windowPageYOffset + <span class="built_in">window</span>.innerHeight;</div><div class="line">        <span class="keyword">var</span> sensitivity = <span class="number">0</span>;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> offsetTop = $(<span class="string">".instagram"</span>).offset().top + $(<span class="string">".instagram"</span>).height();</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (offsetTop &gt;= windowPageYOffset &amp;&amp; offsetTop &lt; windowPageYOffsetAddHeight + sensitivity) &#123;</div><div class="line">          that.render(++that.page, data);</div><div class="line">        &#125;</div><div class="line">      &#125;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>https://oc1gyfe6q.qnssl.com/</code>这个是七牛存储的站点，如果你用github的话请相应更改</p>
+</blockquote>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>最简单的配置是直接修改主题的下面的<code>main.js</code>文件内容，我是这样做的，在此目录下<code>\blog\themes\yelee\source\js\main.js</code>的最后面添加</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> ($(<span class="string">".instagram"</span>).length) &#123;</div><div class="line">   <span class="built_in">require</span>([<span class="string">'/js/photos.js'</span>, <span class="string">'/js/jquery.fancybox.js'</span>, <span class="string">'/js/jquery.lazyload.js'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</div><div class="line">     obj.init();</div><div class="line">   &#125;);</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<h4 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h4><p>到这里就已经差不多了，接着在<code>\blog\source\photo</code>新建一个<code>index.md</code>文件，把图片展示在相册页面中，也就是应用起来。<br>在这里图片的样式用了主题里面默认的，你也可以相应自己更改。<br>内容如下：<br><figure class="highlight vbscript-html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="comment">&lt;!--</span></span></div><div class="line">--- Created by water</div><div class="line">--- 2017/01/19</div><div class="line">--&gt;</div><div class="line"><span class="comment">&lt;!--相册布局--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"instagram"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"archives album"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"img-box-ul"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>到这里基本完成了相册的部署，哎，真不容易。</p>
+<h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p>基本如下，看起来还是美滋滋的<br><img src="http://oc1gyfe6q.qnssl.com/17-1-19/80066474-file_1484810617394_36f1.png" alt=""></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这次用了一天时间搞这个，虽然中间遇到很多问题，但还是逐步尝试解决了，多动手就能多积累经验。<br>一开始我还只是一直看看看，没有动手，到后来慢慢的开始编写，修改，测试，成功。<br>还是很值得的，毕竟实现了我要的功能，也学到了一些东西。<br>还是要多磨练，我开始慢慢明白</p>
+<blockquote>
+<p>实践是检验真理的唯一标准</p>
+</blockquote>
+<p>这句话。<br>噗呲。好吧，希望自己能坚持下去。<br>学习嘛，跟着自己的心来。现在的我，只是懂一些表层的东西，接下来我想会慢慢接触原理类的东西。也只是这么说说辣（滑稽）<br>goodbye！</p>
+<p>###参考的文章<br><a href="https://yq.aliyun.com/articles/8607" target="_blank" rel="external">Hexo折腾记——基本配置篇</a><br><a href="https://fuboyou.github.io/2016/04/01/hexo%E7%9B%B8%E5%86%8C/" target="_blank" rel="external">hexo 相册的搭建</a><br><a href="http://luckykun.com/work/2016-05-20/hexo-advance.html" target="_blank" rel="external">hexo博客进阶－相册和独立域名</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/01/19/Hexo相册功能/">Hexo相册功能</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Water</a></p>
+        <p><span>Created:</span>2017-01-19, 15:33:24</p>
+        <p><span>Updated:</span>2017-01-19, 15:47:48</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/01/19/Hexo相册功能/" title="Hexo相册功能">http://waterlin.cn/2017/01/19/Hexo相册功能/</a>
+            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2017/01/19/Hexo相册功能/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/01/16/Intellij-Idea配置JavaWeb环境/">
+                    Intellij Idea配置JavaWeb环境
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#心血来潮"><span class="toc-number">1.</span> <span class="toc-text">心血来潮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主要工作"><span class="toc-number">2.</span> <span class="toc-text">主要工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#存储站点"><span class="toc-number">2.1.</span> <span class="toc-text">存储站点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上传"><span class="toc-number">2.2.</span> <span class="toc-text">上传</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#工作原理"><span class="toc-number">2.3.</span> <span class="toc-text">工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置"><span class="toc-number">2.4.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#展示"><span class="toc-number">2.5.</span> <span class="toc-text">展示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果展示"><span class="toc-number">2.6.</span> <span class="toc-text">效果展示</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Hexo相册功能　| Water 'Notes　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/19/Hexo相册功能/" data-title="Hexo相册功能" data-url="http://waterlin.cn/2017/01/19/Hexo相册功能/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"Sunshinelzb"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/01/16/Intellij-Idea配置JavaWeb环境/" title="Next: Intellij Idea配置JavaWeb环境">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/19/Hexo相册功能/">Hexo相册功能</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/16/Intellij-Idea配置JavaWeb环境/">Intellij Idea配置JavaWeb环境</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/10/NodeJs爬虫初试/">NodeJs爬虫初试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/07/offsetTop、clientTop、scrollTop、offsetTop/"> offsetTop-clientTop-scrollTop-offsetTop</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/06/理解CSS3-transform中的Matrix-矩阵/">理解CSS3 transform中的Matrix(矩阵)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/ES6学习笔记-二/">ES6学习笔记(二)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/13/ES6学习笔记-一/">ES6学习笔记(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/06/JavaScript-ES6-核心功能一览（ES6-亦作-ECMAScript-6-或-ES2015-）/"> JavaScript ES6 核心功能一览（ES6 亦作 ECMAScript 6 或 ES2015+）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/01/JavaScript思维导图/"> JavaScript思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/30/深入了解JavaScript构造函数/">深入了解JavaScript构造函数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/29/http-server局域网访问/">http-server局域网访问</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/28/服务器初探/">服务器初探</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/">Javascript面向对象编程（二）：构造函数的继承</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/Javascript-面向对象编程（一）：封装/">Javascript 面向对象编程（一）：封装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/18/jQuery解析JSON/">jQuery解析JSON</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/10/三列布局的实现/">三列布局的实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/09/当你输入一个网址，实际会发生什么/">当你输入一个网址，实际会发生什么?</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/01/容器垂直居中/">容器垂直居中</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/01/Sass入门二-变量/">Sass入门二--变量</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/30/Sass入门一-了解与安装/">Sass入门一--了解与安装</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/25/javascript秘密花园/">javascript秘密花园</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/13/JavaScript事件冒泡与事件捕获/">JavaScript事件冒泡与事件捕获</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/13/JS事件对象/"> JS事件对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/08/11/转载-BFC-神奇背后的原理/">转载--BFC 神奇背后的原理</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/24/并查集/">并查集</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/21/Rem—-适配Webapp/">Rem—_适配Webapp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/21/float浮动/">float浮动</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/16/HTML5大纲/">HTML5大纲</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/05/JQuery选择器/">jQuery选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/16/CSS选择器/">CSS选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/13/hexo-github搭建Blog/">hexo+github搭建Blog</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Water
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  vundefined">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
