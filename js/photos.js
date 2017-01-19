@@ -26,10 +26,6 @@ define([], function () {
           '</li>';
       }
 
-      //html = '<section class="archives album">' +
-      //    '<ul class="img-box-ul">' + li + '</ul>' +
-      //    '</section>';
-
 
       $(".img-box-ul").append(li);
       $(".img-box-ul").lazyload();
