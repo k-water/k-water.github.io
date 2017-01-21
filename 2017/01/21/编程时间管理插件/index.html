@@ -15,16 +15,20 @@
 
 
 
-<meta name="description" content="事件对象在触发DOM上的某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。">
 <meta property="og:type" content="article">
-<meta property="og:title" content=" JS事件对象">
-<meta property="og:url" content="http://waterlin.cn/2016/08/13/JS事件对象/index.html">
+<meta property="og:title" content="编程时间管理插件">
+<meta property="og:url" content="http://waterlin.cn/2017/01/21/编程时间管理插件/index.html">
 <meta property="og:site_name" content="备忘录">
-<meta property="og:description" content="事件对象在触发DOM上的某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。">
-<meta property="og:updated_time" content="2016-08-25T14:46:18.802Z">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-21/52651637-file_1485012296677_150cd.jpg">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-21/65594529-file_1485010872296_23c7.png">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-21/69544019-file_1485011175583_12078.png">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-21/52863448-file_1485011349294_daa3.png">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-21/79549488-file_1485011407108_1636c.png">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-1-21/11684858-file_1485011536142_17415.png">
+<meta property="og:updated_time" content="2017-01-21T15:25:36.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=" JS事件对象">
-<meta name="twitter:description" content="事件对象在触发DOM上的某个事件时，会产生一个事件对象event，这个对象中包含着所有与事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。">
+<meta name="twitter:title" content="编程时间管理插件">
+<meta name="twitter:image" content="http://oc1gyfe6q.qnssl.com/17-1-21/52651637-file_1485012296677_150cd.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title> JS事件对象 | 备忘录</title>
+<title>编程时间管理插件 | 备忘录</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -260,11 +264,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-JS事件对象" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-编程时间管理插件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/13/JS事件对象/" class="article-date">
-      <time datetime="2016-08-13T08:30:39.000Z" itemprop="datePublished">2016-08-13</time>
+      <a href="/2017/01/21/编程时间管理插件/" class="article-date">
+      <time datetime="2017-01-21T15:14:23.000Z" itemprop="datePublished">2017-01-21</time>
 </a>
 
 
@@ -279,7 +283,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-       JS事件对象
+      编程时间管理插件
     </h1>
   
 
@@ -288,13 +292,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/配置/">配置</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -304,142 +308,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>在触发<code>DOM</code>上的某个事件时，会产生一个事件对象<code>event</code>，这个对象中包含着所有与事件有关的信息。包括导致事件的元素、事件的类型以及其他与特定事件相关的信息。</p>
-<a id="more"></a>
-<h3 id="DOM中的事件对象"><a href="#DOM中的事件对象" class="headerlink" title="DOM中的事件对象"></a>DOM中的事件对象</h3><p>在JavaScript中，兼容DOM 的浏览器会将一个event 对象传入到事件处理程序中。无论指定事件处理程序时使用什么方法（DOM0 级或DOM2 级），都会传入<code>event</code> 对象。<br><i>例如下面的例子：</i><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	alert(event.type); <span class="comment">//"click"</span></div><div class="line">&#125;;</div><div class="line">btn.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	alert(event.type); <span class="comment">//"click"</span></div><div class="line">&#125;, <span class="literal">false</span>);</div></pre></td></tr></table></figure></p>
-<p>在事件处理程序中，浏览器都会传入一个<code>event</code>对象。上面的例子将会弹出一个警告框，显示由<code>event.type</code> 属性表示的事件类型。</p>
-<h3 id="event对象与方法"><a href="#event对象与方法" class="headerlink" title="event对象与方法"></a>event对象与方法</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">属性/方法</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">读/写</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">bubbles</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">只读</td>
-<td>表明事件是否冒泡</td>
-</tr>
-<tr>
-<td style="text-align:center">cancelable</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">只读</td>
-<td>表明是否可以取消事件的默认行为</td>
-</tr>
-<tr>
-<td style="text-align:center">currentTarget</td>
-<td style="text-align:center">Element</td>
-<td style="text-align:center">只读</td>
-<td>其事件处理程序当前正在处理事件的那个元素</td>
-</tr>
-<tr>
-<td style="text-align:center">defaultPrevented</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">只读</td>
-<td>为true 表示已经调用了preventDefault()</td>
-</tr>
-<tr>
-<td style="text-align:center">detail</td>
-<td style="text-align:center">Integer</td>
-<td style="text-align:center">只读</td>
-<td>与事件相关的细节信息</td>
-</tr>
-<tr>
-<td style="text-align:center">eventPhase</td>
-<td style="text-align:center">Integer</td>
-<td style="text-align:center">只读</td>
-<td>调用事件处理程序的阶段：1表示捕获阶段，2表示“处于目标”，3表示冒泡阶段</td>
-</tr>
-<tr>
-<td style="text-align:center">preventDefault()</td>
-<td style="text-align:center">Function</td>
-<td style="text-align:center">只读</td>
-<td>取消事件的默认行为。如果cancelable是true，则可以使用这个方法</td>
-</tr>
-<tr>
-<td style="text-align:center">stopImmediatePropagation()</td>
-<td style="text-align:center">Function</td>
-<td style="text-align:center">只读</td>
-<td>取消事件的进一步捕获或冒泡，同时阻止任何事件处理程序被调用（DOM3级事件中新增）</td>
-</tr>
-<tr>
-<td style="text-align:center">stopPropagation()</td>
-<td style="text-align:center">Function</td>
-<td style="text-align:center">只读</td>
-<td>取消事件的进一步捕获或冒泡。如果bubbles为true，则可以使用这个方法</td>
-</tr>
-<tr>
-<td style="text-align:center">trusted</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">只读</td>
-<td>为true表示事件是浏览器生成的。为false表示事件是由开发人员通过JavaScript 创建的（DOM3级事件中新增）</td>
-</tr>
-<tr>
-<td style="text-align:center">type</td>
-<td style="text-align:center">String</td>
-<td style="text-align:center">只读</td>
-<td>被触发的事件的类型</td>
-</tr>
-<tr>
-<td style="text-align:center">view</td>
-<td style="text-align:center">AbstractView</td>
-<td style="text-align:center">只读</td>
-<td>与事件关联的抽象视图。等同于发生事件的window对象</td>
-</tr>
-</tbody>
-</table>
-<h3 id="IE中的事件对象"><a href="#IE中的事件对象" class="headerlink" title="IE中的事件对象"></a>IE中的事件对象</h3><p>与访问DOM中的event 对象不同，要访问IE 中的<code>event</code> 对象有几种不同的方式，取决于指定事件处理程序的方法。在使用DOM0 级方法添加事件处理程序时，event 对象作为window 对象的一个属性存在。</p>
-<p><hr><br>在IE中，我们通过<code>window.event</code>取得event对象，并检测了被触发事件的类型，如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"myBtn"</span>);</div><div class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> event = <span class="built_in">window</span>.event;</div><div class="line">	alert(event.type); <span class="comment">//"click"</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>如果事件处理程序是使用<code>attachEvent()</code>添加的，那么就会有一个event 对象作为参数被传入事件处理程序函数中,如<code>function(event)</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">btn.attachEvent(<span class="string">"onclick"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</div><div class="line">	alert(event.type); <span class="comment">//"click"</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<h3 id="IE中event的属性和方法"><a href="#IE中event的属性和方法" class="headerlink" title="IE中event的属性和方法"></a>IE中event的属性和方法</h3><table>
-<thead>
-<tr>
-<th style="text-align:center">属性/方法</th>
-<th style="text-align:center">类型</th>
-<th style="text-align:center">读/写</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">cancaBubble</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">读/写</td>
-<td>默认值为false，但将其设置为true就可以取消事件冒泡（与DOM中的stopPropagation()方法的作用相同）</td>
-</tr>
-<tr>
-<td style="text-align:center">returnValue</td>
-<td style="text-align:center">Boolean</td>
-<td style="text-align:center">读/写</td>
-<td>默认值为true，但将其设置为false就可以取消事件的默认行为（与DOM中的preventDefault()方法的作用相同）</td>
-</tr>
-<tr>
-<td style="text-align:center">srcElement</td>
-<td style="text-align:center">Element</td>
-<td style="text-align:center">只读</td>
-<td>事件的目标（与DOM中的target属性相同）</td>
-</tr>
-<tr>
-<td style="text-align:center">type</td>
-<td style="text-align:center">String</td>
-<td style="text-align:center">只读</td>
-<td>被触发的事件的类型</td>
-</tr>
-</tbody>
-</table>
-<h3 id="跨浏览器的事件对象"><a href="#跨浏览器的事件对象" class="headerlink" title="跨浏览器的事件对象"></a>跨浏览器的事件对象</h3><p>虽然DOM 和IE 中的event 对象不同，但基于它们之间的相似性依旧可以拿出跨浏览器的方案来。IE 中event 对象的全部信息和方法DOM 对象中都有，只不过实现方式不一样。不过，这种对应关系让实现两种事件模型之间的映射非常容易。<br>我们将需要使用的方法封装起来，方便使用，代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line"></div><div class="line">  addHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (element.addEventListener) &#123;</div><div class="line">          element.addEventListener(type, handler, <span class="literal">false</span>);</div><div class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.attachEvent) &#123;</div><div class="line">          element.attachEvent(<span class="string">"on"</span> + type, handler);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">          element[<span class="string">"on"</span> + type] = handler;</div><div class="line">      &#125;</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">removeHandler: <span class="function"><span class="keyword">function</span>(<span class="params">element, type, handler</span>) </span>&#123;</div><div class="line">       <span class="keyword">if</span> (element.removeEventListener) &#123;</div><div class="line">           element.removeEventListener(type, handler, <span class="literal">false</span>);</div><div class="line">       &#125; <span class="keyword">else</span> <span class="keyword">if</span> (element.detachEvent) &#123;</div><div class="line">           element.detachEvent(<span class="string">"on"</span> + type, handler);</div><div class="line">       &#125; <span class="keyword">else</span> &#123;</div><div class="line">           element[<span class="string">"on"</span> + type] = <span class="literal">null</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;,</div><div class="line">   getEvent: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">       <span class="keyword">return</span> event ? event : <span class="built_in">window</span>.event;</div><div class="line">   &#125;,</div><div class="line"></div><div class="line">  getTarget: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> event.target || event.srcElement;</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">  preventDefault: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (event.preventDefault) &#123;</div><div class="line">          event.preventDefault();</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">          event.returnValue = <span class="literal">false</span>;</div><div class="line">      &#125;</div><div class="line">  &#125;,</div><div class="line">  </div><div class="line">stopPropagation: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">       <span class="keyword">if</span> (event.stopPropagation) &#123;</div><div class="line">           event.stopPropagation();</div><div class="line">       &#125; <span class="keyword">else</span> &#123;</div><div class="line">           event.cancelBubble = <span class="literal">true</span>;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>在兼容DOM 的浏览器中，event 变量只是简单地传入和返回。而在IE 中，event 参数是未定义的（undefined），因此就会返回window.event。</p>
-<blockquote>
-<p>第一个方法是addHandler()，即为事件监听程序<br>第二个方法是removeHandler()，即为移除事件处理程序</p>
-<p><em>这两个方法首先都会检测传入的元素中是否存在DOM2 级方法。如果存在DOM2级方法，则使用该方法：传入事件类型、事件处理程序函数和第三个参false（表示冒泡阶段）。如果存在的是IE 的方法，则采取第二种方案。</em></p>
-<p>第三个方法是getTarget()，它返回事件的目标。在这个方法内部，会检测event 对象的target属性，如果存在则返回该属性的值；否则，返回srcElement 属性的值。</p>
-<p>第四个方法是preventDefault()，用于取消事件的默认行为。在传入event 对象后，这个方法会检查是否存在preventDefault()方法，如果存在则调用该方法。如果preventDefault()方法不存在，则将returnValue 设置为false。</p>
-<p>第五个方法是stopPropagation()，其实现方式类似。首先尝试使用DOM 方法阻止事件流，否则就使用cancelBubble 属性。</p>
+        <p><img src="http://oc1gyfe6q.qnssl.com/17-1-21/52651637-file_1485012296677_150cd.jpg" alt=""><br><a id="more"></a></p>
+<h3 id="插件安利–wakatime"><a href="#插件安利–wakatime" class="headerlink" title="插件安利–wakatime"></a>插件安利–wakatime</h3><h4 id="什么是wakatime"><a href="#什么是wakatime" class="headerlink" title="什么是wakatime"></a>什么是wakatime</h4><blockquote>
+<p>Wakatime是一款编程时间管理的插件</p>
 </blockquote>
+<p>Wakatime是给程序员们解决编程时间追踪的一款工具。<br>由于我们在一个文本编辑器内工作，我们又何必要启动和停止计时器来记录编辑时间？<br>WakaTime采用了开源的文本编辑器插件，自动跟踪你花的编程时间，所以你永远不会再手动跟踪它！(<code>引用自Google</code>)</p>
+<h4 id="支持的开发环境"><a href="#支持的开发环境" class="headerlink" title="支持的开发环境"></a>支持的开发环境</h4><p><img src="http://oc1gyfe6q.qnssl.com/17-1-21/65594529-file_1485010872296_23c7.png" alt=""></p>
+<h4 id="配置方法-以vs-code为例"><a href="#配置方法-以vs-code为例" class="headerlink" title="配置方法(以vs code为例)"></a>配置方法(以vs code为例)</h4><p>首先在<a href="https://wakatime.com" target="_blank" rel="external">wakatime</a>官网上注册账号<br>获取需要的密钥</p>
+<blockquote>
+<p>next</p>
+</blockquote>
+<p>打开vscode，在插件应用商店搜索’wakatime’下载</p>
+<p><img src="http://oc1gyfe6q.qnssl.com/17-1-21/69544019-file_1485011175583_12078.png" alt=""></p>
+<p>下载完成后需要输入你的<code>Api-key</code>，这个在你的账户上有</p>
+<p><img src="http://oc1gyfe6q.qnssl.com/17-1-21/52863448-file_1485011349294_daa3.png" alt=""></p>
+<p>然后，重启，生效。<br>在vscode左下角有相应的提示，其他编辑器类似</p>
+<p><img src="http://oc1gyfe6q.qnssl.com/17-1-21/79549488-file_1485011407108_1636c.png" alt=""></p>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><a href="https://wakatime.com/dashboard" target="_blank" rel="external">https://wakatime.com/dashboard</a><br>查看自己的编程时间</p>
+<p><img src="http://oc1gyfe6q.qnssl.com/17-1-21/11684858-file_1485011536142_17415.png" alt=""></p>
+<p>有什么问题call me。</p>
 
       
     </div>
@@ -448,13 +335,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/08/13/JS事件对象/"> JS事件对象</a></p>
+        <p><span>Title:</span><a href="/2017/01/21/编程时间管理插件/">编程时间管理插件</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Water</a></p>
-        <p><span>Created:</span>2016-08-13, 16:30:39</p>
-        <p><span>Updated:</span>2016-08-25, 22:46:18</p>
+        <p><span>Created:</span>2017-01-21, 23:14:23</p>
+        <p><span>Updated:</span>2017-01-21, 23:25:36</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/08/13/JS事件对象/" title=" JS事件对象">http://waterlin.cn/2016/08/13/JS事件对象/</a>
-            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2016/08/13/JS事件对象/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/01/21/编程时间管理插件/" title="编程时间管理插件">http://waterlin.cn/2017/01/21/编程时间管理插件/</a>
+            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2017/01/21/编程时间管理插件/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -466,16 +353,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/08/13/JavaScript事件冒泡与事件捕获/">
-                    JavaScript事件冒泡与事件捕获
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/08/11/转载-BFC-神奇背后的原理/">
-                    转载--BFC 神奇背后的原理
+                <a href="/2017/01/19/Hexo相册功能/">
+                    Hexo相册功能
                 </a>
             </div>
         
@@ -487,7 +368,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#事件对象"><span class="toc-number">1.</span> <span class="toc-text">事件对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM中的事件对象"><span class="toc-number">2.</span> <span class="toc-text">DOM中的事件对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#event对象与方法"><span class="toc-number">3.</span> <span class="toc-text">event对象与方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IE中的事件对象"><span class="toc-number">4.</span> <span class="toc-text">IE中的事件对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IE中event的属性和方法"><span class="toc-number">5.</span> <span class="toc-text">IE中event的属性和方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨浏览器的事件对象"><span class="toc-number">6.</span> <span class="toc-text">跨浏览器的事件对象</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#插件安利–wakatime"><span class="toc-number">1.</span> <span class="toc-text">插件安利–wakatime</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是wakatime"><span class="toc-number">1.1.</span> <span class="toc-text">什么是wakatime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#支持的开发环境"><span class="toc-number">1.2.</span> <span class="toc-text">支持的开发环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置方法-以vs-code为例"><span class="toc-number">1.3.</span> <span class="toc-text">配置方法(以vs code为例)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果"><span class="toc-number">2.</span> <span class="toc-text">效果</span></a></li></ol>
         
     </div>
     <style>
@@ -523,7 +404,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":" JS事件对象　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"编程时间管理插件　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -539,7 +420,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/13/JS事件对象/" data-title=" JS事件对象" data-url="http://waterlin.cn/2016/08/13/JS事件对象/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/21/编程时间管理插件/" data-title="编程时间管理插件" data-url="http://waterlin.cn/2017/01/21/编程时间管理插件/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -562,15 +443,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/08/13/JavaScript事件冒泡与事件捕获/" title="Pre: JavaScript事件冒泡与事件捕获">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/11/转载-BFC-神奇背后的原理/" title="Next: 转载--BFC 神奇背后的原理">
+            <a href="/2017/01/19/Hexo相册功能/" title="Next: Hexo相册功能">
                 <i class="fa fa-angle-right"></i>
             </a>
         
