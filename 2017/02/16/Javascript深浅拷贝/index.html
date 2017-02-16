@@ -15,19 +15,16 @@
 
 
 
-<meta name="description" content="什么是SassSass（Syntactically Awesome StyleSheets）是样式表预编译器，是Haml（HTML Abstract Markup Language）的副功能，Haml是为了防止标签没有闭合而开发的一种语言，类似于ruby，python的简洁语法结构。Scss是CSS3的一个超集，采用CSS标准语法，使用大括号将样式的属性及属性值括起来。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sass入门一--了解与安装">
-<meta property="og:url" content="http://waterlin.cn/2016/08/30/Sass入门一-了解与安装/index.html">
+<meta property="og:title" content="Javascript深浅拷贝">
+<meta property="og:url" content="http://waterlin.cn/2017/02/16/Javascript深浅拷贝/index.html">
 <meta property="og:site_name" content="备忘录">
-<meta property="og:description" content="什么是SassSass（Syntactically Awesome StyleSheets）是样式表预编译器，是Haml（HTML Abstract Markup Language）的副功能，Haml是为了防止标签没有闭合而开发的一种语言，类似于ruby，python的简洁语法结构。Scss是CSS3的一个超集，采用CSS标准语法，使用大括号将样式的属性及属性值括起来。">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f78q33vxzoj20aw08gmyf.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/c444dccejw1f78q784966j20d203a0tc.jpg">
-<meta property="og:updated_time" content="2016-09-01T03:10:09.590Z">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-16/33899578-file_1487251068135_15b43.jpg">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-16/74937959-file_1487249798762_168d5.png">
+<meta property="og:updated_time" content="2017-02-16T13:18:36.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sass入门一--了解与安装">
-<meta name="twitter:description" content="什么是SassSass（Syntactically Awesome StyleSheets）是样式表预编译器，是Haml（HTML Abstract Markup Language）的副功能，Haml是为了防止标签没有闭合而开发的一种语言，类似于ruby，python的简洁语法结构。Scss是CSS3的一个超集，采用CSS标准语法，使用大括号将样式的属性及属性值括起来。">
-<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/c444dccejw1f78q33vxzoj20aw08gmyf.jpg">
+<meta name="twitter:title" content="Javascript深浅拷贝">
+<meta name="twitter:image" content="http://oc1gyfe6q.qnssl.com/17-2-16/33899578-file_1487251068135_15b43.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Sass入门一--了解与安装 | 备忘录</title>
+<title>Javascript深浅拷贝 | 备忘录</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -268,11 +265,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-Sass入门一-了解与安装" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Javascript深浅拷贝" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/30/Sass入门一-了解与安装/" class="article-date">
-      <time datetime="2016-08-30T14:12:08.000Z" itemprop="datePublished">2016-08-30</time>
+      <a href="/2017/02/16/Javascript深浅拷贝/" class="article-date">
+      <time datetime="2017-02-16T13:07:56.000Z" itemprop="datePublished">2017-02-16</time>
 </a>
 
 
@@ -287,7 +284,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Sass入门一--了解与安装
+      Javascript深浅拷贝
     </h1>
   
 
@@ -296,13 +293,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Sass/">Sass</a>
+    <a class="article-category-link" href="/categories/知识点/">知识点</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载/">转载</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -312,9 +309,26 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="什么是Sass"><a href="#什么是Sass" class="headerlink" title="什么是Sass"></a>什么是Sass</h3><p>Sass（Syntactically Awesome StyleSheets）是样式表预编译器，是Haml（HTML Abstract Markup Language）的副功能，Haml是为了防止标签没有闭合而开发的一种语言，类似于<code>ruby</code>，<code>python</code>的简洁语法结构。<br>Scss是CSS3的一个<code>超集</code>，采用CSS标准语法，使用大括号将样式的属性及属性值括起来。<br><a id="more"></a></p>
-<h3 id="Sass安装-基于Windows"><a href="#Sass安装-基于Windows" class="headerlink" title="Sass安装(基于Windows)"></a>Sass安装(基于Windows)</h3><p>首先到<code>Ruby</code><a href="http://rubyinstaller.org/" target="_blank" rel="external">官网</a>上下载ruby的安装程序。<br>双击ruby的安装程序，到下面的界面时全部勾选，然后点击install按钮直至安装完成。<br>Ruby 安装文件下载好后，可以按应用软件安装步骤进行安装 Ruby。在安装过程中选择第二个选项（不选中，就会出现编译时找不到Ruby环境的情况），如下图所示：<br><img src="http://ww3.sinaimg.cn/large/c444dccejw1f78q33vxzoj20aw08gmyf.jpg" alt=""><br>安装完成后，打开cmd命令控制台，输入<code>gem install sass</code>,安装完成后，输入<code>sass -v</code>查看sass版本信息，若出现如下信息，则安装成功，可以开心的玩耍了。<br><img src="https://ws1.sinaimg.cn/large/c444dccejw1f78q784966j20d203a0tc.jpg" alt=""></p>
-<h3 id="使用Sass监听"><a href="#使用Sass监听" class="headerlink" title="使用Sass监听"></a>使用Sass监听</h3><p>Scss监视.scss文件<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//监视整个文件夹</span></div><div class="line">$ scss --watch scss_path:css_path</div><div class="line"></div><div class="line">//监视单个文件</div><div class="line">$ scss --watch scss_path/style.scss:css_path/style.css</div></pre></td></tr></table></figure></p>
+        <p><img src="http://oc1gyfe6q.qnssl.com/17-2-16/33899578-file_1487251068135_15b43.jpg" alt=""><br><a id="more"></a></p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>Javascript有五种<b>基本数据类型</b>（也就是简单数据类型），它们分别是：Undefined，Null，Boolean，Number和String。还含有一种复杂数据类型，就是<b>对象</b></p>
+<p>注意Undefined和Null的区别，Undefined类型只有一个值，就是undefined，Null类型也只有一个值，也就是null<br>Undefined其实就是已声明未赋值的变量输出的结果<br>null其实就是一个不存在的对象的结果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c;</div><div class="line"><span class="built_in">console</span>.log(c)<span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.getElementById(<span class="string">'wsscat'</span>))<span class="comment">//没有id为wsscat的节点,输出null</span></div></pre></td></tr></table></figure></p>
+<p>简单的数据类型和复杂的数据类型有以下重要的区别</p>
+<h3 id="对于简单数据类型"><a href="#对于简单数据类型" class="headerlink" title="对于简单数据类型"></a>对于简单数据类型</h3><p>它们值在占据了内存中固定大小的空间，并被保存在栈内存中。当一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本，还有就是不能给基本数据类型的值添加属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> b = a;</div><div class="line">a.attr = <span class="string">'wsscat'</span>;</div><div class="line"><span class="built_in">console</span>.log(a.attr)<span class="comment">//undefined</span></div></pre></td></tr></table></figure></p>
+<p>上面代码中a就是简单数据类型<code>（Number）</code>，b就是a的副本，它们两者都占有不同位置但相等的内存空间</p>
+<h3 id="对于复杂的数据类型"><a href="#对于复杂的数据类型" class="headerlink" title="对于复杂的数据类型"></a>对于复杂的数据类型</h3><p>复杂的数据类型即<code>引用类型</code>，它的值是<code>对象</code>，保存在堆内存中，包含引用类型值的变量实际上包含的并不是对象本身，而是一个指向该对象的<code>指针</code>。从一个变量向另一个变量复制引用类型的值，复制的其实是指针，因此两个变量最终都<code>指向同一个对象</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    name:<span class="string">'wsscat'</span>,</div><div class="line">    age:<span class="number">0</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj2 = obj;</div><div class="line">  obj2[<span class="string">'c'</span>] = <span class="number">5</span>;</div><div class="line">  <span class="built_in">console</span>.log(obj);<span class="comment">//Object &#123;name: "wsscat", age: 0, c: 5&#125;</span></div><div class="line">  <span class="built_in">console</span>.log(obj2);<span class="comment">////Object &#123;name: "wsscat", age: 0, c: 5&#125;</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://oc1gyfe6q.qnssl.com/17-2-16/74937959-file_1487249798762_168d5.png" alt=""></p>
+<p>我们可以看到obj赋值给obj2后，当我们更改其中一个对象的属性值，两个对象都发生了改变，究其原因局势因为obj和obj2这两个变量都指向同一个指针，赋值只是复制了指针，所以当我们改变其中一个的值就会影响另外一个变量的值</p>
+<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>其实这段代码就是浅拷贝，有时候我们只是想备份数组，但是只是简单让它赋给一个变量，改变其中一个，另外一个就紧跟着改变，但很多时候这不是我们想要的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    name:<span class="string">'wsscat'</span>,</div><div class="line">    age:<span class="number">0</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj2 = obj;</div><div class="line">  obj2[<span class="string">'c'</span>] = <span class="number">5</span>;</div><div class="line">  <span class="built_in">console</span>.log(obj);<span class="comment">//Object &#123;name: "wsscat", age: 0, c: 5&#125;</span></div><div class="line">  <span class="built_in">console</span>.log(obj2);<span class="comment">////Object &#123;name: "wsscat", age: 0, c: 5&#125;</span></div></pre></td></tr></table></figure></p>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>对于数组我们可以使用<code>slice()</code>和<code>concat()</code>方法来解决上面的问题</p>
+<h5 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'wsscat'</span>, <span class="string">'autumns'</span>, <span class="string">'winds'</span>];</div><div class="line"><span class="keyword">var</span> arrCopy = arr.slice(<span class="number">0</span>);</div><div class="line">arrCopy[<span class="number">0</span>] = <span class="string">'tacssw'</span></div><div class="line"><span class="built_in">console</span>.log(arr)<span class="comment">//['wsscat', 'autumns', 'winds']</span></div><div class="line"><span class="built_in">console</span>.log(arrCopy)<span class="comment">//['tacssw', 'autumns', 'winds']</span></div></pre></td></tr></table></figure>
+<h5 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="string">'wsscat'</span>, <span class="string">'autumns'</span>, <span class="string">'winds'</span>];</div><div class="line"><span class="keyword">var</span> arrCopy = arr.concat();</div><div class="line">arrCopy[<span class="number">0</span>] = <span class="string">'tacssw'</span></div><div class="line"><span class="built_in">console</span>.log(arr)<span class="comment">//['wsscat', 'autumns', 'winds']</span></div><div class="line"><span class="built_in">console</span>.log(arrCopy)<span class="comment">//['tacssw', 'autumns', 'winds']</span></div></pre></td></tr></table></figure>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>对象我们可以定义一个新的对象并<code>遍历</code>新的属性上去实现深拷贝<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    name:<span class="string">'wsscat'</span>,</div><div class="line">    age:<span class="number">0</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj2 = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">obj2.name = obj.name;</div><div class="line">obj2.age = obj.age</div><div class="line"></div><div class="line">obj.name = <span class="string">'autumns'</span>;</div><div class="line"><span class="built_in">console</span>.log(obj);<span class="comment">//Object &#123;name: "autumns", age: 0&#125;</span></div><div class="line"><span class="built_in">console</span>.log(obj2);<span class="comment">//Object &#123;name: "wsscat", age: 0&#125;</span></div></pre></td></tr></table></figure></p>
+<p>当然我们可以封装好一个方法来处理对象的深拷贝，代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    name: <span class="string">'wsscat'</span>,</div><div class="line">    age: <span class="number">0</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> deepCopy = <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> result = &#123;&#125;;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> source) &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> source[key] === <span class="string">'object'</span>) &#123;</div><div class="line">	        <span class="comment">// 递归</span></div><div class="line">            result[key] = deepCopy(source[key])</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            result[key] = source[key]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj3 = deepCopy(obj)</div><div class="line">obj.name = <span class="string">'autumns'</span>;</div><div class="line"><span class="built_in">console</span>.log(obj);<span class="comment">//Object &#123;name: "autumns", age: 0&#125;</span></div><div class="line"><span class="built_in">console</span>.log(obj3);<span class="comment">//Object &#123;name: "wsscat", age: 0&#125;</span></div></pre></td></tr></table></figure></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>出处：<a href="https://github.com/Wscats/Good-text-Share/issues/57" target="_blank" rel="external">https://github.com/Wscats/Good-text-Share/issues/57</a></p>
+<blockquote>
+<p>对于深拷贝，个人还有另外一种写法，大同小异，包括数组，更完善一点</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">p, c</span>) </span>&#123;</div><div class="line"> c = c || &#123;&#125;; <span class="comment">//拷贝的结果</span></div><div class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> attr <span class="keyword">in</span> p) &#123;</div><div class="line">    <span class="comment">// 属性attr是否为p对象的自有属性</span></div><div class="line">    <span class="keyword">if</span> (p.hasOwnProperty(attr)) &#123;</div><div class="line">      <span class="comment">// 属性i是否为复杂类型</span></div><div class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> p[attr] === <span class="string">'object'</span>) &#123;</div><div class="line">        <span class="comment">// 如果p[attr]是数组，则创建一个新数组</span></div><div class="line">        <span class="comment">// 如果p[attr]是普通对象，则创建一个新对象</span></div><div class="line">        c[attr] = <span class="built_in">Array</span>.isArray(p[attr]) ? [] : &#123;&#125;;</div><div class="line">        <span class="comment">// 递归拷贝复杂类型的属性</span></div><div class="line">        <span class="keyword">this</span>.deepCopy(p[attr], c[attr]);</div><div class="line">      &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// 属性是基础类型时，直接拷贝</span></div><div class="line">        c[attr] = p[attr];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> c;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -323,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/08/30/Sass入门一-了解与安装/">Sass入门一--了解与安装</a></p>
+        <p><span>Title:</span><a href="/2017/02/16/Javascript深浅拷贝/">Javascript深浅拷贝</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Water</a></p>
-        <p><span>Created:</span>2016-08-30, 22:12:08</p>
-        <p><span>Updated:</span>2016-09-01, 11:10:09</p>
+        <p><span>Created:</span>2017-02-16, 21:07:56</p>
+        <p><span>Updated:</span>2017-02-16, 21:18:36</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/08/30/Sass入门一-了解与安装/" title="Sass入门一--了解与安装">http://waterlin.cn/2016/08/30/Sass入门一-了解与安装/</a>
-            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2016/08/30/Sass入门一-了解与安装/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/02/16/Javascript深浅拷贝/" title="Javascript深浅拷贝">http://waterlin.cn/2017/02/16/Javascript深浅拷贝/</a>
+            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2017/02/16/Javascript深浅拷贝/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -341,16 +355,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/09/01/Sass入门二-变量/">
-                    Sass入门二--变量
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/08/25/javascript秘密花园/">
-                    javascript秘密花园
+                <a href="/2017/02/15/百度前端学院2017热身任务/">
+                    百度前端学院2017热身任务
                 </a>
             </div>
         
@@ -362,7 +370,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是Sass"><span class="toc-number">1.</span> <span class="toc-text">什么是Sass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sass安装-基于Windows"><span class="toc-number">2.</span> <span class="toc-text">Sass安装(基于Windows)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Sass监听"><span class="toc-number">3.</span> <span class="toc-text">使用Sass监听</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对于简单数据类型"><span class="toc-number">2.</span> <span class="toc-text">对于简单数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对于复杂的数据类型"><span class="toc-number">3.</span> <span class="toc-text">对于复杂的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浅拷贝"><span class="toc-number">4.</span> <span class="toc-text">浅拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深拷贝"><span class="toc-number">5.</span> <span class="toc-text">深拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组"><span class="toc-number">5.1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#slice"><span class="toc-number">5.1.1.</span> <span class="toc-text">slice</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#concat"><span class="toc-number">5.1.2.</span> <span class="toc-text">concat</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象"><span class="toc-number">5.2.</span> <span class="toc-text">对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最后"><span class="toc-number">6.</span> <span class="toc-text">最后</span></a></li></ol>
         
     </div>
     <style>
@@ -398,7 +406,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Sass入门一--了解与安装　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Javascript深浅拷贝　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -414,7 +422,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/08/30/Sass入门一-了解与安装/" data-title="Sass入门一--了解与安装" data-url="http://waterlin.cn/2016/08/30/Sass入门一-了解与安装/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/16/Javascript深浅拷贝/" data-title="Javascript深浅拷贝" data-url="http://waterlin.cn/2017/02/16/Javascript深浅拷贝/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -437,15 +445,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/09/01/Sass入门二-变量/" title="Pre: Sass入门二--变量">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/08/25/javascript秘密花园/" title="Next: javascript秘密花园">
+            <a href="/2017/02/15/百度前端学院2017热身任务/" title="Next: 百度前端学院2017热身任务">
                 <i class="fa fa-angle-right"></i>
             </a>
         
