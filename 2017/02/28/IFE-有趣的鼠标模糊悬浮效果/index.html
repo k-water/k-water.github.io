@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="构造函数模式为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript 面向对象编程（一）：封装">
-<meta property="og:url" content="http://waterlin.cn/2016/09/22/Javascript-面向对象编程（一）：封装/index.html">
+<meta property="og:title" content="IFE-有趣的鼠标模糊悬浮效果">
+<meta property="og:url" content="http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/index.html">
 <meta property="og:site_name" content="备忘录">
-<meta property="og:description" content="构造函数模式为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。">
-<meta property="og:updated_time" content="2016-09-22T09:22:57.899Z">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/70946917-file_1488249112656_3c66.gif">
+<meta property="og:updated_time" content="2017-02-28T03:06:57.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript 面向对象编程（一）：封装">
-<meta name="twitter:description" content="构造函数模式为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。所谓”构造函数”，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。">
+<meta name="twitter:title" content="IFE-有趣的鼠标模糊悬浮效果">
+<meta name="twitter:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Javascript 面向对象编程（一）：封装 | 备忘录</title>
+<title>IFE-有趣的鼠标模糊悬浮效果 | 备忘录</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -265,11 +265,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-Javascript-面向对象编程（一）：封装" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-IFE-有趣的鼠标模糊悬浮效果" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/22/Javascript-面向对象编程（一）：封装/" class="article-date">
-      <time datetime="2016-09-22T09:00:04.000Z" itemprop="datePublished">2016-09-22</time>
+      <a href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" class="article-date">
+      <time datetime="2017-02-28T03:03:37.000Z" itemprop="datePublished">2017-02-28</time>
 </a>
 
 
@@ -284,7 +284,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Javascript 面向对象编程（一）：封装
+      IFE-有趣的鼠标模糊悬浮效果
     </h1>
   
 
@@ -293,13 +293,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/动画/">动画</a><a class="article-category-link" href="/categories/动画/IFE2017/">IFE2017</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -309,22 +309,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><p>为了解决从原型对象生成实例的问题，Javascript提供了一个构造函数（Constructor）模式。<br>所谓”构造函数”，其实就是一个普通函数，但是内部使用了<code>this</code>变量。对构造函数使用<code>new</code>运算符，就能生成实例，并且this变量会绑定在实例对象上。<br><a id="more"></a><br>比如，猫的原型对象现在可以这样写，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　<span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.name=name;</div><div class="line">　　　　<span class="keyword">this</span>.color=color;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
-<p>生成对象实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line"><span class="keyword">var</span> cat2 = <span class="keyword">new</span> Cat(<span class="string">"二毛"</span>,<span class="string">"黑色"</span>);</div><div class="line">alert(cat1.name); <span class="comment">// 大毛</span></div><div class="line">alert(cat1.color); <span class="comment">// 黄色</span></div></pre></td></tr></table></figure></p>
-<p>这时<code>cat1</code>和<code>cat2</code>会自动含有一个<code>constructor</code>属性，指向它们的构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(cat1 <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></div><div class="line">alert(cat2 <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<p>Javascript还提供了一个<code>instanceof</code>运算符，验证原型对象与实例对象之间的关系。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alert(cat1 <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></div><div class="line">alert(cat2 <span class="keyword">instanceof</span> Cat); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<h3 id="构造函数模式的问题"><a href="#构造函数模式的问题" class="headerlink" title="构造函数模式的问题"></a>构造函数模式的问题</h3><p>构造函数方法很好用，但是存在一个<code>浪费内存</code>的问题。<br>请看，我们现在为Cat对象添加一个不变的属性<code>type（种类）</code>，再添加一个方法<code>eat（吃）</code>。那么，原型对象Cat就变成了下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">　<span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.name = name;</div><div class="line">　　　　<span class="keyword">this</span>.color = color;</div><div class="line">　　　　<span class="keyword">this</span>.type = <span class="string">"猫科动物"</span>;</div><div class="line">　　　　<span class="keyword">this</span>.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">"吃老鼠"</span>);&#125;;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
-<p>生成实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line"><span class="keyword">var</span> cat2 = <span class="keyword">new</span> Cat (<span class="string">"二毛"</span>,<span class="string">"黑色"</span>);</div><div class="line">alert(cat1.type); <span class="comment">// 猫科动物</span></div><div class="line">cat1.eat(); <span class="comment">// 吃老鼠</span></div></pre></td></tr></table></figure></p>
-<p>表面上好像没什么问题，但是实际上这样做，有一个很大的弊端。那就是对于每一个实例对象，<code>type</code>属性和<code>eat()</code>方法都是一模一样的内容，每一次生成一个实例，都必须为<code>重复的内容</code>，多占用一些内存。这样既不环保，也缺乏效率。</p>
-<p>能不能让<code>type</code>属性和<code>eat()</code>方法在内存中只生成一次，然后所有实例都指向那个内存地址呢？回答是可以的。</p>
-<h3 id="Prototype模式"><a href="#Prototype模式" class="headerlink" title="Prototype模式"></a>Prototype模式</h3><p>Javascript规定，每一个构造函数都有一个<code>prototype</code>属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承。</p>
-<p>这意味着，我们可以把那些不变的属性和方法，直接定义在<code>prototype</code>对象上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.name = name;</div><div class="line">　　　　<span class="keyword">this</span>.color = color;</div><div class="line">&#125;</div><div class="line">Cat.prototype.type = <span class="string">"猫科动物"</span>;</div><div class="line">Cat.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">"吃老鼠"</span>)&#125;;</div></pre></td></tr></table></figure></p>
-<p>生成实例<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line">　　<span class="keyword">var</span> cat2 = <span class="keyword">new</span> Cat(<span class="string">"二毛"</span>,<span class="string">"黑色"</span>);</div><div class="line">　　alert(cat1.type); <span class="comment">// 猫科动物</span></div><div class="line">　　cat1.eat(); <span class="comment">// 吃老鼠</span></div></pre></td></tr></table></figure></p>
-<p>这时所有实例的<code>type</code>属性和<code>eat()</code>方法，其实都是同一个内存地址，指向<code>prototyp</code>e对象，因此就提高了运行效率。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　alert(cat1.eat == cat2.eat); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<h3 id="Prototype模式的验证方法"><a href="#Prototype模式的验证方法" class="headerlink" title="Prototype模式的验证方法"></a>Prototype模式的验证方法</h3><p>为了配合<code>prototype</code>属性，Javascript定义了一些辅助方法，帮助我们使用它。</p>
-<h4 id="isPrototypeOf-NaN"><a href="#isPrototypeOf-NaN" class="headerlink" title="isPrototypeOf()"></a>isPrototypeOf()</h4><p>这个方法用来判断，某个<code>proptotype</code>对象和某个实例之间的关系。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　alert(Cat.prototype.isPrototypeOf(cat1)); <span class="comment">//true</span></div><div class="line">　alert(Cat.prototype.isPrototypeOf(cat2)); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<h4 id="hasOwnProperty-NaN"><a href="#hasOwnProperty-NaN" class="headerlink" title="hasOwnProperty()"></a>hasOwnProperty()</h4><p>每个实例对象都有一个<code>hasOwnProperty()</code>方法，用来判断某一个属性到底是本地属性，还是继承自<code>prototype</code>对象的属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　　alert(cat1.hasOwnProperty(<span class="string">"name"</span>)); <span class="comment">// true</span></div><div class="line">　　alert(cat1.hasOwnProperty(<span class="string">"type"</span>)); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
-<h3 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h3><p>参考自阮一峰老师<a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_encapsulation.html" target="_blank" rel="external">blog</a></p>
+        <p><img src="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg" alt=""><br><a id="more"></a></p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>这是IFE2017的任务，也是我选择的第一个任务，练练手。<br>主要实现的是CSS3动画的编写，伪元素的使用，背景图片模糊以及文字流光效果，知识点大概就是这三个。</p>
+<p>先看一下实现的效果：<br><img src="http://oc1gyfe6q.qnssl.com/17-2-28/70946917-file_1488249112656_3c66.gif" alt=""></p>
+<h3 id="边框从两边散开"><a href="#边框从两边散开" class="headerlink" title="边框从两边散开"></a>边框从两边散开</h3><p>这个主要是使用了伪元素<code>::before</code>，<code>::after</code>来实现，在父容器上加上伪元素，里面填写的CSS分别的上下，左右的边框，并定位到相应的位置。<br>在这里父容器使用相对定位，伪元素使用绝对定位，先做好位置。</p>
+<p>那么怎么实现边框从两边散开？<br>在<code>hover</code>的时候，分别吧对应的<code>left</code> 和<code>top</code>值变为0，之前设置了相对父容器的50%。</p>
+<p>说了这么多，看代码吧</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid ghostwhite;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">3px</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">  <span class="attribute">transition</span>: all .<span class="number">8s</span>;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid ghostwhite;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span> <span class="number">0</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">  <span class="attribute">transition</span>: all .<span class="number">8s</span>;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">opacity</span>: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">visibility</span>: visible;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">visibility</span>: visible;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="文字流光效果"><a href="#文字流光效果" class="headerlink" title="文字流光效果"></a>文字流光效果</h3><p>这个在之前并不知道怎么实现，Google了一下，看了张鑫旭大神的博客，也能理解了。<br>主要是用背景的属性来实现。<br>用到的CSS属性</p>
+<blockquote>
+<p><code>background-image</code><br><code>-webkit-text-fill-color</code><br><code>-webkit-background-clip</code><br><code>-webkit-background-size</code></p>
+</blockquote>
+<p>代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span> <span class="selector-class">.ribbon</span> &#123;</div><div class="line">	<span class="comment">/*渐变背景，此处为能无缝拼接的渐变 即0~100%*/</span></div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);</div><div class="line">  <span class="attribute">color</span>: transparent;</div><div class="line">  <span class="comment">/*文字填充色为透明*/</span></div><div class="line">  <span class="attribute">-webkit-text-fill-color</span>: transparent;</div><div class="line">  <span class="comment">/*背景剪裁为文字，相当于用背景填充文字 CSS3新属性*/</span></div><div class="line">  <span class="attribute">-webkit-background-clip</span>: text;</div><div class="line">   <span class="comment">/*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/</span></div><div class="line">  <span class="attribute">-webkit-background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</div><div class="line">  <span class="attribute">background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</div><div class="line">  <span class="comment">/* 动画 */</span></div><div class="line">  <span class="attribute">-webkit-animation</span>: masked-animation <span class="number">4s</span> infinite linear;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@<span class="keyword">keyframes</span> masked-animation &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">background-position</span>: -<span class="number">100%</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> masked-animation &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">background-position</span>: -<span class="number">100%</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>多写多总结，多查API。</p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="http://www.zhangxinxu.com/wordpress/2014/02/css3%E4%B8%8E%E6%96%87%E5%AD%97%E6%B8%90%E5%8F%98%E6%B0%B4%E7%BA%B9%E6%B3%A2%E5%8A%A8%E6%95%88%E6%9E%9C/" target="_blank" rel="external">小tip: CSS3与文字渐变光影流动动画效果实现</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3" target="_blank" rel="external">MDN CSS3</a></p>
+<h4 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h4><p><a href="https://github.com/k-water/IFE2017/tree/master/CSS3/hoverFuzzy" target="_blank" rel="external">源码</a><br><a href="http://waterlin.cn/IFE2017/CSS3/hoverFuzzy/">预览</a></p>
 
       
     </div>
@@ -333,13 +332,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/09/22/Javascript-面向对象编程（一）：封装/">Javascript 面向对象编程（一）：封装</a></p>
+        <p><span>Title:</span><a href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/">IFE-有趣的鼠标模糊悬浮效果</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Water</a></p>
-        <p><span>Created:</span>2016-09-22, 17:00:04</p>
-        <p><span>Updated:</span>2016-09-22, 17:22:57</p>
+        <p><span>Created:</span>2017-02-28, 11:03:37</p>
+        <p><span>Updated:</span>2017-02-28, 11:06:57</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/09/22/Javascript-面向对象编程（一）：封装/" title="Javascript 面向对象编程（一）：封装">http://waterlin.cn/2016/09/22/Javascript-面向对象编程（一）：封装/</a>
-            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2016/09/22/Javascript-面向对象编程（一）：封装/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" title="IFE-有趣的鼠标模糊悬浮效果">http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/</a>
+            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -351,16 +350,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/">
-                    Javascript面向对象编程（二）：构造函数的继承
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/09/18/jQuery解析JSON/">
-                    jQuery解析JSON
+                <a href="/2017/02/23/win10-tomcat安装/">
+                    win10-tomcat安装
                 </a>
             </div>
         
@@ -372,7 +365,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数模式"><span class="toc-number">1.</span> <span class="toc-text">构造函数模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数模式的问题"><span class="toc-number">2.</span> <span class="toc-text">构造函数模式的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prototype模式"><span class="toc-number">3.</span> <span class="toc-text">Prototype模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prototype模式的验证方法"><span class="toc-number">4.</span> <span class="toc-text">Prototype模式的验证方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#isPrototypeOf-NaN"><span class="toc-number">4.1.</span> <span class="toc-text">isPrototypeOf()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hasOwnProperty-NaN"><span class="toc-number">4.2.</span> <span class="toc-text">hasOwnProperty()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出处"><span class="toc-number">5.</span> <span class="toc-text">出处</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#边框从两边散开"><span class="toc-number">2.</span> <span class="toc-text">边框从两边散开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字流光效果"><span class="toc-number">3.</span> <span class="toc-text">文字流光效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章"><span class="toc-number">4.1.</span> <span class="toc-text">参考文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Demo"><span class="toc-number">4.2.</span> <span class="toc-text">Demo</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -408,7 +401,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Javascript 面向对象编程（一）：封装　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"IFE-有趣的鼠标模糊悬浮效果　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -424,7 +417,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/22/Javascript-面向对象编程（一）：封装/" data-title="Javascript 面向对象编程（一）：封装" data-url="http://waterlin.cn/2016/09/22/Javascript-面向对象编程（一）：封装/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" data-title="IFE-有趣的鼠标模糊悬浮效果" data-url="http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -447,15 +440,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/" title="Pre: Javascript面向对象编程（二）：构造函数的继承">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/09/18/jQuery解析JSON/" title="Next: jQuery解析JSON">
+            <a href="/2017/02/23/win10-tomcat安装/" title="Next: win10-tomcat安装">
                 <i class="fa fa-angle-right"></i>
             </a>
         
