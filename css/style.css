@@ -1265,7 +1265,7 @@ body .ui-tooltip {
   background: transparent;
 }
 .body-wrap {
-  max-width: 70em;
+  max-width: 60em;
   margin: auto;
   margin-bottom: 126px;
   overflow: hidden;
@@ -1291,7 +1291,17 @@ body .ui-tooltip {
 }
 .article img {
   max-width: 100%;
+  height: 10em;
+  width: 20em;
   margin: 0.5em auto;
+}
+@media screen and (max-width: 800px) {
+  .article img {
+    max-width: 100% !important;
+    width: 100%;
+    height: 100%;
+    margin: 0.5em auto;
+  }
 }
 @-webkit-keyframes cd-bounce-1 {
   0% {
@@ -1506,21 +1516,16 @@ body .ui-tooltip {
 .article-entry li ol {
   margin-left: 30px;
 }
-.article-entry ul > li:before {
-  content: "";
-  background: #dedede;
+.article-entry ul > li {
+  list-style: none;
+  margin: 0;
 }
 .article-entry ul > li:before {
-  display: inline-block;
-  content: "";
-  width: 0.4em;
-  height: 0.4em;
+  content: '\f061';
+  font-family: FontAwesome;
+  font-size: 0.8em;
   margin-right: 0.5em;
-  margin-bottom: 0.11em;
-  border: 1px solid #d3d3d3;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  background: #d3d3d3;
+  color: #c8c8c8;
 }
 .article-entry h1,
 .article-entry h2,
@@ -2131,14 +2136,14 @@ aside.comment-bar:active {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: rgba(0,0,0,0.67);
+  background: rgba(32,34,37,0.85);
   margin: auto;
   padding: 0.35em 1.5em;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px;
   overflow: auto;
-  color: #eaeaea;
+  color: #c5c8c6;
   line-height: 1.3rem;
 }
 .article-entry .highlight .gutter pre,
@@ -2155,7 +2160,7 @@ aside.comment-bar:active {
   text-shadow: none;
   padding: 0;
   background: none;
-  color: #eaeaea;
+  color: #c5c8c6;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -2212,7 +2217,7 @@ aside.comment-bar:active {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: rgba(0,0,0,0.67);
+  background: rgba(32,34,37,0.85);
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -2238,7 +2243,7 @@ aside.comment-bar:active {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: rgba(0,0,0,0.67);
+  background: rgba(32,34,37,0.85);
   color: #969896;
   font: 0.85em "Lucida Grande", Verdana, "Helvetica Neue", Arial;
   text-shadow: 0 0;
@@ -2261,9 +2266,10 @@ aside.comment-bar:active {
   border-radius: 3px;
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
-  var: 1;
+  var: 4;
   color: #fff;
   background: rgba(153,204,153,0.7);
+  background: rgba(136,172,219,0.65);
 }
 pre .comment,
 pre .title {
@@ -2281,7 +2287,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #d54e53;
+  color: #c66;
 }
 pre .number,
 pre .preprocessor,
@@ -2289,12 +2295,12 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #e78c45;
+  color: #de935f;
 }
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #b9ca4a;
+  color: #b5bd68;
 }
 pre .string,
 pre .value,
@@ -2302,10 +2308,10 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #b9ca4a;
+  color: #b5bd68;
 }
 pre .css .hexcolor {
-  color: #70c0b1;
+  color: #8abeb7;
 }
 pre .function,
 pre .python .decorator,
@@ -2315,11 +2321,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #7aa6da;
+  color: #81a2be;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #c397d8;
+  color: #b294bb;
 }
 #footer {
   font-size: 0.8rem;
@@ -3070,43 +3076,4 @@ pre .javascript .function {
   padding: 0;
   height: 100%;
   overflow: hidden;
-}
-body {
-  background: #d3d3d3;
-}
-#container .left-col {
-  background: #fff;
-}
-.article {
-  background: #fff;
-}
-.article .article-inner {
-  margin-bottom: 1em;
-}
-.article .article-more-link a {
-  opacity: 0.9;
-}
-.tagcloud a {
-  opacity: 0.9;
-}
-#header .header-nav .social li {
-  opacity: 0.8;
-}
-.archives-wrap {
-  background: #fff;
-}
-.scroll a .fa {
-  color: #fff;
-}
-.post-nav-button {
-  background: #ececec;
-}
-#post-nav-button a {
-  background: rgba(215,216,215,0.5);
-}
-.post-list {
-  background: #fff;
-}
-#article-nav {
-  background: rgba(158,188,226,0.9);
 }
