@@ -15,16 +15,18 @@
 
 
 
-<meta name="description" content="今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。">
+<meta name="description" content="思路两个一位数相加，相加之后结果除以10，余数放在ah中，商放在al中，然后再输出余数和商，就是结果。有进位高位就是余数，没有进位输出高位为0。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript面向对象编程（二）：构造函数的继承">
-<meta property="og:url" content="http://waterlin.cn/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/index.html">
+<meta property="og:title" content="汇编一位数加法">
+<meta property="og:url" content="http://waterlin.cn/2017/03/14/汇编一位数加法/index.html">
 <meta property="og:site_name" content="备忘录">
-<meta property="og:description" content="今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。">
-<meta property="og:updated_time" content="2016-09-22T09:45:19.034Z">
+<meta property="og:description" content="思路两个一位数相加，相加之后结果除以10，余数放在ah中，商放在al中，然后再输出余数和商，就是结果。有进位高位就是余数，没有进位输出高位为0。">
+<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-3-14/57502507-file_1489460106820_88ef.png">
+<meta property="og:updated_time" content="2017-03-14T02:55:18.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Javascript面向对象编程（二）：构造函数的继承">
-<meta name="twitter:description" content="今天要介绍的是，对象之间的”继承”的五种方法。比如，现在有一个”动物”对象的构造函数。">
+<meta name="twitter:title" content="汇编一位数加法">
+<meta name="twitter:description" content="思路两个一位数相加，相加之后结果除以10，余数放在ah中，商放在al中，然后再输出余数和商，就是结果。有进位高位就是余数，没有进位输出高位为0。">
+<meta name="twitter:image" content="http://oc1gyfe6q.qnssl.com/17-3-14/57502507-file_1489460106820_88ef.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Javascript面向对象编程（二）：构造函数的继承 | 备忘录</title>
+<title>汇编一位数加法 | 备忘录</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -263,11 +265,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-Javascript面向对象编程（二）：构造函数的继承" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-汇编一位数加法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/" class="article-date">
-      <time datetime="2016-09-22T09:43:11.000Z" itemprop="datePublished">2016-09-22</time>
+      <a href="/2017/03/14/汇编一位数加法/" class="article-date">
+      <time datetime="2017-03-14T02:50:07.000Z" itemprop="datePublished">2017-03-14</time>
 </a>
 
 
@@ -282,7 +284,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Javascript面向对象编程（二）：构造函数的继承
+      汇编一位数加法
     </h1>
   
 
@@ -291,13 +293,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+    <a class="article-category-link" href="/categories/汇编/">汇编</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/assume/">assume</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -307,31 +309,41 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>今天要介绍的是，对象之间的”继承”的五种方法。<br>比如，现在有一个”动物”对象的构造函数。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　<span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.species = <span class="string">"动物"</span>;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
-<p>还有一个”猫”对象的构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</div><div class="line">　　　　<span class="keyword">this</span>.name = name;</div><div class="line">　　　　<span class="keyword">this</span>.color = color;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
-<p>怎样才能使”猫”继承”动物”呢？</p>
-<h3 id="构造函数绑定"><a href="#构造函数绑定" class="headerlink" title="构造函数绑定"></a>构造函数绑定</h3><p>第一种方法也是最简单的方法，使用<code>call</code>或<code>apply</code>方法，将父对象的构造函数绑定在子对象上，即在子对象构造函数中加一行：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name,color</span>)</span>&#123;</div><div class="line">　　　　Animal.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);<span class="string">"||Animal.call(this,arguments)"</span></div><div class="line">　　　　<span class="keyword">this</span>.name = name;</div><div class="line">　　　　<span class="keyword">this</span>.color = color;</div><div class="line">　　&#125;</div><div class="line">　　<span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line">　　alert(cat1.species); <span class="comment">// 动物</span></div></pre></td></tr></table></figure></p>
-<h3 id="prototype模式"><a href="#prototype模式" class="headerlink" title="prototype模式"></a>prototype模式</h3><p>第二种方法更常见，使用prototype属性。<br>如果”猫”的prototype对象，指向一个Animal的实例，那么所有”猫”的实例，就能继承Animal了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Cat.prototype = <span class="keyword">new</span> Animal();</div><div class="line">Cat.prototype.constructor = Cat;</div><div class="line"><span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line">alert(cat1.species); <span class="comment">// 动物</span></div></pre></td></tr></table></figure></p>
-<p>代码的第一行，我们将Cat的prototype对象指向一个Animal的实例。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　Cat.prototype = <span class="keyword">new</span> Animal();</div></pre></td></tr></table></figure></p>
-<p>它相当于完全删除了prototype 对象原先的值，然后赋予一个新值。但是，第二行又是什么意思呢？<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　Cat.prototype.constructor = Cat;</div></pre></td></tr></table></figure></p>
-<p>原来，任何一个prototype对象都有一个<code>constructor</code>属性，指向它的构造函数。如果没有<code>&quot;Cat.prototype = new Animal();&quot;</code>这一行，Cat.prototype.constructor是指向Cat的；加了这一行以后，Cat.prototype.constructor指向Animal。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　alert(Cat.prototype.constructor == Animal); <span class="comment">//true</span></div></pre></td></tr></table></figure></p>
-<p>因此，在运行”Cat.prototype = new Animal();”这一行之后，cat1.constructor也指向Animal！<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　alert(cat1.constructor == Animal); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>这显然会导致继承链的紊乱（cat1明明是用构造函数Cat生成的），因此我们必须手动纠正，将Cat.prototype对象的constructor值改为Cat。这就是第二行的意思。<br>这是很重要的一点，编程时务必要遵守。下文都遵循这一点，即如果替换了prototype对象，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　o.prototype = &#123;&#125;;</div></pre></td></tr></table></figure></p>
-<p>那么，下一步必然是为新的prototype对象加上constructor属性，并将这个属性指回原来的构造函数。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　o.prototype.constructor = o;</div></pre></td></tr></table></figure></p>
-<h3 id="直接继承prototype"><a href="#直接继承prototype" class="headerlink" title="直接继承prototype"></a>直接继承prototype</h3><p>第三种方法是对第二种方法的改进。由于Animal对象中，不变的属性都可以直接写入Animal.prototype。所以，我们也可以让Cat()跳过 Animal()，直接继承<code>Animal.prototype</code>。<br>现在，我们先将Animal对象改写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123; &#125;</div><div class="line">Animal.prototype.species = <span class="string">"动物"</span>;</div></pre></td></tr></table></figure></p>
-<p>然后，将Cat的prototype对象，然后指向Animal的prototype对象，这样就完成了继承。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　Cat.prototype = Animal.prototype;</div><div class="line">　　Cat.prototype.constructor = Cat;</div><div class="line">　　<span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line">　　alert(cat1.species); <span class="comment">// 动物</span></div></pre></td></tr></table></figure></p>
-<p>与前一种方法相比，这样做的优点是效率比较高（不用执行和建立Animal的实例了），比较省内存。缺点是 Cat.prototype和Animal.prototype现在指向了同一个对象，那么任何对Cat.prototype的修改，都会反映到Animal.prototype。<br>所以，上面这一段代码其实是有问题的。请看第二行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　Cat.prototype.constructor = Cat;</div></pre></td></tr></table></figure></p>
-<p>这一句实际上把Animal.prototype对象的constructor属性也改掉了！<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(Animal.prototype.constructor); <span class="comment">// Cat</span></div></pre></td></tr></table></figure></p>
-<h3 id="利用空对象作为中介"><a href="#利用空对象作为中介" class="headerlink" title="利用空对象作为中介"></a>利用空对象作为中介</h3><p>由于”直接继承prototype”存在上述的缺点，所以就有第四种方法，利用一个空对象作为中介。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">　　F.prototype = Animal.prototype;</div><div class="line">　　Cat.prototype = <span class="keyword">new</span> F();</div><div class="line">　　Cat.prototype.constructor = Cat;</div></pre></td></tr></table></figure></p>
-<p>F是空对象，所以几乎不占内存。这时，修改Cat的prototype对象，就不会影响到Animal的prototype对象。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　alert(Animal.prototype.constructor); <span class="comment">// Animal</span></div></pre></td></tr></table></figure></p>
-<p>我们将上面的方法，封装成一个函数，便于使用。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Child, Parent</span>) </span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">　　　　F.prototype = Parent.prototype;</div><div class="line">　　　　Child.prototype = <span class="keyword">new</span> F();</div><div class="line">　　　　Child.prototype.constructor = Child;</div><div class="line">　　　　Child.uber = Parent.prototype;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
-<p>使用的时候，方法如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　extend(Cat,Animal);</div><div class="line">　　<span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line">　　alert(cat1.species); <span class="comment">// 动物</span></div></pre></td></tr></table></figure></p>
-<p>这个extend函数，就是YUI库如何实现继承的方法。<br>另外，说明一点，函数体最后一行<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">　　Child.uber = Parent.prototype;</div></pre></td></tr></table></figure></p>
-<p>意思是为子对象设一个<code>uber属性</code>，这个属性<code>直接指向父对象的prototype属性</code>。（uber是一个德语词，意思是”向上”、”上一层”。）这等于在子对象上打开一条通道，可以直接调用父对象的方法。这一行放在这里，只是为了实现继承的完备性，<code>纯属备用性质</code>。</p>
-<h3 id="五、-拷贝继承"><a href="#五、-拷贝继承" class="headerlink" title="五、 拷贝继承"></a>五、 拷贝继承</h3><p>上面是采用prototype对象，实现继承。我们也可以换一种思路，纯粹采用”拷贝”方法实现继承。简单说，如果把父对象的所有属性和方法，拷贝进子对象，不也能够实现继承吗？这样我们就有了第五种方法。<br>首先，还是把Animal的所有不变属性，都放到它的prototype对象上。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">　　Animal.prototype.species = <span class="string">"动物"</span>;</div></pre></td></tr></table></figure></p>
-<p>然后，再写一个函数，实现属性拷贝的目的。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">　　<span class="function"><span class="keyword">function</span> <span class="title">extend2</span>(<span class="params">Child, Parent</span>) </span>&#123;</div><div class="line">　　　　<span class="keyword">var</span> p = Parent.prototype;</div><div class="line">　　　　<span class="keyword">var</span> c = Child.prototype;</div><div class="line">　　　　<span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> p) &#123;</div><div class="line">　　　　　　c[i] = p[i];</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　c.uber = p;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure></p>
-<p>这个函数的作用，就是将父对象的prototype对象中的属性，一一拷贝给Child对象的prototype对象。<br>使用的时候，这样写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">　　extend2(Cat, Animal);</div><div class="line">　　<span class="keyword">var</span> cat1 = <span class="keyword">new</span> Cat(<span class="string">"大毛"</span>,<span class="string">"黄色"</span>);</div><div class="line">　　alert(cat1.species); <span class="comment">// 动物</span></div></pre></td></tr></table></figure></p>
-<h3 id="出处"><a href="#出处" class="headerlink" title="出处"></a>出处</h3><p>阮一峰老师<a href="http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html" target="_blank" rel="external">blog</a></p>
+        <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>两个一位数相加，相加之后结果除以10，余数放在ah中，商放在al中，然后再输出余数和商，就是结果。<br>有进位高位就是余数，没有进位输出高位为0。<br><a id="more"></a><br>如：</p>
+<blockquote>
+<ul>
+<li>3+2 = 05</li>
+<li>7+8 = 15</li>
+</ul>
+</blockquote>
+<p><img src="http://oc1gyfe6q.qnssl.com/17-3-14/57502507-file_1489460106820_88ef.png" alt=""></p>
+<h3 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h3><blockquote>
+<ul>
+<li>win10 64位</li>
+<li>基于DosBox</li>
+<li>Masm5.0</li>
+</ul>
+</blockquote>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line">code <span class="meta">segment</span></div><div class="line"><span class="meta">assume</span> <span class="built_in">cs</span>:code</div><div class="line"><span class="symbol">start:</span></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">dl</span>,<span class="string">'?'</span> <span class="comment">;调用2号功能号显示问号</span></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">02h</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">01h</span> <span class="comment">;调用1号功能号输入第一个数 输入的数保存在al中</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">bl</span>,<span class="built_in">al</span> <span class="comment">;保存第一个数到dl 并转换为数字</span></div><div class="line">  <span class="keyword">sub</span> <span class="built_in">bl</span>,<span class="number">30h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">dl</span>,<span class="string">'+'</span> <span class="comment">;2号功能号显示加号</span></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">02h</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">01h</span> <span class="comment">;输入第二个数 转换成数字</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line">  <span class="keyword">sub</span> <span class="built_in">al</span>,<span class="number">30h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="number">dh</span>,<span class="built_in">al</span> <span class="comment">;第二个数保存在dh中 高8位</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">dl</span>,<span class="string">'='</span> <span class="comment">;2号功能号显示等号</span></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">02h</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">al</span>,<span class="number">dh</span> <span class="comment">;取出第二个数 并与第一个数相加</span></div><div class="line">  <span class="keyword">add</span> <span class="built_in">al</span>,<span class="built_in">bl</span></div><div class="line">  </div><div class="line">  <span class="comment">;接下来是输出结果的除法 </span></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">0</span> <span class="comment">;ah清0</span></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">bl</span>,<span class="number">10</span> <span class="comment">;除数 每次除10</span></div><div class="line"></div><div class="line">  <span class="keyword">div</span> <span class="built_in">bl</span> <span class="comment">;al除以bl结果 商保存到al 余数保存到ah 余高商低</span></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">bl</span>,<span class="number">ah</span> <span class="comment">;余数保存到bl</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">dl</span>,<span class="built_in">al</span> <span class="comment">;输出商 例如15/10 商是1 余数是5</span></div><div class="line">  <span class="keyword">add</span> <span class="built_in">dl</span>,<span class="number">30h</span> <span class="comment">;转换为ASCII码</span></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">02h</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">dl</span>,<span class="built_in">bl</span> <span class="comment">;同理输出余数 </span></div><div class="line">  <span class="keyword">add</span> <span class="built_in">dl</span>,<span class="number">30h</span> <span class="comment">;转换为ASCII码</span></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">02h</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">dl</span>,<span class="number">0dh</span> <span class="comment">;回车换行</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line">  <span class="keyword">mov</span> <span class="built_in">dl</span>,<span class="number">0ah</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span></div><div class="line"></div><div class="line">  <span class="keyword">mov</span> <span class="number">ah</span>,<span class="number">4ch</span> <span class="comment">;结束程序</span></div><div class="line">  <span class="keyword">int</span> <span class="number">21h</span> </div><div class="line">code ends</div><div class="line">end start</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>一位数主要是用到了汇编的除法，因为结果不会超过两位数，所以输出方面不难解决。</p>
+<p>主要用到的功能号</p>
+<blockquote>
+<ul>
+<li>02h 显示一个字符</li>
+<li>01h 键入一个字符</li>
+<li>0dh 回车</li>
+<li>0ah 换行 </li>
+</ul>
+</blockquote>
+<p>指令</p>
+<blockquote>
+<ul>
+<li>mov</li>
+<li>add</li>
+<li>sub</li>
+<li>div</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -340,13 +352,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/">Javascript面向对象编程（二）：构造函数的继承</a></p>
+        <p><span>Title:</span><a href="/2017/03/14/汇编一位数加法/">汇编一位数加法</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Water</a></p>
-        <p><span>Created:</span>2016-09-22, 17:43:11</p>
-        <p><span>Updated:</span>2016-09-22, 17:45:19</p>
+        <p><span>Created:</span>2017-03-14, 10:50:07</p>
+        <p><span>Updated:</span>2017-03-14, 10:55:18</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/" title="Javascript面向对象编程（二）：构造函数的继承">http://waterlin.cn/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/</a>
-            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/03/14/汇编一位数加法/" title="汇编一位数加法">http://waterlin.cn/2017/03/14/汇编一位数加法/</a>
+            <span class="copy-path" data-clipboard-text="From http://waterlin.cn/2017/03/14/汇编一位数加法/　　By Water" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -358,16 +370,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/09/28/服务器初探/">
-                    服务器初探
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/09/22/Javascript-面向对象编程（一）：封装/">
-                    Javascript 面向对象编程（一）：封装
+                <a href="/2017/03/04/Win10-MongoDBInstall/">
+                    Win10-MongoDBInstall
                 </a>
             </div>
         
@@ -379,7 +385,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数绑定"><span class="toc-number">1.</span> <span class="toc-text">构造函数绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prototype模式"><span class="toc-number">2.</span> <span class="toc-text">prototype模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接继承prototype"><span class="toc-number">3.</span> <span class="toc-text">直接继承prototype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用空对象作为中介"><span class="toc-number">4.</span> <span class="toc-text">利用空对象作为中介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、-拷贝继承"><span class="toc-number">5.</span> <span class="toc-text">五、 拷贝继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出处"><span class="toc-number">6.</span> <span class="toc-text">出处</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行环境"><span class="toc-number">2.</span> <span class="toc-text">运行环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
         
     </div>
     <style>
@@ -415,7 +421,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Javascript面向对象编程（二）：构造函数的继承　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"汇编一位数加法　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -431,7 +437,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/22/Javascript面向对象编程（二）：构造函数的继承/" data-title="Javascript面向对象编程（二）：构造函数的继承" data-url="http://waterlin.cn/2016/09/22/Javascript面向对象编程（二）：构造函数的继承/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/14/汇编一位数加法/" data-title="汇编一位数加法" data-url="http://waterlin.cn/2017/03/14/汇编一位数加法/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -454,15 +460,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/09/28/服务器初探/" title="Pre: 服务器初探">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/09/22/Javascript-面向对象编程（一）：封装/" title="Next: Javascript 面向对象编程（一）：封装">
+            <a href="/2017/03/04/Win10-MongoDBInstall/" title="Next: Win10-MongoDBInstall">
                 <i class="fa fa-angle-right"></i>
             </a>
         
