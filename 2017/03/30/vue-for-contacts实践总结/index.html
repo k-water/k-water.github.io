@@ -16,15 +16,21 @@
 
 
 <meta property="og:type" content="article">
-<meta property="og:title" content="IFE-有趣的鼠标模糊悬浮效果">
-<meta property="og:url" content="http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/index.html">
+<meta property="og:title" content="vue-for-contacts实践总结">
+<meta property="og:url" content="http://waterlin.cn/2017/03/30/vue-for-contacts实践总结/index.html">
 <meta property="og:site_name" content="备忘录">
-<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg">
-<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/70946917-file_1488249112656_3c66.gif">
-<meta property="og:updated_time" content="2017-02-28T03:06:57.077Z">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/43434844-file_1490879850754_14751.jpg">
+<meta property="og:image" content="http://i1.piimg.com/567571/3a41f36b419e362a.png">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/44482491-file_1490804083610_13abf.png">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/26551606-file_1490805016268_1d6b.jpg">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/23939651-file_1490807526111_10aed.png">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/18394862-file_1490848719702_86ea.png">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/48060922-file_1490849331078_37a0.png">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/58732066-file_1490878225515_bed3.png">
+<meta property="og:updated_time" content="2017-03-30T13:31:44.066Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IFE-有趣的鼠标模糊悬浮效果">
-<meta name="twitter:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg">
+<meta name="twitter:title" content="vue-for-contacts实践总结">
+<meta name="twitter:image" content="https://oc1gyfe6q.qnssl.com/17-3-30/43434844-file_1490879850754_14751.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>IFE-有趣的鼠标模糊悬浮效果 | 备忘录</title>
+<title>vue-for-contacts实践总结 | 备忘录</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -263,11 +269,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-IFE-有趣的鼠标模糊悬浮效果" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-vue-for-contacts实践总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" class="article-date">
-      <time datetime="2017-02-28T03:03:37.000Z" itemprop="datePublished">2017-02-28</time>
+      <a href="/2017/03/30/vue-for-contacts实践总结/" class="article-date">
+      <time datetime="2017-03-30T13:18:31.000Z" itemprop="datePublished">2017-03-30</time>
 </a>
 
 
@@ -282,7 +288,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      IFE-有趣的鼠标模糊悬浮效果
+      vue-for-contacts实践总结
     </h1>
   
 
@@ -291,13 +297,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/动画/">动画</a><a class="article-category-link" href="/categories/动画/IFE2017/">IFE2017</a>
+    <a class="article-category-link" href="/categories/Vue/">Vue</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -307,21 +313,65 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><img src="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg" alt=""><br><a id="more"></a></p>
-<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>这是IFE2017的任务，也是我选择的第一个任务，练练手。<br>主要实现的是CSS3动画的编写，伪元素的使用，背景图片模糊以及文字流光效果，知识点大概就是这三个。</p>
-<p>先看一下实现的效果：<br><img src="http://oc1gyfe6q.qnssl.com/17-2-28/70946917-file_1488249112656_3c66.gif" alt=""></p>
-<h3 id="边框从两边散开"><a href="#边框从两边散开" class="headerlink" title="边框从两边散开"></a>边框从两边散开</h3><p>这个主要是使用了伪元素<code>::before</code>，<code>::after</code>来实现，在父容器上加上伪元素，里面填写的CSS分别的上下，左右的边框，并定位到相应的位置。<br>在这里父容器使用相对定位，伪元素使用绝对定位，先做好位置。</p>
-<p>那么怎么实现边框从两边散开？<br>在<code>hover</code>的时候，分别吧对应的<code>left</code> 和<code>top</code>值变为0，之前设置了相对父容器的50%。</p>
-<p>说了这么多，看代码吧</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid ghostwhite;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">3px</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">  <span class="attribute">transition</span>: all .<span class="number">8s</span>;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid ghostwhite;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span> <span class="number">0</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">  <span class="attribute">transition</span>: all .<span class="number">8s</span>;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">opacity</span>: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">visibility</span>: visible;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">visibility</span>: visible;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="文字流光效果"><a href="#文字流光效果" class="headerlink" title="文字流光效果"></a>文字流光效果</h3><p>这个在之前并不知道怎么实现，Google了一下，看了张鑫旭大神的博客，也能理解了。<br>主要是用背景的属性来实现。<br>用到的CSS属性</p>
+        <p><img src="https://oc1gyfe6q.qnssl.com/17-3-30/43434844-file_1490879850754_14751.jpg" alt=""><br><a id="more"></a></p>
+<h3 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h3><p>项目地址：<a href="https://github.com/k-water/Contacts" target="_blank" rel="external">https://github.com/k-water/Contacts</a><br>二话不说，先放代码，这也是一个学习vue项目的实践，其中基本用到了网上说到的东西，什么vue全家桶啊，当然，这是第一次的尝试，可能还有很多不完善，请多多指教，喜欢的请点个Star，提个issue什么的（滑稽正经脸~）</p>
+<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这个项目属于个人项目，主要的功能是实现一个通讯录的web版，基础功能有</p>
 <blockquote>
-<p><code>background-image</code><br><code>-webkit-text-fill-color</code><br><code>-webkit-background-clip</code><br><code>-webkit-background-size</code></p>
+<ul>
+<li>联系人的增删查改</li>
+<li>联系人的分组</li>
+<li>联系人资料的导入导出</li>
+</ul>
 </blockquote>
-<p>代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span> <span class="selector-class">.ribbon</span> &#123;</div><div class="line">	<span class="comment">/*渐变背景，此处为能无缝拼接的渐变 即0~100%*/</span></div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);</div><div class="line">  <span class="attribute">color</span>: transparent;</div><div class="line">  <span class="comment">/*文字填充色为透明*/</span></div><div class="line">  <span class="attribute">-webkit-text-fill-color</span>: transparent;</div><div class="line">  <span class="comment">/*背景剪裁为文字，相当于用背景填充文字 CSS3新属性*/</span></div><div class="line">  <span class="attribute">-webkit-background-clip</span>: text;</div><div class="line">   <span class="comment">/*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/</span></div><div class="line">  <span class="attribute">-webkit-background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</div><div class="line">  <span class="attribute">background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</div><div class="line">  <span class="comment">/* 动画 */</span></div><div class="line">  <span class="attribute">-webkit-animation</span>: masked-animation <span class="number">4s</span> infinite linear;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@<span class="keyword">keyframes</span> masked-animation &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">background-position</span>: -<span class="number">100%</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> masked-animation &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">background-position</span>: -<span class="number">100%</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>多写多总结，多查API。</p>
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="http://www.zhangxinxu.com/wordpress/2014/02/css3%E4%B8%8E%E6%96%87%E5%AD%97%E6%B8%90%E5%8F%98%E6%B0%B4%E7%BA%B9%E6%B3%A2%E5%8A%A8%E6%95%88%E6%9E%9C/" target="_blank" rel="external">小tip: CSS3与文字渐变光影流动动画效果实现</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3" target="_blank" rel="external">MDN CSS3</a></p>
-<h4 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h4><p><a href="https://github.com/k-water/IFE2017/tree/master/CSS3/hoverFuzzy" target="_blank" rel="external">源码</a><br><a href="http://waterlin.cn/IFE2017/CSS3/hoverFuzzy/">预览</a></p>
+<p>那么。。。。<br>为什么会有这个项目的生成呢？<br>其实，是自己想要练手，因为没有经历过一个完整project的实践，加上自己学的东西，感觉只看不练是学不到东西的，因为在实践中可以踩到你在看文档中看不到的很多坑（当然，也许是自己有时候短路，写错了造成，滑稽呱呱呱）<br>基于以上，所以自己开始了这个项目的coding。</p>
+<h3 id="蜗牛爬行"><a href="#蜗牛爬行" class="headerlink" title="蜗牛爬行"></a>蜗牛爬行</h3><p>这个项目持续了挺久的，加上自己断断续续写的，大概是两个多月，我自己都不好意思说了…<br>大概是从寒假开始的，那时候刚开始学习vue，看了几天文档之后，就开始着手写，体会一个<code>从0到1的过程</code>。<br>当然，现在感觉做出来后还是蛮爽的。</p>
+<p><b>第一次的commit</b></p>
+<p><img src="http://i1.piimg.com/567571/3a41f36b419e362a.png" alt=""><br><b>页面布局</b><br>基于做一个通讯录，那么首先开始的页面布局设计的问题，由于本人深知自己的审美和设计能力，所以我上网看了，最后模仿google的通讯录布局。<br>这里有一个问题，我在写页面的时候，如果不知道怎么配色布局的，我就很头疼，所以第一步还是找了个模仿。<br>然后，他大概就是…长这个样子（我知道你们想吐槽）</p>
+<p><img src="https://oc1gyfe6q.qnssl.com/17-3-30/44482491-file_1490804083610_13abf.png" alt=""></p>
+<p><b>辛酸简史</b><br>嗯，然后呢，一开始写的是没有后台支持的，纯前端，然后自己mock数据测试，当前在写的过程中遇到很多坑，也纠结了很久，请教了师兄，最后也解决了，不过当中真是又想哭又想笑，留在后面说。<br>在寒假期间，我完成前端页面的编写和业务逻辑的测试，在开学之后，我又想“搞事”了，觉得一直接触前端没有后台也不是很爽，所以开始着手编写后台接口，我选择了<code>JAVA</code>。<br>由于我前端是<code>vue-cli</code>构建的项目，那么我不想前后台混在一起写，所以选择了前后端分离（我也不知道自己做的是不是，说错请指正），后台提供接口，前端负责数据渲染。<br>自己google和请教师兄后，决定用<code>servlet</code>来处理前端的请求，所以，这里又开始了servlet的学习，（简直蛋疼）。写了几个demo之后，觉得可行，就运动到project之中了。<br>懒猴，并不是，在此之前，还有一个问题，数据存储啊word哥。所以要用到了数据库，我选择了<code>MySQL</code>。<br>哎，又开始了sql语句的学习。</p>
+<p><img src="https://oc1gyfe6q.qnssl.com/17-3-30/26551606-file_1490805016268_1d6b.jpg" alt=""></p>
+<p>接着就是整合测试，各种测试，各种填坑….</p>
+<h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><h4 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h4><p>上面好像说了挺多废话，说说这个项目的结构，前端用到的技术主要是vue的全家桶</p>
+<blockquote>
+<ul>
+<li>vue</li>
+<li>vuex</li>
+<li>vue-cli</li>
+<li>vue-router</li>
+<li>vue-resource</li>
+<li>element-ui</li>
+</ul>
+</blockquote>
+<p>其中的页面切换用到了router来实现，关于router，官方文档也有说明，当然可能某些方面说的不是很清楚，但遇到的问题网上的issue都有提到，stackoverflow也有相应的提问和回答，不成问题，这里只是简单的应用。<br>数据管理用到了vuex，一开始没学习vuex的时候数据是独立的，有时候想要给父子组件通信有点困难，但最终也通过较复杂的方式实现，想要查看的话，可以回滚我在github上面的commit，学了vuex之后感觉还是棒棒哒。vuex是单向数据流，所有的数据都存在store里，这里不多讲，我也讲不好，哈哈哈。<br>然后数据请求是vue-resource插件，主要是用到了get和post，当然现在vue官方推荐的是axios。<br>其中UI方面也应用了饿了么的组件库，省了不少事，当然学习它也是要花费精力的，毕竟渣渣对于这个框架的理解还不够深入。</p>
+<p>目录结构就是下面酱紫了</p>
+<p><img src="https://oc1gyfe6q.qnssl.com/17-3-30/23939651-file_1490807526111_10aed.png" alt=""></p>
+<p>然后我也不知道要讲什么了，有什么问题都欢迎与我交流探讨 。<code>email：625592890@qq.com</code></p>
+<h4 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h4><p>后台方面用的有</p>
+<blockquote>
+<ul>
+<li>JAVA</li>
+<li>MySQL</li>
+<li>Servlet</li>
+</ul>
+</blockquote>
+<p> MySQL主要用来存储数据，这里有两个表，我设计的时候一个用来存储联系人的资料，另一个是存储分组。<br> 用Servlet来主要前台的请求，并处理返回相关的数据，tomcat做后台服务。<br> 嗯，后台就不讲太多了，自己也是刚接触，项目结构如下：</p>
+<p> <img src="https://oc1gyfe6q.qnssl.com/17-3-30/18394862-file_1490848719702_86ea.png" alt=""></p>
+<h3 id="展示"><a href="#展示" class="headerlink" title="展示"></a>展示</h3><p>这里再放上项目地址<br><a href="https://github.com/k-water/Contacts" target="_blank" rel="external">https://github.com/k-water/Contacts</a><br>在线展示：<a href="http://119.29.151.195/contacts/" target="_blank" rel="external">http://119.29.151.195/contacts/</a><br>请自己体验啦，这里不再放图了。</p>
+<p>好了，下面讲讲我的经历以及修补bug的过程。<br>喜欢的可以接着往下看。</p>
+<h3 id="bug经历"><a href="#bug经历" class="headerlink" title="bug经历"></a>bug经历</h3><p>实践才能出bug，这句话是没错的。<br>一开始的时候，刚接触vue的思想，觉得蛮不错，双向数据绑定很方便，写法也很简洁，就喜欢上了他。<br>所以，第一个大坑就是关于双向数据绑定的。下面是我故事</p>
+<p><b>数据双向绑定</b></p>
+<p>在添加联系人这个组件里，我写了一个form表单，并且用v-model绑定相关数据，所有数据都放在一个对象 也就是<code>this.form</code>里面。</p>
+<p><img src="https://oc1gyfe6q.qnssl.com/17-3-30/48060922-file_1490849331078_37a0.png" alt=""></p>
+<p>那么这个form就是全局的，暂且这么说，我在添加，修改的时候都要用到这个form里面的数据。<br>一开始，我很天真，就直接找到对应的数据，然后把他赋值给一个临时变量，类似下面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.tempObj = <span class="keyword">this</span>.form</div></pre></td></tr></table></figure>
+<p>然后添加，修改的时候，就出现了问题，什么问题？<br>所有数据都被更新成为最后一次修改的数据，当时就一脸懵逼了。<br>这个点折腾了我好久是吧，最后也弄清楚了。<br>首先，这样赋值过去，上面那句代码，只是对 <code>对象</code>的引用，<a href="https://developer.mozilla.org/zh-CN" target="_blank" rel="external">MDN</a>有相关解释，所以还是跟原来的<code>this.form</code>脱不了干系，也就是这里只是对象的<code>浅拷贝</code>，再加上vue的数据是双向绑定的，所以，你懂的了吧。<br>你修改的时候，vue检测到你数据的变化（<code>vue用的是Object.defineProperty()</code>），对应的数据也就被更新了。<br>当时，我wa的一声就哭了，（开玩笑的）<br>其实解决方法上面也略微提到了，既然直接赋值是引用也就是浅拷贝，那么我们就用个深拷贝让她跟原来的那个对象没有关系就行了，这样也就解决了数据更新的毛病，如下：</p>
+<p><img src="https://oc1gyfe6q.qnssl.com/17-3-30/58732066-file_1490878225515_bed3.png" alt=""></p>
+<p>这个东西折腾了好久，差不多一个多星期，也意识到了自己JavaScript基础的不扎实，最后解决了还是蛮开心的（噗嗤）。</p>
+<p>==============================================================<br><b>滑稽的分割线</b><br>过程中遇到的bug还是蛮多的，这里就简述了自己印象比较深刻的，其他不一一细说。</p>
+<blockquote>
+<p>其中还有一段折腾服务器的故事，也是蛮有趣，学到了不少东西，至少对服务器又了一个初步的了解，有兴趣的可以找我聊聊。</p>
+</blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>做完这个项目，其中的过程还是挺艰辛的，毕竟都是边学边做，不过最后能完成还是挺开心的，终于有了一个从0到1的项目过程。虽然只是一个小小的练手项目，不过对于目前的我，感觉还是不错的。<br>希望自己能继续加油，也希望你们能给个star。<br>最后，感谢在这个过程中一直热心帮我解答的师兄，一直被我骚扰啊，哈哈，感谢！<br>这是师兄的<a href="https://github.com/x-cold" target="_blank" rel="external">Github</a>，很牛逼的人哦。</p>
 
       
     </div>
@@ -330,13 +380,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/">IFE-有趣的鼠标模糊悬浮效果</a></p>
+        <p><span>本文标题:</span><a href="/2017/03/30/vue-for-contacts实践总结/">vue-for-contacts实践总结</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Water</a></p>
-        <p><span>发布时间:</span>2017-02-28, 11:03:37</p>
-        <p><span>最后更新:</span>2017-02-28, 11:06:57</p>
+        <p><span>发布时间:</span>2017-03-30, 21:18:31</p>
+        <p><span>最后更新:</span>2017-03-30, 21:31:44</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" title="IFE-有趣的鼠标模糊悬浮效果">http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/03/30/vue-for-contacts实践总结/" title="vue-for-contacts实践总结">http://waterlin.cn/2017/03/30/vue-for-contacts实践总结/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2017/03/30/vue-for-contacts实践总结/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -348,16 +398,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/04/Win10-MongoDBInstall/">
-                    Win10-MongoDBInstall
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/23/win10-tomcat安装/">
-                    win10-tomcat安装
+                <a href="/2017/03/14/汇编一位数加法/">
+                    汇编一位数加法
                 </a>
             </div>
         
@@ -369,7 +413,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#边框从两边散开"><span class="toc-number">2.</span> <span class="toc-text">边框从两边散开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字流光效果"><span class="toc-number">3.</span> <span class="toc-text">文字流光效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章"><span class="toc-number">4.1.</span> <span class="toc-text">参考文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Demo"><span class="toc-number">4.2.</span> <span class="toc-text">Demo</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Project"><span class="toc-number">1.</span> <span class="toc-text">Project</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#起因"><span class="toc-number">2.</span> <span class="toc-text">起因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#蜗牛爬行"><span class="toc-number">3.</span> <span class="toc-text">蜗牛爬行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#项目结构"><span class="toc-number">4.</span> <span class="toc-text">项目结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#前端"><span class="toc-number">4.1.</span> <span class="toc-text">前端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#后台"><span class="toc-number">4.2.</span> <span class="toc-text">后台</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#展示"><span class="toc-number">5.</span> <span class="toc-text">展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bug经历"><span class="toc-number">6.</span> <span class="toc-text">bug经历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
         
     </div>
     <style>
@@ -405,7 +449,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"IFE-有趣的鼠标模糊悬浮效果　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"vue-for-contacts实践总结　| 备忘录　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -421,7 +465,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" data-title="IFE-有趣的鼠标模糊悬浮效果" data-url="http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/03/30/vue-for-contacts实践总结/" data-title="vue-for-contacts实践总结" data-url="http://waterlin.cn/2017/03/30/vue-for-contacts实践总结/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -444,15 +488,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/04/Win10-MongoDBInstall/" title="上一篇: Win10-MongoDBInstall">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/23/win10-tomcat安装/" title="下一篇: win10-tomcat安装">
+            <a href="/2017/03/14/汇编一位数加法/" title="下一篇: 汇编一位数加法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
