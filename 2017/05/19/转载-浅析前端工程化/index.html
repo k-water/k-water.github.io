@@ -15,16 +15,20 @@
 
 
 
+<meta name="description" content="前端工程化主要应该从模块化、组件化、规范化、自动化四个方面来思考">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IFE-有趣的鼠标模糊悬浮效果">
-<meta property="og:url" content="http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/index.html">
+<meta property="og:title" content="(转载-修改)浅析前端工程化">
+<meta property="og:url" content="http://waterlin.cn/2017/05/19/转载-浅析前端工程化/index.html">
 <meta property="og:site_name" content="次元空间">
-<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg">
-<meta property="og:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/70946917-file_1488249112656_3c66.gif">
-<meta property="og:updated_time" content="2017-02-28T03:06:57.077Z">
+<meta property="og:description" content="前端工程化主要应该从模块化、组件化、规范化、自动化四个方面来思考">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-5-19/66808399-file_1495170721982_9c72.jpg">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-5-19/79247367-file_1495169723779_14877.png">
+<meta property="og:image" content="https://oc1gyfe6q.qnssl.com/17-5-19/87193349-file_1495163754235_e419.png">
+<meta property="og:updated_time" content="2017-05-19T05:12:09.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IFE-有趣的鼠标模糊悬浮效果">
-<meta name="twitter:image" content="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg">
+<meta name="twitter:title" content="(转载-修改)浅析前端工程化">
+<meta name="twitter:description" content="前端工程化主要应该从模块化、组件化、规范化、自动化四个方面来思考">
+<meta name="twitter:image" content="https://oc1gyfe6q.qnssl.com/17-5-19/66808399-file_1495170721982_9c72.jpg">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>IFE-有趣的鼠标模糊悬浮效果 | 次元空间</title>
+<title>(转载-修改)浅析前端工程化 | 次元空间</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -263,11 +267,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-IFE-有趣的鼠标模糊悬浮效果" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-转载-浅析前端工程化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" class="article-date">
-      <time datetime="2017-02-28T03:03:37.000Z" itemprop="datePublished">2017-02-28</time>
+      <a href="/2017/05/19/转载-浅析前端工程化/" class="article-date">
+      <time datetime="2017-05-19T04:01:36.000Z" itemprop="datePublished">2017-05-19</time>
 </a>
 
 
@@ -282,7 +286,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      IFE-有趣的鼠标模糊悬浮效果
+      (转载-修改)浅析前端工程化
     </h1>
   
 
@@ -291,13 +295,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/动画/">动画</a><a class="article-category-link" href="/categories/动画/IFE2017/">IFE2017</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载/">转载</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -307,21 +311,69 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><img src="http://oc1gyfe6q.qnssl.com/17-2-28/5815645-file_1488251054166_7527.jpg" alt=""><br><a id="more"></a></p>
-<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>这是IFE2017的任务，也是我选择的第一个任务，练练手。<br>主要实现的是CSS3动画的编写，伪元素的使用，背景图片模糊以及文字流光效果，知识点大概就是这三个。</p>
-<p>先看一下实现的效果：<br><img src="http://oc1gyfe6q.qnssl.com/17-2-28/70946917-file_1488249112656_3c66.gif" alt=""></p>
-<h3 id="边框从两边散开"><a href="#边框从两边散开" class="headerlink" title="边框从两边散开"></a>边框从两边散开</h3><p>这个主要是使用了伪元素<code>::before</code>，<code>::after</code>来实现，在父容器上加上伪元素，里面填写的CSS分别的上下，左右的边框，并定位到相应的位置。<br>在这里父容器使用相对定位，伪元素使用绝对定位，先做好位置。</p>
-<p>那么怎么实现边框从两边散开？<br>在<code>hover</code>的时候，分别吧对应的<code>left</code> 和<code>top</code>值变为0，之前设置了相对父容器的50%。</p>
-<p>说了这么多，看代码吧</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid ghostwhite;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">0</span> <span class="number">3px</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">  <span class="attribute">transition</span>: all .<span class="number">8s</span>;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">3px</span> solid ghostwhite;</div><div class="line">  <span class="attribute">border-width</span>: <span class="number">3px</span> <span class="number">0</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">visibility</span>: hidden;</div><div class="line">  <span class="attribute">transition</span>: all .<span class="number">8s</span>;</div><div class="line">  <span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">opacity</span>: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span><span class="selector-pseudo">::before</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">visibility</span>: visible;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.wrap</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.container</span><span class="selector-pseudo">::after</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">visibility</span>: visible;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="文字流光效果"><a href="#文字流光效果" class="headerlink" title="文字流光效果"></a>文字流光效果</h3><p>这个在之前并不知道怎么实现，Google了一下，看了张鑫旭大神的博客，也能理解了。<br>主要是用背景的属性来实现。<br>用到的CSS属性</p>
+        <p><img src="https://oc1gyfe6q.qnssl.com/17-5-19/66808399-file_1495170721982_9c72.jpg" alt=""></p>
 <blockquote>
-<p><code>background-image</code><br><code>-webkit-text-fill-color</code><br><code>-webkit-background-clip</code><br><code>-webkit-background-size</code></p>
+<p>前端工程化主要应该从模块化、组件化、规范化、自动化四个方面来思考</p>
 </blockquote>
-<p>代码：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.wrap</span> <span class="selector-class">.caption</span> <span class="selector-class">.container</span> <span class="selector-class">.ribbon</span> &#123;</div><div class="line">	<span class="comment">/*渐变背景，此处为能无缝拼接的渐变 即0~100%*/</span></div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">-webkit-linear-gradient</span>(left, #3498db, #f47920 10%, #d71345 20%, #f7acbc 30%, #ffd400 40%, #3498db 50%, #f47920 60%, #d71345 70%, #f7acbc 80%, #ffd400 90%, #3498db);</div><div class="line">  <span class="attribute">color</span>: transparent;</div><div class="line">  <span class="comment">/*文字填充色为透明*/</span></div><div class="line">  <span class="attribute">-webkit-text-fill-color</span>: transparent;</div><div class="line">  <span class="comment">/*背景剪裁为文字，相当于用背景填充文字 CSS3新属性*/</span></div><div class="line">  <span class="attribute">-webkit-background-clip</span>: text;</div><div class="line">   <span class="comment">/*背景图片向水平方向扩大一倍，这样background-position才有移动与变化的空间*/</span></div><div class="line">  <span class="attribute">-webkit-background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</div><div class="line">  <span class="attribute">background-size</span>: <span class="number">200%</span> <span class="number">100%</span>;</div><div class="line">  <span class="comment">/* 动画 */</span></div><div class="line">  <span class="attribute">-webkit-animation</span>: masked-animation <span class="number">4s</span> infinite linear;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@<span class="keyword">keyframes</span> masked-animation &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">background-position</span>: -<span class="number">100%</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> masked-animation &#123;</div><div class="line">  0% &#123;</div><div class="line">    <span class="attribute">background-position</span>: <span class="number">0</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">  100% &#123;</div><div class="line">    <span class="attribute">background-position</span>: -<span class="number">100%</span> <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>多写多总结，多查API。</p>
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="http://www.zhangxinxu.com/wordpress/2014/02/css3%E4%B8%8E%E6%96%87%E5%AD%97%E6%B8%90%E5%8F%98%E6%B0%B4%E7%BA%B9%E6%B3%A2%E5%8A%A8%E6%95%88%E6%9E%9C/" target="_blank" rel="external">小tip: CSS3与文字渐变光影流动动画效果实现</a><br><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3" target="_blank" rel="external">MDN CSS3</a></p>
-<h4 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h4><p><a href="https://github.com/k-water/IFE2017/tree/master/CSS3/hoverFuzzy" target="_blank" rel="external">源码</a><br><a href="http://waterlin.cn/IFE2017/CSS3/hoverFuzzy/">预览</a></p>
+<a id="more"></a>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><p><strong>简单来说，模块化就是将一个大文件拆分成相互依赖的小文件，再进行统一的拼装和加载。只有这样，才有多人协作的可能。</strong></p>
+<h3 id="JS的模块化"><a href="#JS的模块化" class="headerlink" title="JS的模块化"></a>JS的模块化</h3><p>JavaScript本身不是一种模块化语言，设计者在创造JavaScript之初应该也没有想到这么一个脚本语言的作用领域会越来越大。以前一个页面的JS代码再多也不会多到哪儿去，而现在随着越来越多的JavaScript库和框架的出现，<b>Single-page App(单页面应用程序SPA)</b>的流行以及Node.js的迅猛发展，如果我们还不对自己的JS代码进行一些模块化的组织的话，开发过程会越来越困难，运行性能也会越来越低。因此，了解JS模块化编程是非常重要的。</p>
+<p>在ES6之前，JavaScript一直没有模块系统，这对开发大型复杂的前端工程造成了巨大的障碍。对此社区制定了一些模块加载方案，如<code>CommonJS</code>、<code>AMD</code>和<code>CMD</code>等，某些框架也会有自己模块系统。现在ES6已经在语言层面上规定了模块系统，完全可以取代现有的<code>CommonJS和AMD</code>规范，而且使用起来相当简洁，并且有静态加载的特性。<br>用<code>Webpack+Babel</code>将所有模块打包成一个文件同步加载。</p>
+<h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><p>CommonJS是为了弥补JavaScript标准库过少的缺点而产生的，由于JS没有模块机制（ES6引入了模块系统，但浏览器全面支持估计还有好几年），CommonJS就帮助JS实现模块的功能。现在很热门的Node.js就是CommonJS规范的一个实现。</p>
+<p>CommonJS在模块中定义方法要借助一个全局变量exports，它用来生成当前模块的API：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 	calculate module */</span></div><div class="line"></div><div class="line">exports.calculate = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> a + b</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>要加载模块就要使用CommonJS的一个全局方法require()。加载之前实现的    calculate模块像这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> calculate = <span class="built_in">require</span>(<span class="string">'calculate'</span>)</div></pre></td></tr></table></figure>
+<p>加载后<code>calculate变量</code>就是这个模块对象的一个引用，要调用模块中的方法就像调用普通对象的方法一样了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">calculate.add(<span class="number">1</span>,<span class="number">2</span>)</div></pre></td></tr></table></figure>
+<p>总之，CommonJS就是一个模块加载器，可以方便地对JavaScript代码进行模块化管理。但它也有缺点，它在设计之初并没有完全为浏览器环境考虑，浏览器环境的特点是所有的资源，不考虑本地缓存的因素，都需要从服务器端加载，加载的速度取决于网络速度，而CommonJS的模块加载过程是同步阻塞的。也就是说如果calculate模块体积很大，网速又不好的时候，整个程序便会停止，等待模块加载完成。</p>
+<p>随着浏览器端JS资源的体积越来越庞大，阻塞给体验带来的不良影响也越来越严重，终于从，在CommonJS社区中有了不同的声音，AMD规范诞生了。</p>
+<h4 id="AMD和CMD"><a href="#AMD和CMD" class="headerlink" title="AMD和CMD"></a>AMD和CMD</h4><p><b>AMD（Asynchronous Module Definition）异步模块定义</b><br><b>CMD（Common Module Definition）通用模块定义</b></p>
+<p><a href="https://segmentfault.com/a/1190000000492678" target="_blank" rel="external">JS模块化拓展阅读</a><br><a href="http://www.ruanyifeng.com/blog/2012/10/javascript_module.html" target="_blank" rel="external">Javascript模块化编程（一）：模块的写法</a></p>
+<h3 id="CSS的模块化"><a href="#CSS的模块化" class="headerlink" title="CSS的模块化"></a>CSS的模块化</h3><p>虽然SASS、LESS、Stylus等预处理器实现了CSS的文件拆分，但没有解决CSS模块化的一个重要问题：选择器的全局污染问题。按道理，一个模块化的文件应该要隐藏内部作用域，只暴露少量接口给使用者。而按照目前预处理器的方式，导入一个CSS模块后，已存在的样式有被覆盖的风险。虽然重写样式是CSS的一个优势，但这并不利于多人协作。</p>
+<p>CSS模块将<b>作用域限制于组件</b>中，从而避免了全局作用域的问题。我们再也不用操心为组件寻找一个好的命名了，因为编译过程已经帮你完成了这个任务。</p>
+<p>CSS模块需要在构建步骤进行管道化，这也就是说，它不是自动驱动的。它可以看成是<code>webpack</code>一个插件。其基本工作方式是：当你在一个JavaScript模块中导入一个CSS文件时（例如，在一个 React 组件中），CSS模块将会定义一个对象，将文件中类的名字动态的映射为JavaScript作用域中可以使用的字符串。举个具体的例子：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.base</span> &#123;</div><div class="line">  <span class="attribute">color</span>: deeppink;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">42em</span>;</div><div class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面是该CSS类在JavaScript组件中的使用方式：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> styles <span class="keyword">from</span> <span class="string">'./styles.css'</span>;</div><div class="line"> </div><div class="line">element.innerHTML = <span class="string">`&lt;div class="<span class="subst">$&#123;styles.base&#125;</span>"&gt;</span></div><div class="line">  CSS Modules are fun.</div><div class="line">&lt;/div&gt;`</div></pre></td></tr></table></figure>
+<p>最终，它将生成下面这个东西（当使用webpack的默认步骤时）：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"_20WEds96_Ee1ra54-24ePy"</span>&gt;</span>CSS Modules are fun.<span class="tag">&lt;/<span class="name">div</span>&gt;</span>`</div></pre></td></tr></table></figure></p>
+<p>当然，生成的类名可以通过配置，使得它的长度更短或者遵循一些特定的模式。当然了，这些最终都不重要（虽然短的类名意味着更短的样式表），重点在于这些类名是动态生成的、唯一的且和正确的样式表一一对应的。</p>
+<p><a href="http://www.jianshu.com/p/d46bc8cf3afa" target="_blank" rel="external">拓展阅读</a></p>
+<h2 id="组件化-Web-Component"><a href="#组件化-Web-Component" class="headerlink" title="组件化(Web Component)"></a>组件化(Web Component)</h2><p><code>组件化≠模块化</code>。模块化只是在语言层面上，对代码的拆分；而组件化是基于模块化，在设计层面上，对UI（用户界面）的拆分。从UI拆分下来的每个包含模板(HTML)+样式(CSS)+逻辑(JS)功能完备的结构单元，我们称之为组件。其实，组件化更重要的是一种分治思想。</p>
+<p><img src="https://oc1gyfe6q.qnssl.com/17-5-19/79247367-file_1495169723779_14877.png" alt=""></p>
+<p>如上图，简单的页面，整个页面分为主页的四个组件，分别是<code>Headers，Sidebar，container，Footers</code>，其中很容易看出Headers，Sidebar，Footers可复用的组件，每个页面都需要的，他们都具有完备的功能，而中间的container组件又可以再细分为其他组件，每个组件即是独立的又有相互关联。</p>
+<p><b>Vue中的组件</b></p>
+<p>组件（Component）是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素， Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以是原生 HTML 元素的形式，以 is 特性扩展。</p>
+<p>Vue中关于组件的介绍是Vue中的重点部分，从它在Vue官方文档中的篇幅就可以看出来。我认为组件中最重要的方面，到目前为止我能理解的就两部分：通讯和复用</p>
+<blockquote>
+<p>Keep Simple. Everything can be a component.</p>
+</blockquote>
+<p>这句话就是说页面上所有的东西都是组件。页面是个大型组件，可以拆成若干个中型组件，然后中型组件还可以再拆，拆成若干个小型组件，小型组件也可以再拆，直到拆成DOM元素为止。</p>
+<p>DOM元素可以看成是浏览器自身的组件，作为组件的基本单元。传统前端框架/类库的思想是先组织DOM，然后把某些可复用的逻辑封装成组件来操作DOM，是DOM优先；而组件化框架/类库的思想是先来构思组件，然后用DOM这种基本单元结合相应逻辑来实现组件，是组件优先。这是两者本质的区别。</p>
+<p>其次，组件化实际上是一种按照模板(HTML)+样式(CSS)+逻辑(JS)三位一体的形式对面向对象的进一步抽象。<br>所以我们除了封装组件本身，还要合理处理组件之间的关系，比如（逻辑）继承、（样式）扩展、（模板）嵌套和包含等，这些关系都可以归为依赖。</p>
+<p><a href="https://github.com/xufei/blog/issues/19" target="_blank" rel="external">拓展阅读</a></p>
+<h2 id="规范化"><a href="#规范化" class="headerlink" title="规范化"></a>规范化</h2><p>模块化和组件化确定了开发模型，而这些东西的实现就需要规范去落实。<br>规范化其实是工程化中很重要的一个部分，项目初期规范制定的好坏会直接影响到后期的开发质量。</p>
+<ul>
+<li>目录结构的制定</li>
+<li>编码规范</li>
+<li>前后端接口规范</li>
+<li>文档规范</li>
+<li>组件管理</li>
+<li>Git分支管理</li>
+<li>Commit描述规范</li>
+<li>定期CodeReview</li>
+<li>视觉图标规范</li>
+<li>…</li>
+<li></li>
+</ul>
+<p>其中编码规范最好采取<code>ESLint</code>和<code>StyleLint</code>等强制措施。</p>
+<h2 id="自动化"><a href="#自动化" class="headerlink" title="自动化"></a>自动化</h2><blockquote>
+<p>任何简单机械的重复劳动都应该让机器去完成。</p>
+</blockquote>
+<h3 id="图标合并"><a href="#图标合并" class="headerlink" title="图标合并"></a>图标合并</h3><h3 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h3><h3 id="自动化构建"><a href="#自动化构建" class="headerlink" title="自动化构建"></a>自动化构建</h3><h3 id="自动化部署"><a href="#自动化部署" class="headerlink" title="自动化部署"></a>自动化部署</h3><h3 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h3><h3 id="构建工具"><a href="#构建工具" class="headerlink" title="构建工具"></a>构建工具</h3><p>下图是我们的构建工具任务流。</p>
+<p><img src="https://oc1gyfe6q.qnssl.com/17-5-19/87193349-file_1495163754235_e419.png" alt=""></p>
+<h2 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h2><p><b><a href="https://zhuanlan.zhihu.com/p/24575395" target="_blank" rel="external">2016-我的前端之路:工具化与工程化</a></b></p>
+<h2 id="原文出处"><a href="#原文出处" class="headerlink" title="原文出处"></a>原文出处</h2><p><b>原文链接：<a href="https://www.zhihu.com/question/24558375/answer/139920107" target="_blank" rel="external">https://www.zhihu.com/question/24558375/answer/139920107</a><br>来源：知乎</b></p>
 
       
     </div>
@@ -330,13 +382,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/">IFE-有趣的鼠标模糊悬浮效果</a></p>
+        <p><span>本文标题:</span><a href="/2017/05/19/转载-浅析前端工程化/">(转载-修改)浅析前端工程化</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Water</a></p>
-        <p><span>发布时间:</span>2017-02-28, 11:03:37</p>
-        <p><span>最后更新:</span>2017-02-28, 11:06:57</p>
+        <p><span>发布时间:</span>2017-05-19, 12:01:36</p>
+        <p><span>最后更新:</span>2017-05-19, 13:12:09</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" title="IFE-有趣的鼠标模糊悬浮效果">http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/19/转载-浅析前端工程化/" title="(转载-修改)浅析前端工程化">http://waterlin.cn/2017/05/19/转载-浅析前端工程化/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2017/05/19/转载-浅析前端工程化/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -348,16 +400,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/03/04/Win10-MongoDBInstall/">
-                    Win10-MongoDBInstall
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/02/23/win10-tomcat安装/">
-                    win10-tomcat安装
+                <a href="/2017/03/30/vue-for-contacts实践总结/">
+                    vue-for-contacts实践总结
                 </a>
             </div>
         
@@ -369,7 +415,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#边框从两边散开"><span class="toc-number">2.</span> <span class="toc-text">边框从两边散开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文字流光效果"><span class="toc-number">3.</span> <span class="toc-text">文字流光效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文章"><span class="toc-number">4.1.</span> <span class="toc-text">参考文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Demo"><span class="toc-number">4.2.</span> <span class="toc-text">Demo</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化"><span class="toc-number">1.</span> <span class="toc-text">模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS的模块化"><span class="toc-number">1.1.</span> <span class="toc-text">JS的模块化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CommonJS"><span class="toc-number">1.1.1.</span> <span class="toc-text">CommonJS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AMD和CMD"><span class="toc-number">1.1.2.</span> <span class="toc-text">AMD和CMD</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS的模块化"><span class="toc-number">1.2.</span> <span class="toc-text">CSS的模块化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件化-Web-Component"><span class="toc-number">2.</span> <span class="toc-text">组件化(Web Component)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规范化"><span class="toc-number">3.</span> <span class="toc-text">规范化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动化"><span class="toc-number">4.</span> <span class="toc-text">自动化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图标合并"><span class="toc-number">4.1.</span> <span class="toc-text">图标合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#持续集成"><span class="toc-number">4.2.</span> <span class="toc-text">持续集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动化构建"><span class="toc-number">4.3.</span> <span class="toc-text">自动化构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动化部署"><span class="toc-number">4.4.</span> <span class="toc-text">自动化部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动化测试"><span class="toc-number">4.5.</span> <span class="toc-text">自动化测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建工具"><span class="toc-number">4.6.</span> <span class="toc-text">构建工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#拓展阅读"><span class="toc-number">5.</span> <span class="toc-text">拓展阅读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原文出处"><span class="toc-number">6.</span> <span class="toc-text">原文出处</span></a></li></ol>
         
     </div>
     <style>
@@ -405,7 +451,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"IFE-有趣的鼠标模糊悬浮效果　| 次元空间　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"(转载-修改)浅析前端工程化　| 次元空间　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -421,7 +467,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/28/IFE-有趣的鼠标模糊悬浮效果/" data-title="IFE-有趣的鼠标模糊悬浮效果" data-url="http://waterlin.cn/2017/02/28/IFE-有趣的鼠标模糊悬浮效果/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/05/19/转载-浅析前端工程化/" data-title="(转载-修改)浅析前端工程化" data-url="http://waterlin.cn/2017/05/19/转载-浅析前端工程化/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -444,15 +490,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/03/04/Win10-MongoDBInstall/" title="上一篇: Win10-MongoDBInstall">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/02/23/win10-tomcat安装/" title="下一篇: win10-tomcat安装">
+            <a href="/2017/03/30/vue-for-contacts实践总结/" title="下一篇: vue-for-contacts实践总结">
                 <i class="fa fa-angle-right"></i>
             </a>
         
