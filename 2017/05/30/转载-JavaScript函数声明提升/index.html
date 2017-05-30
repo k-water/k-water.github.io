@@ -15,29 +15,16 @@
 
 
 
-<meta name="description" content="简单说下px和em
-
-
-px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
+<meta name="description" content="函数声明提升在ES5 中存在这样的事实，变量声明提升 ，函数声明提升。 在抛出这篇文章要讨论的问题之前，我们先来解释下这两个概念。变量声明提升： 通过 var 声明的变量在代码执行之前被js引擎提升到了当前作用域的顶部。函数声明提升： 通过函数声明的方式（非函数表达式）声明的函数在代码执行之前被js引擎提升到了当前作用域的顶部，而且函数声明提升优先于变量声明提升。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rem—_适配Webapp">
-<meta property="og:url" content="http://waterlin.cn/2016/07/21/Rem—-适配Webapp/index.html">
+<meta property="og:title" content="JavaScript函数声明提升">
+<meta property="og:url" content="http://waterlin.cn/2017/05/30/转载-JavaScript函数声明提升/index.html">
 <meta property="og:site_name" content="次元空间">
-<meta property="og:description" content="简单说下px和em
-
-
-px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61hq4py6qj208704laa2.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccegw1f61hxtblkcj20hi0a6gnb.jpg">
-<meta property="og:updated_time" content="2016-07-21T06:23:14.236Z">
+<meta property="og:description" content="函数声明提升在ES5 中存在这样的事实，变量声明提升 ，函数声明提升。 在抛出这篇文章要讨论的问题之前，我们先来解释下这两个概念。变量声明提升： 通过 var 声明的变量在代码执行之前被js引擎提升到了当前作用域的顶部。函数声明提升： 通过函数声明的方式（非函数表达式）声明的函数在代码执行之前被js引擎提升到了当前作用域的顶部，而且函数声明提升优先于变量声明提升。">
+<meta property="og:updated_time" content="2017-05-30T09:49:28.410Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rem—_适配Webapp">
-<meta name="twitter:description" content="简单说下px和em
-
-
-px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg">
+<meta name="twitter:title" content="JavaScript函数声明提升">
+<meta name="twitter:description" content="函数声明提升在ES5 中存在这样的事实，变量声明提升 ，函数声明提升。 在抛出这篇文章要讨论的问题之前，我们先来解释下这两个概念。变量声明提升： 通过 var 声明的变量在代码执行之前被js引擎提升到了当前作用域的顶部。函数声明提升： 通过函数声明的方式（非函数表达式）声明的函数在代码执行之前被js引擎提升到了当前作用域的顶部，而且函数声明提升优先于变量声明提升。">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -65,7 +52,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Rem—_适配Webapp | 次元空间</title>
+<title>JavaScript函数声明提升 | 次元空间</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -276,11 +263,11 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Rem—-适配Webapp" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-转载-JavaScript函数声明提升" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/21/Rem—-适配Webapp/" class="article-date">
-      <time datetime="2016-07-21T06:19:52.000Z" itemprop="datePublished">2016-07-21</time>
+      <a href="/2017/05/30/转载-JavaScript函数声明提升/" class="article-date">
+      <time datetime="2017-05-30T09:14:19.000Z" itemprop="datePublished">2017-05-30</time>
 </a>
 
 
@@ -295,7 +282,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
         
   
     <h1 class="article-title" itemprop="name">
-      Rem—_适配Webapp
+      JavaScript函数声明提升
     </h1>
   
 
@@ -304,13 +291,13 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+    <a class="article-category-link" href="/categories/转载/">转载</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -320,33 +307,54 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
-<h3>简单说下px和em</h3>
-
-</blockquote>
-<h3 id="px为单位"><a href="#px为单位" class="headerlink" title="px为单位"></a>px为单位</h3><p>在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。<br><a id="more"></a></p>
-<h3 id="em位单位"><a href="#em位单位" class="headerlink" title="em位单位"></a>em位单位</h3><p>使用“px”为单位是比较方便，而又一致，但在浏览器中放大或缩放浏览页面时会存在一个问题，要解决这个问题，我们可以使用“em”单位。“em”是指相对于父元素的字体大小的单位。设置em为单位，需要有一个参考点，即他的父元素的font-size的大小。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">62.5%</span>;<span class="comment">/*10 ÷ 16 × 100% = 62.5%*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">2.4em</span>; <span class="comment">/*2.4em × 10 = 24px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">1.4em</span>; <span class="comment">/*1.4em × 10 = 14px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>其计算公式为：</p>
+        <h3 id="函数声明提升"><a href="#函数声明提升" class="headerlink" title="函数声明提升"></a>函数声明提升</h3><p>在ES5 中存在这样的事实，<code>变量声明提升</code> ，<code>函数声明提升</code>。 在抛出这篇文章要讨论的问题之前，我们先来解释下这两个概念。<br><b>变量声明提升</b>： 通过 <code>var</code> 声明的变量在代码执行之前被js引擎提升到了当前作用域的顶部。<br><b>函数声明提升</b>： 通过函数声明的方式<code>（非函数表达式）</code>声明的函数在代码执行之前被js引擎提升到了当前作用域的顶部，而且函数声明提升优先于变量声明提升。<br><a id="more"></a></p>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><p><b>1. js中变量没有声明就直接使用，是会导致引用错误的，如下:</b><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a)</div></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Uncaught <span class="built_in">ReferenceError</span>: a is not defined(…)</div></pre></td></tr></table></figure></p>
+<p><b>2. 变量声明提升</b><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a)</div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="literal">undefined</span></div></pre></td></tr></table></figure></p>
+<p>没有报错，而是输出了<code>undefined</code>, 说明变量声明 <code>var a</code> 被提升到了作用域的顶部， console.log 进行RHS引用时找到了<code>变量 a</code>, 所以没有报错。</p>
 <blockquote>
-<p><strong>1 ÷ 父元素的font-size × 需要转换的像素值 = em值</strong></p>
+<p>RHS: JavaScript引擎的一种查找类型，含义是赋值操作的右侧。</p>
 </blockquote>
-<h3 id="Rem"><a href="#Rem" class="headerlink" title="Rem"></a>Rem</h3><p>rem（font size of the rootelement）是指相对于根元素的字体大小的单位。简单的说它就是一个相对单位。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; <span class="attribute">font-size</span>: <span class="number">100px</span>; &#125;</div><div class="line"><span class="comment">/*或者*/</span></div><div class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">font-size</span>: <span class="number">62.5%</span>;<span class="comment">/*10 ÷ 16 × 100% = 62.5%*/</span>&#125;</div></pre></td></tr></table></figure>
+<p><b>3. 函数声明提升</b><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'This is a function body'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">This is a <span class="function"><span class="keyword">function</span> <span class="title">body</span></span></div></pre></td></tr></table></figure></p>
+<p>函数的调用发生在函数声明之前，但是依旧正常执行。其实真正的函数声明只包含如下部分：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'This is a function body'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这部分执行的结果就是创建了一个函数对象，我们假设为 <code>funcObj</code>。<br><code>a</code> 只是指向 <code>funcObj 的指针</code>，函数声明提升，提升的应该是创建 <code>funcObj</code>的过程，也就是上述的代码块。</p>
 <blockquote>
-<p>于是，在整个页面中，就有这样的换算关系，<strong>1rem=100px</strong>；</p>
+<p>在一些引擎的实现中，<code>a</code> 也会赋值给 <code>funcObj</code>对象上的一个 <code>name</code> 属性。 比如 <code>a.name</code>会输出<code>a</code></p>
 </blockquote>
-<h3 id="使用Rem实现屏幕适配布局"><a href="#使用Rem实现屏幕适配布局" class="headerlink" title="使用Rem实现屏幕适配布局"></a>使用Rem实现屏幕适配布局</h3><p>rem是通过根元素进行适配的，网页中的根元素指的是html我们通过设置html的字体大小就可以控制rem的大小。举个例子：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.btn</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">6rem</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">3rem</span>;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">3rem</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1.2rem</span>;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#0f0</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#000</span>;</div><div class="line">    <span class="attribute">border-radius</span>: .<span class="number">5rem</span>;</div><div class="line">    <span class="attribute">text-decoration</span>: none;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">outline</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>效果如下：<br><img src="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg" alt=""><br>当改变html中font-size的值，会发生怎样的变化呢，我们做如下的改变：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://ww4.sinaimg.cn/large/c444dccegw1f61hq4py6qj208704laa2.jpg" alt=""><br>如图所示，上面的width，height变成了上面结果的两倍，我们只改变了html的font-size，但.btn样式的width,height的rem设置的属性不变的情况下就改变了按钮在web中的大小。</p>
-<p>由此我们可以看到，我们不需要改变.btn中的width，height，只需改变html即根元素中的font-size的值，按钮的大小就会随之改变。从例子中，我们也可以知道rem和px之间的换算关系，在这里，<i>1rem=10px</i>。</p>
-<h3 id="不同分辨率下font-size的值"><a href="#不同分辨率下font-size的值" class="headerlink" title="不同分辨率下font-size的值"></a>不同分辨率下font-size的值</h3><p>这里借用了ISUX的博文中一张图，如下</p>
-<p><img src="http://ww3.sinaimg.cn/large/c444dccegw1f61hxtblkcj20hi0a6gnb.jpg" alt=""></p>
-<p>引用ISUX中的媒体查询，做的是对大部分设备的适配，可以参考。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size </span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">401px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">25px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">428px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">26.75px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">481px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">30px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">569px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">35px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">641px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">40px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="Rem-flexible-实现移动端适配"><a href="#Rem-flexible-实现移动端适配" class="headerlink" title="Rem + flexible 实现移动端适配"></a>Rem + flexible 实现移动端适配</h3><p>参考大漠老师的博文: <a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a>，讲的很详细，值得学习。</p>
-<h3 id="相关学习资料"><a href="#相关学习资料" class="headerlink" title="相关学习资料"></a>相关学习资料</h3><p><a href="https://segmentfault.com/a/1190000003690140?_ea=746493#articleHeader1" target="_blank" rel="external">关于移动端 rem 布局的一些总结</a></p>
-<p><a href="http://isux.tencent.com/web-app-rem.html" target="_blank" rel="external">web app变革之rem</a></p>
-<p><a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a></p>
+<p><b>4. 函数声明提升优于变量声明提升</b><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">a()</div><div class="line"></div><div class="line"><span class="keyword">var</span> a</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</div><div class="line">&#125;</div><div class="line">a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line">a()</div></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure></p>
+<p>上述代码会被js引擎解析为如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</div><div class="line">&#125;</div><div class="line">a()</div><div class="line">a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</div><div class="line">&#125;</div><div class="line">a()</div></pre></td></tr></table></figure></p>
+<p><code>var a</code> 属于重复声明，被忽略掉了。然而后续的函数声明还是会覆盖之前的函数声明。如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">a()</div><div class="line"></div><div class="line"><span class="keyword">var</span> a</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>)</div><div class="line">&#125;</div><div class="line">a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>)</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">3</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p><b>所以得出如下猜想：</b></p>
+<blockquote>
+<p>函数声明提升其实做了两个提升动作：</p>
+<ul>
+<li>函数名变量提升，类似变量声明 function a()</li>
+<li>函数定义提升 { /<em>function body</em>/ } .</li>
+</ul>
+</blockquote>
+<p>也就是说通过函数声明的方式定义一个函数会有以下三个步骤（或者说两个也可以，第三个可以归并到第二步中）（YY而已，不要当真）：+</p>
+<blockquote>
+<ul>
+<li>声明函数名变量 a</li>
+<li>创建函数对象 funcObj</li>
+<li>把函数名变量 a 指向函数对象 funcObj</li>
+</ul>
+</blockquote>
+<p>而一般的函数声明提升会把这三个步骤都提升到作用域的顶部。</p>
+<h4 id="一般的函数声明提升的结果如上所述，那不一般的函数声明提升又会是什么样的呢？"><a href="#一般的函数声明提升的结果如上所述，那不一般的函数声明提升又会是什么样的呢？" class="headerlink" title="一般的函数声明提升的结果如上所述，那不一般的函数声明提升又会是什么样的呢？"></a>一般的函数声明提升的结果如上所述，那不一般的函数声明提升又会是什么样的呢？</h4><p>问题如下：在chrome 49, FF 46, IE 11中运行如下代码都得出类似结果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a)</div><div class="line">    <span class="keyword">if</span>(<span class="literal">false</span>)&#123;</div><div class="line">        <span class="built_in">console</span>.log(a())</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'true'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">   a()</div><div class="line">&#125;)()</div></pre></td></tr></table></figure></p>
+<p>chrome运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="literal">undefined</span></div><div class="line">Uncaught <span class="built_in">TypeError</span>: a is not a <span class="function"><span class="keyword">function</span></span></div></pre></td></tr></table></figure></p>
+<p>奇怪吧？！函数提升发生在所有代码执行之前，所以，尽管<code>a</code> 的定义过程写在了 <code>if 分支</code>中，但是理论上或者说ES6之前， 它是不会影响函数声明提升的，而现在，在作用域顶部<code>console.log(a)</code>输出 <code>undefined</code>, 而执行 <code>a()</code> 发生<code>TypeError</code>。 我们稍作如下修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a)</div><div class="line">    <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">        <span class="built_in">console</span>.log(a())</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'true'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">   a()</div><div class="line">&#125;)()</div></pre></td></tr></table></figure></p>
+<p>chrome运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="literal">undefined</span></div><div class="line"><span class="literal">true</span></div><div class="line"><span class="literal">true</span></div></pre></td></tr></table></figure></p>
+<p>再做一次修改：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="meta">    'use strict'</span></div><div class="line"></div><div class="line">    <span class="keyword">if</span>(<span class="literal">true</span>)&#123;</div><div class="line">        <span class="built_in">console</span>.log(a())</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'true'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(a)</div><div class="line">&#125;)()</div></pre></td></tr></table></figure></p>
+<p>chrome运行结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="literal">true</span></div><div class="line">Uncaught <span class="built_in">TypeError</span>: a is not a <span class="function"><span class="keyword">function</span></span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>现代浏览器的JS引擎已经支持块作用域了， 只是在非严格模式下，只有函数名变量声明会提升到当前闭包的顶部，这也是不管if 分支是否成立，在它之前 <code>console.log(a)</code> 都会输出 <code>undefined</code> 的原因。 而函数定义提升只提升到了if 的块作用域内，这就是在if 为真时，在if块内且在函数声明之前<code>console.log(a())</code>会输出 <code>true</code>的原因。 但是在严格模式下， 函数名变量的提升也只提升到了if 块的顶部。这就是在严格模式下，在if 块外部对a 进行RHS引用是报<code>TypeError</code> 的原因。</p>
+</blockquote>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>在ES5中，严格模式下，函数的声明只能在全局作用域或者函数内，其他块（if, for）都会报错。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 如下代码ES5中都会报错</span></div><div class="line"></div><div class="line"><span class="keyword">if</span>(<span class="number">1</span>)&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;……&#125; <span class="comment">// 报错，ES6中不报错，是因为ES6支持了块作用域，所以在块作用域中声明函数是合理的。</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -355,13 +363,13 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/21/Rem—-适配Webapp/">Rem—_适配Webapp</a></p>
+        <p><span>本文标题:</span><a href="/2017/05/30/转载-JavaScript函数声明提升/">JavaScript函数声明提升</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Water</a></p>
-        <p><span>发布时间:</span>2016-07-21, 14:19:52</p>
-        <p><span>最后更新:</span>2016-07-21, 14:23:14</p>
+        <p><span>发布时间:</span>2017-05-30, 17:14:19</p>
+        <p><span>最后更新:</span>2017-05-30, 17:49:28</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/21/Rem—-适配Webapp/" title="Rem—_适配Webapp">http://waterlin.cn/2016/07/21/Rem—-适配Webapp/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2016/07/21/Rem—-适配Webapp/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/30/转载-JavaScript函数声明提升/" title="JavaScript函数声明提升">http://waterlin.cn/2017/05/30/转载-JavaScript函数声明提升/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2017/05/30/转载-JavaScript函数声明提升/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -373,16 +381,10 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/07/24/并查集/">
-                    并查集
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/07/21/float浮动/">
-                    float浮动
+                <a href="/2017/05/19/转载-浅析前端工程化/">
+                    (转载-修改)浅析前端工程化
                 </a>
             </div>
         
@@ -394,7 +396,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">简单说下px和em</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#px为单位"><span class="toc-number">2.</span> <span class="toc-text">px为单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em位单位"><span class="toc-number">3.</span> <span class="toc-text">em位单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rem"><span class="toc-number">4.</span> <span class="toc-text">Rem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Rem实现屏幕适配布局"><span class="toc-number">5.</span> <span class="toc-text">使用Rem实现屏幕适配布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不同分辨率下font-size的值"><span class="toc-number">6.</span> <span class="toc-text">不同分辨率下font-size的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rem-flexible-实现移动端适配"><span class="toc-number">7.</span> <span class="toc-text">Rem + flexible 实现移动端适配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关学习资料"><span class="toc-number">8.</span> <span class="toc-text">相关学习资料</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数声明提升"><span class="toc-number">1.</span> <span class="toc-text">函数声明提升</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例代码"><span class="toc-number">1.1.</span> <span class="toc-text">示例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一般的函数声明提升的结果如上所述，那不一般的函数声明提升又会是什么样的呢？"><span class="toc-number">1.2.</span> <span class="toc-text">一般的函数声明提升的结果如上所述，那不一般的函数声明提升又会是什么样的呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意"><span class="toc-number">1.3.</span> <span class="toc-text">注意</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -430,7 +432,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Rem—_适配Webapp　| 次元空间　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"JavaScript函数声明提升　| 次元空间　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -446,7 +448,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/07/21/Rem—-适配Webapp/" data-title="Rem—_适配Webapp" data-url="http://waterlin.cn/2016/07/21/Rem—-适配Webapp/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/05/30/转载-JavaScript函数声明提升/" data-title="JavaScript函数声明提升" data-url="http://waterlin.cn/2017/05/30/转载-JavaScript函数声明提升/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -469,15 +471,13 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/24/并查集/" title="上一篇: 并查集">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/07/21/float浮动/" title="下一篇: float浮动">
+            <a href="/2017/05/19/转载-浅析前端工程化/" title="下一篇: (转载-修改)浅析前端工程化">
                 <i class="fa fa-angle-right"></i>
             </a>
         
