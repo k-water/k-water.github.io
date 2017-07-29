@@ -15,29 +15,23 @@
 
 
 
-<meta name="description" content="简单说下px和em
-
-
-px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
+<meta name="description" content="概述项目是基于Vue.js，成品是一个移动端的音乐播放器，来源于imooc的实战课程。自己动手实践并加以修改拓展。项目的大致流程是Vue-cli构建开发环境，分析需求，设计构思，规划目录结构，开始编码。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rem—_适配Webapp">
-<meta property="og:url" content="http://waterlin.cn/2016/07/21/Rem—-适配Webapp/index.html">
+<meta property="og:title" content="基于Vue.js的音乐播放器（Webapp）">
+<meta property="og:url" content="http://waterlin.cn/2017/07/29/基于Vue-js的音乐播放器（Webapp）/index.html">
 <meta property="og:site_name" content="次元空间">
-<meta property="og:description" content="简单说下px和em
-
-
-px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg">
-<meta property="og:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61hq4py6qj208704laa2.jpg">
-<meta property="og:image" content="http://ww3.sinaimg.cn/large/c444dccegw1f61hxtblkcj20hi0a6gnb.jpg">
-<meta property="og:updated_time" content="2016-07-21T06:23:14.237Z">
+<meta property="og:description" content="概述项目是基于Vue.js，成品是一个移动端的音乐播放器，来源于imooc的实战课程。自己动手实践并加以修改拓展。项目的大致流程是Vue-cli构建开发环境，分析需求，设计构思，规划目录结构，开始编码。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3017671-0d73dfcecd68f86c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3017671-58dbbfd92e63fd2c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3017671-1e68275dfb64a26a.jpg?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3017671-df2bc070213bd1ec.jpg?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3017671-ca76b7c4ca052f57.jpg?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3017671-09583fbd757c77f1.jpg?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2017-07-29T01:41:56.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rem—_适配Webapp">
-<meta name="twitter:description" content="简单说下px和em
-
-
-px为单位在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。">
-<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg">
+<meta name="twitter:title" content="基于Vue.js的音乐播放器（Webapp）">
+<meta name="twitter:description" content="概述项目是基于Vue.js，成品是一个移动端的音乐播放器，来源于imooc的实战课程。自己动手实践并加以修改拓展。项目的大致流程是Vue-cli构建开发环境，分析需求，设计构思，规划目录结构，开始编码。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3017671-0d73dfcecd68f86c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -65,7 +59,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Rem—_适配Webapp | 次元空间</title>
+<title>基于Vue.js的音乐播放器（Webapp） | 次元空间</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -276,11 +270,11 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Rem—-适配Webapp" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-基于Vue-js的音乐播放器（Webapp）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/07/21/Rem—-适配Webapp/" class="article-date">
-      <time datetime="2016-07-21T06:19:52.000Z" itemprop="datePublished">2016-07-21</time>
+      <a href="/2017/07/29/基于Vue-js的音乐播放器（Webapp）/" class="article-date">
+      <time datetime="2017-07-29T01:40:46.000Z" itemprop="datePublished">2017-07-29</time>
 </a>
 
 
@@ -295,7 +289,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
         
   
     <h1 class="article-title" itemprop="name">
-      Rem—_适配Webapp
+      基于Vue.js的音乐播放器（Webapp）
     </h1>
   
 
@@ -303,14 +297,10 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/CSS/">CSS</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工程/">工程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂谈/">杂谈</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -320,33 +310,43 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
-<h3>简单说下px和em</h3>
-
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>项目是基于Vue.js，成品是一个移动端的音乐播放器，来源于imooc的实战课程。自己动手实践并加以修改拓展。<br>项目的大致流程是Vue-cli构建开发环境，分析需求，设计构思，规划目录结构，开始编码。<br><a id="more"></a></p>
+<h4 id="视图层"><a href="#视图层" class="headerlink" title="视图层"></a>视图层</h4><blockquote>
+<ul>
+<li>推荐页</li>
+<li>歌手页<ul>
+<li>歌手详情</li>
+</ul>
+</li>
+<li>歌曲排行榜<ul>
+<li>排行榜详情</li>
+</ul>
+</li>
+<li>搜索页</li>
+<li>用户中心</li>
+</ul>
 </blockquote>
-<h3 id="px为单位"><a href="#px为单位" class="headerlink" title="px为单位"></a>px为单位</h3><p>在Web页面初期制作中，我们都是使用“px”来设置我们的文本，因为他比较稳定和精确。但是这种方法存在一个问题，当用户在浏览器中浏览我们制作的Web页面时，他改变了浏览器的字体大小，这时会使用我们的Web页面布局被打破。这样对于那些关心自己网站可用性的用户来说，就是一个大问题了。因此，这时就提出了使用“em”来定义Web页面的字体。<br><a id="more"></a></p>
-<h3 id="em位单位"><a href="#em位单位" class="headerlink" title="em位单位"></a>em位单位</h3><p>使用“px”为单位是比较方便，而又一致，但在浏览器中放大或缩放浏览页面时会存在一个问题，要解决这个问题，我们可以使用“em”单位。“em”是指相对于父元素的字体大小的单位。设置em为单位，需要有一个参考点，即他的父元素的font-size的大小。例如：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">62.5%</span>;<span class="comment">/*10 ÷ 16 × 100% = 62.5%*/</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">2.4em</span>; <span class="comment">/*2.4em × 10 = 24px */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">	<span class="attribute">font-size</span>: <span class="number">1.4em</span>; <span class="comment">/*1.4em × 10 = 14px */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>其计算公式为：</p>
+<h4 id="数据来源"><a href="#数据来源" class="headerlink" title="数据来源"></a>数据来源</h4><p>所有数据都来自于QQ音乐，抓取自QQ的接口，大部分接口都是JSONP，抓取比较容易，其中一些接口限制了<code>host</code>，不能直接抓取，采用的方法是用<code>axios</code>代理，设置<code>header</code>，以此绕过<code>host</code>的限制。<br>PS：具体代码请看<code>prod.server.js</code>文件</p>
+<h4 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h4><blockquote>
+<p>Vue<br>Vuex<br>Vue-Router<br>Vue-cli<br>Stylus<br>Axios<br>ESlint<br>Better-scroll</p>
+</blockquote>
+<h4 id="src目录结构"><a href="#src目录结构" class="headerlink" title="src目录结构"></a>src目录结构</h4><p><img src="http://upload-images.jianshu.io/upload_images/3017671-0d73dfcecd68f86c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><h4 id="player组件"><a href="#player组件" class="headerlink" title="player组件"></a>player组件</h4><p>讲一讲<code>player</code>    播放器组件，播放器组件可谓是整个项目的核心，当然数据处理和用户体验方面也是不简单的（逃。<br>播放器是全局组件，放在<code>App.vue</code>下面，通过<code>Vuex</code>传递数据，触发<code>action</code>提交<code>mutation</code>，从而使播放器开始工作。当然，其中的数据交互说复杂也不是很复杂，就是要花多点时间理解，<code>player</code>组件由多个基础组件构成，具体请看项目代码，下面上图<br><img src="http://upload-images.jianshu.io/upload_images/3017671-58dbbfd92e63fd2c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <blockquote>
-<p><strong>1 ÷ 父元素的font-size × 需要转换的像素值 = em值</strong></p>
+<p>为了防止切换歌曲时点击速度过快导致歌曲播放错误，使用了<code>audio</code>的<code>onplay</code>API，结合<code>Vuex</code>获取到数据，判断当前歌曲数据请求到才可以切换下一首歌曲，判断函数如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ready() &#123;</div><div class="line">  <span class="keyword">this</span>.songReady = <span class="literal">true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="Rem"><a href="#Rem" class="headerlink" title="Rem"></a>Rem</h3><p>rem（font size of the rootelement）是指相对于根元素的字体大小的单位。简单的说它就是一个相对单位。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; <span class="attribute">font-size</span>: <span class="number">100px</span>; &#125;</div><div class="line"><span class="comment">/*或者*/</span></div><div class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">font-size</span>: <span class="number">62.5%</span>;<span class="comment">/*10 ÷ 16 × 100% = 62.5%*/</span>&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>于是，在整个页面中，就有这样的换算关系，<strong>1rem=100px</strong>；</p>
-</blockquote>
-<h3 id="使用Rem实现屏幕适配布局"><a href="#使用Rem实现屏幕适配布局" class="headerlink" title="使用Rem实现屏幕适配布局"></a>使用Rem实现屏幕适配布局</h3><p>rem是通过根元素进行适配的，网页中的根元素指的是html我们通过设置html的字体大小就可以控制rem的大小。举个例子：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.btn</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">6rem</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">3rem</span>;</div><div class="line">    <span class="attribute">line-height</span>: <span class="number">3rem</span>;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">1.2rem</span>;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">background</span>: <span class="number">#0f0</span>;</div><div class="line">    <span class="attribute">color</span>: <span class="number">#000</span>;</div><div class="line">    <span class="attribute">border-radius</span>: .<span class="number">5rem</span>;</div><div class="line">    <span class="attribute">text-decoration</span>: none;</div><div class="line">    <span class="attribute">text-align</span>: center;</div><div class="line">    <span class="attribute">outline</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>效果如下：<br><img src="http://ww4.sinaimg.cn/large/c444dccegw1f61ho8l7nwj204r034mx2.jpg" alt=""><br>当改变html中font-size的值，会发生怎样的变化呢，我们做如下的改变：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><img src="http://ww4.sinaimg.cn/large/c444dccegw1f61hq4py6qj208704laa2.jpg" alt=""><br>如图所示，上面的width，height变成了上面结果的两倍，我们只改变了html的font-size，但.btn样式的width,height的rem设置的属性不变的情况下就改变了按钮在web中的大小。</p>
-<p>由此我们可以看到，我们不需要改变.btn中的width，height，只需改变html即根元素中的font-size的值，按钮的大小就会随之改变。从例子中，我们也可以知道rem和px之间的换算关系，在这里，<i>1rem=10px</i>。</p>
-<h3 id="不同分辨率下font-size的值"><a href="#不同分辨率下font-size的值" class="headerlink" title="不同分辨率下font-size的值"></a>不同分辨率下font-size的值</h3><p>这里借用了ISUX的博文中一张图，如下</p>
-<p><img src="http://ww3.sinaimg.cn/large/c444dccegw1f61hxtblkcj20hi0a6gnb.jpg" alt=""></p>
-<p>引用ISUX中的媒体查询，做的是对大部分设备的适配，可以参考。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">    <span class="attribute">font-size </span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">401px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">25px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">428px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">26.75px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">481px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">30px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">569px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">35px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">641px</span>)&#123;</div><div class="line">    <span class="selector-tag">html</span> &#123;</div><div class="line">        <span class="attribute">font-size</span>: <span class="number">40px</span> <span class="meta">!important</span>; </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="Rem-flexible-实现移动端适配"><a href="#Rem-flexible-实现移动端适配" class="headerlink" title="Rem + flexible 实现移动端适配"></a>Rem + flexible 实现移动端适配</h3><p>参考大漠老师的博文: <a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a>，讲的很详细，值得学习。</p>
-<h3 id="相关学习资料"><a href="#相关学习资料" class="headerlink" title="相关学习资料"></a>相关学习资料</h3><p><a href="https://segmentfault.com/a/1190000003690140?_ea=746493#articleHeader1" target="_blank" rel="external">关于移动端 rem 布局的一些总结</a></p>
-<p><a href="http://isux.tencent.com/web-app-rem.html" target="_blank" rel="external">web app变革之rem</a></p>
-<p><a href="http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html" target="_blank" rel="external">使用Flexible实现手淘H5页面的终端适配</a></p>
+<h4 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h4><p>通过调用QQ音乐的JSONP接口，获取的数据并不能直接拿来用，需要做进一步的规格化，达到我们使用的要求，所以在这方面单独封装了一个<code>class</code>来处理这方面的数据，具体请看<code>src/common/js/song.js</code></p>
+<p>在请求JSONP的时候，用到了一个JSONP库，这个库代码十分简短，只有几十行，有兴趣的同学可以<a href="https://github.com/webmodules/jsonp" target="_blank" rel="external">学习</a>下。</p>
+<p>使用时，就是将请求的参数拼接在请求url上，然后调用这个库的<code>jsonp</code>方法。所以，在此封装了两个函数，一个是将参数拼接在url上，另一个是将库里面的<code>jsonp</code>方法Promise化，方便我们使用，具体请查看<code>src/common/js/jsonp.js</code>。</p>
+<p>将请求的数据格式化后再通过<code>Vuex</code>传递，组件间共享，实现歌曲的播放切换等。</p>
+<h4 id="交互体验"><a href="#交互体验" class="headerlink" title="交互体验"></a>交互体验</h4><p>该项目的很多地方都涉及到滚动，包括下拉滚动，下拉滚动刷新等。这里面用到了一个库(<code>better-scroll</code>)，来实现所有涉及到的滚动，建议学习下它的<a href="https://github.com/ustbhuangyi/better-scroll" target="_blank" rel="external">API</a>。</p>
+<p>其他动画包括了<code>Vue</code>的<code>transition</code>动画，路由之间切换时的简单动画，播放器打开时的动画，这个地方比较难，也比较好玩。</p>
+<p>打开页面时的加载Loading效果，其实就是一个Loading组件，也比较简单。</p>
+<p>为了减少流量，图片加载使用了懒加载的方式，滚动时再加载真实的图片。<br>具体效果请自身体验：）</p>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p><img src="http://upload-images.jianshu.io/upload_images/3017671-1e68275dfb64a26a.jpg?imageMogr2/auto-orient/strip" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3017671-df2bc070213bd1ec.jpg?imageMogr2/auto-orient/strip" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3017671-ca76b7c4ca052f57.jpg?imageMogr2/auto-orient/strip" alt=""><br><img src="http://upload-images.jianshu.io/upload_images/3017671-09583fbd757c77f1.jpg?imageMogr2/auto-orient/strip" alt=""></p>
+<h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><h4 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># install dependencies</span></div><div class="line">npm install</div><div class="line"></div><div class="line"><span class="comment"># serve with hot reload at localhost:8080</span></div><div class="line">npm run dev</div><div class="line"></div><div class="line"><span class="comment"># run e2e tests</span></div><div class="line">npm run e2e</div><div class="line"></div><div class="line"><span class="comment"># run all tests</span></div><div class="line">npm <span class="built_in">test</span></div></pre></td></tr></table></figure>
+<h4 id="生产环境"><a href="#生产环境" class="headerlink" title="生产环境"></a>生产环境</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># build for production with minification</span></div><div class="line">npm run build</div><div class="line"><span class="comment"># run</span></div><div class="line">node prod.server.js</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过学习该项目，自己收获了许多，实践中也遇到了大大小小许多问题，通过断点调试等最终解决了，对我来说无疑是最大的鼓励，也希望能与大家一起学习。<br>项目地址：<a href="https://github.com/k-water/vue-music" target="_blank" rel="external">https://github.com/k-water/vue-music</a><br>喜欢的求个star(^_^)ノ<br>完 ：）</p>
 
       
     </div>
@@ -355,13 +355,13 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/07/21/Rem—-适配Webapp/">Rem—_适配Webapp</a></p>
+        <p><span>本文标题:</span><a href="/2017/07/29/基于Vue-js的音乐播放器（Webapp）/">基于Vue.js的音乐播放器（Webapp）</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Water</a></p>
-        <p><span>发布时间:</span>2016-07-21, 14:19:52</p>
-        <p><span>最后更新:</span>2016-07-21, 14:23:14</p>
+        <p><span>发布时间:</span>2017-07-29, 09:40:46</p>
+        <p><span>最后更新:</span>2017-07-29, 09:41:56</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/07/21/Rem—-适配Webapp/" title="Rem—_适配Webapp">http://waterlin.cn/2016/07/21/Rem—-适配Webapp/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2016/07/21/Rem—-适配Webapp/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/29/基于Vue-js的音乐播放器（Webapp）/" title="基于Vue.js的音乐播放器（Webapp）">http://waterlin.cn/2017/07/29/基于Vue-js的音乐播放器（Webapp）/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://waterlin.cn/2017/07/29/基于Vue-js的音乐播放器（Webapp）/　　作者: Water" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -373,16 +373,10 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/07/24/并查集/">
-                    并查集
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/07/21/float浮动/">
-                    float浮动
+                <a href="/2017/06/20/项目总结/">
+                    项目总结
                 </a>
             </div>
         
@@ -394,7 +388,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">简单说下px和em</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#px为单位"><span class="toc-number">2.</span> <span class="toc-text">px为单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em位单位"><span class="toc-number">3.</span> <span class="toc-text">em位单位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rem"><span class="toc-number">4.</span> <span class="toc-text">Rem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用Rem实现屏幕适配布局"><span class="toc-number">5.</span> <span class="toc-text">使用Rem实现屏幕适配布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不同分辨率下font-size的值"><span class="toc-number">6.</span> <span class="toc-text">不同分辨率下font-size的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rem-flexible-实现移动端适配"><span class="toc-number">7.</span> <span class="toc-text">Rem + flexible 实现移动端适配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关学习资料"><span class="toc-number">8.</span> <span class="toc-text">相关学习资料</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#视图层"><span class="toc-number">1.1.</span> <span class="toc-text">视图层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据来源"><span class="toc-number">1.2.</span> <span class="toc-text">数据来源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#技术栈"><span class="toc-number">1.3.</span> <span class="toc-text">技术栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#src目录结构"><span class="toc-number">1.4.</span> <span class="toc-text">src目录结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#难点"><span class="toc-number">2.</span> <span class="toc-text">难点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#player组件"><span class="toc-number">2.1.</span> <span class="toc-text">player组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据处理"><span class="toc-number">2.2.</span> <span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#交互体验"><span class="toc-number">2.3.</span> <span class="toc-text">交互体验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果"><span class="toc-number">3.</span> <span class="toc-text">效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建"><span class="toc-number">4.</span> <span class="toc-text">构建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#开发环境"><span class="toc-number">4.1.</span> <span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生产环境"><span class="toc-number">4.2.</span> <span class="toc-text">生产环境</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
         
     </div>
     <style>
@@ -430,7 +424,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Rem—_适配Webapp　| 次元空间　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"基于Vue.js的音乐播放器（Webapp）　| 次元空间　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -446,7 +440,7 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/07/21/Rem—-适配Webapp/" data-title="Rem—_适配Webapp" data-url="http://waterlin.cn/2016/07/21/Rem—-适配Webapp/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/07/29/基于Vue-js的音乐播放器（Webapp）/" data-title="基于Vue.js的音乐播放器（Webapp）" data-url="http://waterlin.cn/2017/07/29/基于Vue-js的音乐播放器（Webapp）/"></div>
     <script>
         var duoshuoQuery = {short_name:"Sunshinelzb"};
         var loadComment = function(){
@@ -469,15 +463,13 @@ px为单位在Web页面初期制作中，我们都是使用“px”来设置我�
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/24/并查集/" title="上一篇: 并查集">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/07/21/float浮动/" title="下一篇: float浮动">
+            <a href="/2017/06/20/项目总结/" title="下一篇: 项目总结">
                 <i class="fa fa-angle-right"></i>
             </a>
         
