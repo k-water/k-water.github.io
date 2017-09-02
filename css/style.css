@@ -18,10 +18,10 @@ html, button, input, select, textarea,
 	font-family: "PingFangSC-Regular", Helvetica, "Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Source Han Sans CN", "Microsoft YaHei", "STHeiti", "WenQuanYi Micro Hei", sans-serif !important;
 }
 html {
-  background-color: #f7fafc; }
+  background-color: #fff7a3; }
 
 body {
-  color: #444;
+  color: #000;
 	font-family: "TIBch", "Classic Grotesque W01", "Helvetica Neue", Arial, "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", SimSun, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -33,14 +33,14 @@ body {
 	max-width: 1150px;
 	margin: 0 auto;
 }
-canvas#background-canvas {
+/* canvas#background-canvas {
 	position: fixed;
 	display: block;
 	left: 0;
 	top: 0;
   background: #f7fafc;
 	z-index: -1;
-}
+} */
 .content_container {
 	padding-right: 50px;
 	padding-top: 20px;
@@ -74,7 +74,7 @@ div {
 #header {
 	padding: 58px 0 0;
 	text-align: left;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #F6F6B1;
 	position: relative;
 }
 
@@ -121,16 +121,16 @@ div {
 }
 
 #header #nav-menu a:hover {
-	border-bottom-color: #444;
+	border-bottom-color: #F6F6B1;
 }
 
 #header #nav-menu a.current {
-	border: 1px solid #ddd;
-	border-bottom-color: #fff;
+	border: 1px solid #fac564;
+	border-bottom-color: #F6F6B1;
 }
 
 #sidebar {
-	border-left: 1px solid #ddd;
+	border-left: 1px solid #fac564;
 	padding-left: 35px;
 	margin-top: 40px;
 	padding-bottom: 20px;
@@ -146,7 +146,7 @@ div {
 	line-height: 2.7;
 	margin-top: 0;
 	font-size: 16px;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #fac564;
 	display: block;
 	font-weight: normal;
 }
