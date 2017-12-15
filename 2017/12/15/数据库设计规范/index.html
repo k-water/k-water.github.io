@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="A contented mind is a perpetual feast."><title>数据库设计规范 | WaterBlog</title><link rel="stylesheet" type="text/css" href="/css/style.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/7.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">数据库设计规范</h1><a id="logo" href="/.">WaterBlog</a><p class="description">WaterGayGay的博客</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/collection/"><i class="fa fa-bookmark"> 收藏</i></a><a href="/history/"><i class="fa fa-book"> 历史</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">数据库设计规范</h1><div class="post-meta">Dec 15, 2017<span> | </span><span class="category"><a href="/categories/BackEnd/">BackEnd</a></span></div><div class="post-content"><p>最近学习了数据库相关的知识，体会到了数据库设计的重要性，一个好的数据库设计能为我们后面奠定开发基础，就好比建筑一样，数据库设计就是其中的地基，地基打稳了，后面的工程才能顺利进行。如果数据库设计的不好，地基不稳，那么我们的系统可能会不太稳定，对维护和开发带来了麻烦。</p>
+<a id="more"></a>
+<h3 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h3><p>简单来说，数据库设计就是根据业务系统的具体需要， 结合我们所选用的DBMS(Database Management System)，例如Oracle，MySQL，SQLserver等，为这个业务系统构造出最优的数据存储模型，并建立好数据库中的标结构及表与表之间的联系的过程。使之能有效的对应用系统中的数据进行存储，并可以高效的对已经存储的数据进行访问。</p>
+<p>一般来说，数据库设计分为以下四个步骤：</p>
+<ul>
+<li>需求分析<ul>
+<li>数据是什么</li>
+<li>数据有哪些属性</li>
+<li>数据和属性各自的特点有哪些</li>
+</ul>
+</li>
+<li>逻辑设计<ul>
+<li>使用<code>ER</code>图对数据库进行逻辑建模</li>
+</ul>
+</li>
+<li>物理设计<ul>
+<li>具体的代码设计</li>
+<li>根据所选数据库自身的特点把逻辑设计转换为物理设计</li>
+</ul>
+</li>
+<li>维护优化<ul>
+<li>新的需求进行建表</li>
+<li>索引优化</li>
+<li>大表拆分</li>
+</ul>
+</li>
+</ul>
+<h4 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h4><p>首先拿到一个需求，首先要进行需求分析，而不是一开始就着手代码的编写和数据库的建立。我们需要了解系统中需要存储的数据是什么，这些数据有什么特点，比如有一些数据是具体时效性的，对于这些数据我们可以采用过期清理的方式，减少不必要的数据存储。了解数据的生命周期，比如有一些数据不是数据库的核心数据，就不适合存储在数据库中。例如，日志类的文件，日志这种文件增长量非常大，同时它也不是数据库的核心数据，一般不适合存储在数据库中。</p>
+<p>另一方面，要弄清楚实体与实体之间的关系，是1对1,1对多，还是多对多？实体所包含的属性是什么，哪些属性或属性的组合可以唯一标识一个实体，也就是超码。</p>
+<h4 id="ER图"><a href="#ER图" class="headerlink" title="ER图"></a>ER图</h4><p>需求分析做完之后我们就可以进行数据库逻辑模型的设计，一般我们采用<code>ER</code>图的形式对逻辑模型进行展示。<br>ER图中的相关名词：</p>
+<blockquote>
+<ul>
+<li>关系：一个关系对应通常所说的一张表</li>
+<li>元组：表中的一行即为一个元组</li>
+<li>属性：表中的一列即为一个属性，每个属性都有一个名称，称为属性名</li>
+<li>候选码：表中的某个属性或属性组，它可以唯一确定一个元组</li>
+<li>主码：一个关系有多个候选码，选定其中一个为主码</li>
+<li>域：属性的取值范围</li>
+<li>分量：元组中的一个属性</li>
+</ul>
+</blockquote>
+<h3 id="数据库设计范式"><a href="#数据库设计范式" class="headerlink" title="数据库设计范式"></a>数据库设计范式</h3><p>数据的设计要遵循一定的规范，这样出来的数据库才是简洁的，结构清晰的，能让开发人员一目了然，看到这个数据库就能大概知道它对应的功能。优良的数据库设计可以节约存储空间，减少数据冗余，避免数据维护异常(如数据插入，更新，删除的异常)，同时也能进行高效的访问，不给开发人员制造不必要的麻烦。<br>常见的数据库范式包括：</p>
+<blockquote>
+<ul>
+<li>第一范式(1NF)</li>
+<li>第二范式(2NF)</li>
+<li>第三范式(3NF)</li>
+<li>BC范式(BCNF)</li>
+<li>第四范式(4NF)</li>
+<li>第五范式(5NF)</li>
+</ul>
+</blockquote>
+<p>目前重点放在前四个范式上，这也是目前大多数数据库设计所要遵循的范式，一般要求数据库的设计至少要满足第三范式，更高的会要求满足BCNF。</p>
+<h4 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h4><p>所谓第一范式（1NF）是指数据库表的每一列都是不可分割的基本数据项，同一列中不能有多个值，即实体中的某个属性不能有多个值或者不能有重复的属性。如果出现重复的属性，就可能需要定义一个新的实体，新的实体由重复的属性构成，新实体与原实体之间为一对多关系。在第一范式（1NF）中表的每一行只包含一个实例的信息。<br>简而言之，第一范式要求数据库中的表都是二维表。</p>
+<p>满足第一范式<br>| id     |     name |   sex  |<br>| :——– | ——–:| :——: |<br>| 1    |   water |  male  |</p>
+<h4 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h4><p>首先第二范式肯定是要满足第一范式的(废话)。第二范式的定义是：</p>
+<blockquote>
+<p>数据库的表中不存在<strong>非关键字段</strong>对任一候选关键字段的部分函数依赖</p>
+<p><strong>部分函数依赖</strong>是指存在着组合关键字中的某一关键字决定非关键字的情况</p>
+</blockquote>
+<p><strong>换句话说：所有单关键字的标都符合第二范式</strong></p>
+<p>如下表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">学号</th>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">年龄</th>
+<th style="text-align:center">课程名称</th>
+<th style="text-align:center">成绩</th>
+<th>学分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2015xxx</td>
+<td style="text-align:center">water</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">DBMS</td>
+<td style="text-align:center">90</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>上表的关键字为组合关键字(学号，课程名称)，存在以下决定关系：<br><code>（学号，课程名称）→ （姓名，年龄， 成绩，学分）</code></p>
+<p>这个表不满足第二范式，因为存在如下决定关系（部分函数依赖）：<br><code>（课程名称）→ （学分）</code><br><code>（学号）→ （姓名，年龄）</code></p>
+<p>即存在关键字中的字段决定非关键字的情况。</p>
+<p>由于上表不满足第二范式，那它会存在以下问题：</p>
+<ul>
+<li>插入异常</li>
+<li>删除异常</li>
+<li>更新异常</li>
+<li>数据冗余</li>
+</ul>
+<p><strong>插入异常</strong><br>假如现在要开设一门新的课程，这门课程还没有人选修。这样，由于还没有“学号”关键字，课程名称和学分也无法记录入数据库。</p>
+<p><strong>删除异常</strong><br>假如一学期结束，一批学生已经完成课程的选修，这些选修记录应该从数据库表中删除。但是，与此同时，课程名和学分信息也被删除，很显然，这也会导致插入异常。</p>
+<p><strong>更新异常</strong><br>若调整了某一门课程的学分，那么对应数据表中的所有“学分”值都要更新，否则就会出现异常，同一门课程学分不同的情况。</p>
+<p><strong>数据冗余</strong><br>很显然，同一门课程由多个学生选修，“学分”就重复了多遍，另一方面，同一个学生选修了多门课程，姓名和年龄也会重复。</p>
+<p>为了解决这种情况，进行表的拆分，使它满足第二范式，如下：</p>
+<p><strong>student表</strong><br>| 学号 | 姓名 |  年龄  |<br>| :——–: | ——–:| :——: |<br>| 2015xxx  | water |  20 |</p>
+<p><strong>course表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">课程名称</th>
+<th style="text-align:center">学分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DBMS</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>takes表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">学号</th>
+<th style="text-align:right">课程名称</th>
+<th style="text-align:center">成绩</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2015xxx</td>
+<td style="text-align:right">DBMS</td>
+<td style="text-align:center">90</td>
+</tr>
+</tbody>
+</table>
+<p>以上表都是单关键字的，满足第二范式，这样就消除了插入异常，删除异常，更新异常和数据冗余。</p>
+<h4 id="第三范式"><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h4><p>第三范式是在第二范式的基础之上定义的，如果数据表中不存在<code>非关键字段</code>对任意<code>任意候选关键字段</code>的传递函数依赖则符合第三范式。<br>所谓传递函数依赖，指的是如果存在“A → B → C”的决定关系，则C传递函数依赖于A。<br>简单来说，第三范式就是在第二范式的基础上消除传递依赖，<code>即属性不依赖于其他非主属性</code>。<br>看下面例子：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">商品名称</th>
+<th style="text-align:right">价格</th>
+<th style="text-align:center">商品描述</th>
+<th style="text-align:center">重量</th>
+<th style="text-align:center">有效期</th>
+<th style="text-align:center">分类</th>
+<th style="text-align:center">分类描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">苹果</td>
+<td style="text-align:right">8.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">500g</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">生鲜食品</td>
+<td style="text-align:center">水果</td>
+</tr>
+</tbody>
+</table>
+<p>如上表，它存在以下的函数依赖关系：<br><code>(商品名称) → （分类）</code><br><code>（分类） → （分类描述）</code><br>也就是说存储非关键字段“分类描述”对关键字段“商品名称”的传递函数依赖，所以上表不满足第三范式。</p>
+<p>同样，不满足第三范式的数据表也存在着数据冗余，插入，删除，更新的异常。例如：（分类，分类藐视）对于每一个商品都会进行记录，所以存在着数据冗余，同时，也存在着其他三个异常。</p>
+<p>为了解决这个问题，同样对表进行拆分</p>
+<p><strong>goods表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">商品ID</th>
+<th style="text-align:right">商品名称</th>
+<th style="text-align:center">价格</th>
+<th style="text-align:center">商品描述</th>
+<th style="text-align:center">重量</th>
+<th style="text-align:center">有效期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:right">苹果</td>
+<td style="text-align:center">8.00</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">500g</td>
+</tr>
+</tbody>
+</table>
+<p><strong>category表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分类ID</th>
+<th style="text-align:right">分类</th>
+<th style="text-align:center">分类描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:right">生鲜食品</td>
+<td style="text-align:center">水果</td>
+</tr>
+</tbody>
+</table>
+<p><strong>联系表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分类ID</th>
+<th style="text-align:right">商品ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+<p>这样的数据库表是符合第三范式的，消除了数据冗余、更新异常、插入异常和删除异常。</p>
+<p><strong>BC范式</strong><br>BC范式比第三范式要求更加严格，在第三范式的基础上，数据库表中如果不存在任何字段对<code>任一候选关键字段</code>的传递函数依赖则符合BC范式。<br>也就是说，如果存在复合关键字，则复合关键字之间也不能存在函数依赖关系。<br>假如存在以下关系表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">仓库</th>
+<th style="text-align:right">管理员</th>
+<th style="text-align:center">存储物品</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">深圳仓</td>
+<td style="text-align:right">water</td>
+<td style="text-align:center">iPhone X</td>
+<td style="text-align:center">100</td>
+</tr>
+</tbody>
+</table>
+<p>已知条件有：</p>
+<ul>
+<li>某公司有若干仓库</li>
+<li>每个仓库只有一名管理员，一名管理员只能在一个仓库工作</li>
+<li>一个仓库可以存放多种物品，一种物品也可以存放在不同的仓库中。每种物品在每个仓库中都有对应数量。</li>
+</ul>
+<p>由此已知，该关系表存在以下依赖关系：<br>（仓库，存储物品）→ （管理员，数量）<br>（管理员，存储物品）→（仓库， 数量）<br>（仓库）→ （管理员）<br>（管理员）→ （仓库）<br>表中的唯一非关键字段为<code>数量</code>，不存在非关键字段对关键字段（码）的部分函数依赖和传递依赖函数，所以它符合第三范式。<br>但是，由于存在以下关系：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">（仓库）→ （管理员）</div><div class="line">（管理员）→ （仓库）</div></pre></td></tr></table></figure></p>
+<p>即存在关键字段决定关键字段的情况，即存在关键字段（仓库名）对 （管理员，物品名）的部分函数依赖，所以其不符合BCNF。</p>
+<p>它会出现如下异常：<br><strong> 插入异常</strong><br>当仓库没有存储物品的时候，无法给仓库分配管理员。因为存储物品也是主属性，根据实体完整性的要求，主属性不能为空。</p>
+<p><strong>删除异常</strong><br>当仓库被清空后，即“存储物品”和“数量”内删除的同时，“仓库”和“管理员”信息也被删除了。</p>
+<p><strong>更新异常</strong><br>如果仓库更换了管理员，则表中所有行的管理员都要修改。</p>
+<p>分解表：</p>
+<p>仓库<br>| 仓库  |  管理员 |<br>| :——–: | ——–:|<br>| 深圳仓   | water  | </p>
+<p>库存<br>| 仓库 | 物品 | 数量  |<br>| :——–: | ——–:| :——: |<br>| 深圳仓  | iPhone X |  1000  |</p>
+<p>这样的数据库表是符合BCNF的，消除了删除异常、插入异常和更新异常。</p>
+<h3 id="范式之间的关系"><a href="#范式之间的关系" class="headerlink" title="范式之间的关系"></a>范式之间的关系</h3><p><img src="https://oc1gyfe6q.qnssl.com/17-12-15/93314099.jpg" alt=""></p>
+<p>推荐更详细的讲解：<a href="https://www.zhihu.com/question/24696366" target="_blank" rel="external">https://www.zhihu.com/question/24696366</a></p>
+</div><div class="tags"><a href="/tags/数据库设计/">数据库设计</a></div><div class="post-nav"><a href="/2017/10/22/离散化求矩形的并/" class="next">离散化求矩形的并</a></div><div id="container"></div><link rel="stylesheet" href="/css/default.css?v=1.0.0"><script src="/js/gitment.browser.js?v=1.0.0"></script><script>var gitment = new Gitment({
+  owner: 'k-water',
+  repo: 'k-water.github.io',
+  oauth: {
+    client_id: 'b80d9a577bec58f5cd74',
+    client_secret: 'bb14317e485db9a408465da9eac80af12e340ad9',
+  },
+})
+gitment.render('container')
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://waterlin.cn"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/more/"><!--more--></a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/BackEnd/">BackEnd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/FontEnd/">FontEnd</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Server/">Server</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/ES6/" style="font-size: 15px;">ES6</a> <a href="/tags/HTML5/" style="font-size: 15px;">HTML5</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/jQuery/" style="font-size: 15px;">jQuery</a> <a href="/tags/CSS/" style="font-size: 15px;">CSS</a> <a href="/tags/Algorithm/" style="font-size: 15px;">Algorithm</a> <a href="/tags/Data-struct/" style="font-size: 15px;">Data struct</a> <a href="/tags/BFC/" style="font-size: 15px;">BFC</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/Sass/" style="font-size: 15px;">Sass</a> <a href="/tags/Browser/" style="font-size: 15px;">Browser</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/node/" style="font-size: 15px;">node</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/CSS3/" style="font-size: 15px;">CSS3</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/Blog/" style="font-size: 15px;">Blog</a> <a href="/tags/VSCode/" style="font-size: 15px;">VSCode</a> <a href="/tags/Vue/" style="font-size: 15px;">Vue</a> <a href="/tags/转载/" style="font-size: 15px;">转载</a> <a href="/tags/服务器/" style="font-size: 15px;">服务器</a> <a href="/tags/MongoDB/" style="font-size: 15px;">MongoDB</a> <a href="/tags/IFE/" style="font-size: 15px;">IFE</a> <a href="/tags/汇编/" style="font-size: 15px;">汇编</a> <a href="/tags/RegExp/" style="font-size: 15px;">RegExp</a> <a href="/tags/Electron/" style="font-size: 15px;">Electron</a> <a href="/tags/数据库设计/" style="font-size: 15px;">数据库设计</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/12/15/数据库设计规范/">数据库设计规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/22/离散化求矩形的并/">离散化求矩形的并</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/10/11/underscore源码学习（八）/">underscore源码学习（八）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/29/underscore源码学习（七）/">underscore源码学习（七）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/27/underscore源码学习（六）/">underscore源码学习（六）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/26/underscore源码学习（五）/">underscore源码学习（五）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/22/underscore源码学习（四）/">underscore源码学习（四）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/19/underscore源码学习（三）/">underscore源码学习（三）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/17/underscore源码学习（二）/">underscore源码学习（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/15/underscore源码学习（一）/">underscore源码学习（一）</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="http://blog.lxstart.net/" title="x-cold" target="_blank">x-cold</a><ul></ul><a href="http://www.cnblogs.com/liuweimingcprogram" title="SCAU_L" target="_blank">SCAU_L</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2016-2017 <a href="/." rel="nofollow">WaterBlog.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.1.20/jquery.fancybox.min.css"><script type="text/javascript" color="0,0,0" opacity="0.5" zIndex="-2" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script><script type="text/javascript" src="/js/background-canvas.js?v=1.0.0"></script></div></body></html>
