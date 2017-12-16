@@ -52,7 +52,23 @@
 </blockquote>
 <p>目前重点放在前四个范式上，这也是目前大多数数据库设计所要遵循的范式，一般要求数据库的设计至少要满足第三范式，更高的会要求满足BCNF。</p>
 <h4 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h4><p>所谓第一范式（1NF）是指数据库表的每一列都是不可分割的基本数据项，同一列中不能有多个值，即实体中的某个属性不能有多个值或者不能有重复的属性。如果出现重复的属性，就可能需要定义一个新的实体，新的实体由重复的属性构成，新实体与原实体之间为一对多关系。在第一范式（1NF）中表的每一行只包含一个实例的信息。<br>简而言之，第一范式要求数据库中的表都是二维表。</p>
-<p>满足第一范式<br>| id     | name |   sex  |<br>| :——–: | ——–:| :——: |<br>| 1    |   water |  male  |</p>
+<p>满足第一范式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">id</th>
+<th style="text-align:center">name</th>
+<th style="text-align:center">sex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">water</td>
+<td style="text-align:center">male</td>
+</tr>
+</tbody>
+</table>
 <h4 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h4><p>首先第二范式肯定是要满足第一范式的(废话)。第二范式的定义是：</p>
 <blockquote>
 <p>数据库的表中不存在<strong>非关键字段</strong>对任一候选关键字段的部分函数依赖</p>
@@ -97,7 +113,23 @@
 <p><strong>更新异常</strong><br>若调整了某一门课程的学分，那么对应数据表中的所有“学分”值都要更新，否则就会出现异常，同一门课程学分不同的情况。</p>
 <p><strong>数据冗余</strong><br>很显然，同一门课程由多个学生选修，“学分”就重复了多遍，另一方面，同一个学生选修了多门课程，姓名和年龄也会重复。</p>
 <p>为了解决这种情况，进行表的拆分，使它满足第二范式，如下：</p>
-<p><strong>student表</strong><br>| 学号 | 姓名 |  年龄  |<br>| :——–: | :——–:| :——: |<br>| 2015xxx  | water |  20 |</p>
+<p><strong>student表</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">学号</th>
+<th style="text-align:center">姓名</th>
+<th style="text-align:center">年龄</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2015xxx</td>
+<td style="text-align:center">water</td>
+<td style="text-align:center">20</td>
+</tr>
+</tbody>
+</table>
 <p><strong>course表</strong></p>
 <table>
 <thead>
@@ -245,8 +277,38 @@
 <p><strong>删除异常</strong><br>当仓库被清空后，即“存储物品”和“数量”内删除的同时，“仓库”和“管理员”信息也被删除了。</p>
 <p><strong>更新异常</strong><br>如果仓库更换了管理员，则表中所有行的管理员都要修改。</p>
 <p>分解表：</p>
-<p>仓库<br>| 仓库  |  管理员 |<br>| :——–: | :——–:|<br>| 深圳仓   | water  | </p>
-<p>库存<br>| 仓库 | 物品 | 数量  |<br>| :——–: | :——–:| :——: |<br>| 深圳仓  | iPhone X |  1000  |</p>
+<p>仓库</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">仓库</th>
+<th style="text-align:center">管理员</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">深圳仓</td>
+<td style="text-align:center">water</td>
+</tr>
+</tbody>
+</table>
+<p>库存</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">仓库</th>
+<th style="text-align:center">物品</th>
+<th style="text-align:center">数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">深圳仓</td>
+<td style="text-align:center">iPhone X</td>
+<td style="text-align:center">1000</td>
+</tr>
+</tbody>
+</table>
 <p>这样的数据库表是符合BCNF的，消除了删除异常、插入异常和更新异常。</p>
 <h3 id="范式之间的关系"><a href="#范式之间的关系" class="headerlink" title="范式之间的关系"></a>范式之间的关系</h3><p><img src="https://oc1gyfe6q.qnssl.com/17-12-15/93314099.jpg" alt=""></p>
 <p>推荐更详细的讲解：<a href="https://www.zhihu.com/question/24696366" target="_blank" rel="external">https://www.zhihu.com/question/24696366</a></p>
